@@ -1,0 +1,230 @@
+
+/* Unified Modern Styles for NextJS Technology Page */
+.nextjs-modern-page {
+	font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
+	background: linear-gradient(120deg, #f3f4f6 0%, #e0e7ff 100%);
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.nextjs-hero {
+	background: linear-gradient(90deg, #000 0%, #6366f1 100%);
+	color: #fff;
+	padding: 5rem 2rem 3rem 2rem;
+	border-radius: 0 0 2rem 2rem;
+	box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+	width: 100%;
+	max-width: 1200px;
+	text-align: center;
+}
+.nextjs-hero-logo {
+	margin-bottom: 1.5rem;
+}
+.nextjs-hero-image {
+	width: 90px;
+	height: 90px;
+	border-radius: 50%;
+	background: #fff;
+	box-shadow: 0 2px 12px rgba(0, 0, 0, 0.13);
+	object-fit: contain;
+}
+.nextjs-hero-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 1rem;
+	margin-bottom: 0.5rem;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 0.5rem;
+}
+.nextjs-hero-icon {
+	font-size: 2.2rem;
+	color: #fff;
+}
+.nextjs-hero-desc {
+	font-size: 1.25rem;
+	margin-top: 1rem;
+	margin-bottom: 1.5rem;
+}
+.nextjs-hero-btn {
+	margin-top: 1.5rem;
+}
+.nextjs-cta-btn {
+	background: #fff;
+	color: #000;
+	font-weight: 600;
+	border-radius: 2rem;
+	padding: 0.75rem 2.5rem;
+	font-size: 1.1rem;
+	box-shadow: 0 2px 12px rgba(0, 0, 0, 0.13);
+	transition: background 0.2s, color 0.2s;
+}
+.nextjs-cta-btn:hover {
+	background: #e0e7ff;
+	color: #6366f1;
+}
+
+/* Features Section */
+.nextjs-features {
+	width: 100%;
+	max-width: 1200px;
+	margin: 2.5rem auto 0 auto;
+	background: #fff;
+	border-radius: 2rem;
+	box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
+	padding: 2.5rem 2rem;
+}
+.nextjs-features-header {
+	text-align: center;
+	margin-bottom: 2.5rem;
+}
+.nextjs-features-cards {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 2rem;
+	justify-content: center;
+}
+.nextjs-feature-card {
+	background: #e0e7ff;
+	border: 1px solid #c7d2fe;
+	border-radius: 1rem;
+	box-shadow: 0 2px 12px rgba(0, 0, 0, 0.07);
+	padding: 2rem 1.5rem;
+	width: 270px;
+	text-align: center;
+	transition: transform 0.2s, box-shadow 0.2s;
+}
+.nextjs-feature-card:hover {
+	transform: translateY(-4px) scale(1.03);
+	box-shadow: 0 6px 24px rgba(0, 0, 0, 0.13);
+}
+.nextjs-feature-icon {
+	font-size: 2.2rem;
+	color: #6366f1;
+	margin-bottom: 0.5rem;
+}
+.nextjs-feature-card-border {
+	border-top: 4px solid #6366f1;
+}
+
+/* About Section */
+.nextjs-about {
+	width: 100%;
+	max-width: 1200px;
+	margin: 2.5rem auto 0 auto;
+	background: #e0e7ff;
+	border-radius: 2rem;
+	box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
+	padding: 2.5rem 2rem;
+}
+.nextjs-about-title {
+	font-size: 2rem;
+	font-weight: 700;
+	margin-bottom: 1.2rem;
+	color: #6366f1;
+}
+.nextjs-about-text {
+	font-size: 1.15rem;
+	margin-bottom: 1.5rem;
+}
+.nextjs-about-extra {
+	background: #fff;
+	border-radius: 1.2rem;
+	padding: 1.5rem 1rem;
+	margin-top: 1.5rem;
+	box-shadow: 0 2px 12px rgba(0, 0, 0, 0.07);
+}
+.nextjs-about-extra-accent {
+	border-left: 5px solid #6366f1;
+}
+.nextjs-why-title {
+	font-size: 1.2rem;
+	font-weight: 600;
+	color: #000;
+	margin-bottom: 0.7rem;
+}
+.nextjs-why-list {
+	list-style: disc inside;
+	color: #000;
+	font-size: 1.05rem;
+	margin-left: 1rem;
+}
+
+/* Expertise Section */
+.nextjs-expertise {
+	width: 100%;
+	max-width: 1200px;
+	margin: 2.5rem auto 0 auto;
+	background: #fff;
+	border-radius: 2rem;
+	box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
+	padding: 2.5rem 2rem;
+}
+.nextjs-expertise ul {
+	list-style: disc inside;
+	color: #6366f1;
+	font-size: 1.1rem;
+	margin-left: 1rem;
+}
+
+/* Success Stories Section */
+.nextjs-success-stories {
+	width: 100%;
+	max-width: 1200px;
+	margin: 2.5rem auto 2.5rem auto;
+	background: #e0e7ff;
+	border-radius: 2rem;
+	box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
+	padding: 2.5rem 2rem;
+}
+.nextjs-stories-cards {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 2rem;
+	justify-content: center;
+	margin-top: 1.5rem;
+}
+.nextjs-story-card {
+	background: #fff;
+	border-radius: 1.2rem;
+	box-shadow: 0 2px 12px rgba(0, 0, 0, 0.07);
+	padding: 1.5rem 1rem;
+	width: 320px;
+	text-align: left;
+	border-left: 5px solid #6366f1;
+}
+
+@media (max-width: 1024px) {
+	.nextjs-hero,
+	.nextjs-features,
+	.nextjs-about,
+	.nextjs-expertise,
+	.nextjs-success-stories {
+		max-width: 98vw;
+		padding-left: 1vw;
+		padding-right: 1vw;
+	}
+	.nextjs-feature-card,
+	.nextjs-story-card {
+		max-width: 95vw;
+	}
+}
+
+@media (max-width: 768px) {
+	.nextjs-hero-title {
+		font-size: 1.5rem;
+	}
+	.nextjs-hero-image {
+		width: 60px;
+		height: 60px;
+	}
+	.nextjs-features,
+	.nextjs-about,
+	.nextjs-expertise,
+	.nextjs-success-stories {
+		padding: 1.2rem 0.5rem;
+	}
+}

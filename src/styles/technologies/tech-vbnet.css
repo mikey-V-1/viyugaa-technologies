@@ -1,0 +1,230 @@
+
+/* Unified Modern Styles for VB.Net Technology Page (matching KnockoutJS) */
+.vbnet-modern-page {
+	font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
+	background: linear-gradient(120deg, #fff7ed 0%, #ede7f6 100%);
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.vbnet-hero {
+	background: linear-gradient(90deg, #6a1b9a 0%, #8e24aa 100%);
+	color: #fff;
+	padding: 5rem 2rem 3rem 2rem;
+	border-radius: 0 0 2rem 2rem;
+	box-shadow: 0 8px 32px rgba(106, 27, 154, 0.15);
+	width: 100%;
+	max-width: 1200px;
+	text-align: center;
+}
+.vbnet-hero-logo {
+	margin-bottom: 1.5rem;
+}
+.vbnet-hero-image {
+	width: 90px;
+	height: 90px;
+	border-radius: 50%;
+	background: #fff;
+	box-shadow: 0 2px 12px rgba(106, 27, 154, 0.13);
+	object-fit: contain;
+}
+.vbnet-hero-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 1rem;
+	margin-bottom: 0.5rem;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 0.5rem;
+}
+.vbnet-hero-icon {
+	font-size: 2.2rem;
+	color: #fff;
+}
+.vbnet-hero-desc {
+	font-size: 1.25rem;
+	margin-top: 1rem;
+	margin-bottom: 1.5rem;
+}
+.vbnet-hero-btn {
+	margin-top: 1.5rem;
+}
+.vbnet-cta-btn {
+	background: #fff;
+	color: #6a1b9a;
+	font-weight: 600;
+	border-radius: 2rem;
+	padding: 0.75rem 2.5rem;
+	font-size: 1.1rem;
+	box-shadow: 0 2px 12px rgba(106, 27, 154, 0.13);
+	transition: background 0.2s, color 0.2s;
+}
+.vbnet-cta-btn:hover {
+	background: #ede7f6;
+	color: #8e24aa;
+}
+
+/* Features Section */
+.vbnet-features {
+	width: 100%;
+	max-width: 1200px;
+	margin: 2.5rem auto 0 auto;
+	background: #fff;
+	border-radius: 2rem;
+	box-shadow: 0 4px 24px rgba(106, 27, 154, 0.08);
+	padding: 2.5rem 2rem;
+}
+.vbnet-features-header {
+	text-align: center;
+	margin-bottom: 2.5rem;
+}
+.vbnet-features-cards {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 2rem;
+	justify-content: center;
+}
+.vbnet-feature-card {
+	background: #ede7f6;
+	border: 1px solid #d1c4e9;
+	border-radius: 1rem;
+	box-shadow: 0 2px 12px rgba(106, 27, 154, 0.07);
+	padding: 2rem 1.5rem;
+	width: 270px;
+	text-align: center;
+	transition: transform 0.2s, box-shadow 0.2s;
+}
+.vbnet-feature-card:hover {
+	transform: translateY(-4px) scale(1.03);
+	box-shadow: 0 6px 24px rgba(106, 27, 154, 0.13);
+}
+.vbnet-feature-icon {
+	font-size: 2.2rem;
+	color: #6a1b9a;
+	margin-bottom: 0.5rem;
+}
+.vbnet-feature-card-border {
+	border-top: 4px solid #6a1b9a;
+}
+
+/* About Section */
+.vbnet-about {
+	width: 100%;
+	max-width: 1200px;
+	margin: 2.5rem auto 0 auto;
+	background: #ede7f6;
+	border-radius: 2rem;
+	box-shadow: 0 4px 24px rgba(106, 27, 154, 0.08);
+	padding: 2.5rem 2rem;
+}
+.vbnet-about-title {
+	font-size: 2rem;
+	font-weight: 700;
+	margin-bottom: 1.2rem;
+	color: #6a1b9a;
+}
+.vbnet-about-text {
+	font-size: 1.15rem;
+	margin-bottom: 1.5rem;
+}
+.vbnet-about-extra {
+	background: #fff;
+	border-radius: 1.2rem;
+	padding: 1.5rem 1rem;
+	margin-top: 1.5rem;
+	box-shadow: 0 2px 12px rgba(106, 27, 154, 0.07);
+}
+.vbnet-about-extra-accent {
+	border-left: 5px solid #6a1b9a;
+}
+.vbnet-why-title {
+	font-size: 1.2rem;
+	font-weight: 600;
+	color: #8e24aa;
+	margin-bottom: 0.7rem;
+}
+.vbnet-why-list {
+	list-style: disc inside;
+	color: #8e24aa;
+	font-size: 1.05rem;
+	margin-left: 1rem;
+}
+
+/* Expertise Section */
+.vbnet-expertise {
+	width: 100%;
+	max-width: 1200px;
+	margin: 2.5rem auto 0 auto;
+	background: #fff;
+	border-radius: 2rem;
+	box-shadow: 0 4px 24px rgba(106, 27, 154, 0.08);
+	padding: 2.5rem 2rem;
+}
+.vbnet-expertise-list {
+	list-style: disc inside;
+	color: #6a1b9a;
+	font-size: 1.1rem;
+	margin-left: 1rem;
+}
+
+/* Success Stories Section */
+.vbnet-success-stories {
+	width: 100%;
+	max-width: 1200px;
+	margin: 2.5rem auto 2.5rem auto;
+	background: #ede7f6;
+	border-radius: 2rem;
+	box-shadow: 0 4px 24px rgba(106, 27, 154, 0.08);
+	padding: 2.5rem 2rem;
+}
+.vbnet-stories-cards {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 2rem;
+	justify-content: center;
+	margin-top: 1.5rem;
+}
+.vbnet-story-card {
+	background: #fff;
+	border-radius: 1.2rem;
+	box-shadow: 0 2px 12px rgba(106, 27, 154, 0.07);
+	padding: 1.5rem 1rem;
+	width: 320px;
+	text-align: left;
+	border-left: 5px solid #6a1b9a;
+}
+
+@media (max-width: 1024px) {
+	.vbnet-hero,
+	.vbnet-features,
+	.vbnet-about,
+	.vbnet-expertise,
+	.vbnet-success-stories {
+		max-width: 98vw;
+		padding-left: 1vw;
+		padding-right: 1vw;
+	}
+	.vbnet-feature-card,
+	.vbnet-story-card {
+		max-width: 95vw;
+	}
+}
+
+@media (max-width: 768px) {
+	.vbnet-hero-title {
+		font-size: 1.5rem;
+	}
+	.vbnet-hero-image {
+		width: 60px;
+		height: 60px;
+	}
+	.vbnet-features,
+	.vbnet-about,
+	.vbnet-expertise,
+	.vbnet-success-stories {
+		padding: 1.2rem 0.5rem;
+	}
+}

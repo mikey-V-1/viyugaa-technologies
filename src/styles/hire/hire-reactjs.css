@@ -1,0 +1,231 @@
+/* Super Styled ReactJS Hire Page */
+.super-desc{
+	color:#fff;
+}
+
+.hire-reactjs-super {
+	font-family: 'Segoe UI', 'Roboto', Arial, sans-serif;
+	min-height: 100vh;
+	color: #fff;
+}
+
+.super-hero-section {
+	background: linear-gradient(90deg, #1e3c72 0%, #2a5298 100%);
+	padding: 4rem 2rem 2rem 2rem;
+	text-align: center;
+	box-shadow: 0 8px 32px rgba(30,60,114,0.2);
+	border-radius: 0 0 2rem 2rem;
+}
+.super-logo {
+	width: 120px;
+	height: 120px;
+	border-radius: 50%;
+	box-shadow: 0 4px 24px #61dafb99;
+	margin-bottom: 1.5rem;
+}
+.super-title {
+	font-size: 3rem;
+	font-weight: 800;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 1rem;
+	color: #61dafb;
+	text-shadow: 0 2px 8px #222;
+}
+.super-icon {
+	font-size: 3.5rem;
+	color: #61dafb;
+	filter: drop-shadow(0 0 8px #61dafb99);
+}
+.super-desc {
+	font-size: 1.25rem;
+	margin: 1.5rem auto 0 auto;
+	max-width: 700px;
+	color: #fff;
+	padding: 1.2rem 1.5rem;
+	border-radius: 10px;
+	text-shadow: none;
+}
+
+.super-section-title {
+	font-size: 2.2rem;
+	font-weight: 700;
+	margin-bottom: 2rem;
+	color: #61dafb;
+	text-align: center;
+		text-shadow: none;
+}
+.super-cards {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 2rem;
+	justify-content: center;
+}
+.super-card {
+	background: linear-gradient(135deg, #232526 0%, #414345 100%);
+	color: #fff;
+	border-radius: 1.5rem;
+	box-shadow: 0 4px 24px #2228;
+	padding: 2rem 1.5rem;
+	min-width: 280px;
+	max-width: 370px;
+	margin-bottom: 2rem;
+	transition: transform 0.2s, box-shadow 0.2s;
+}
+.super-card:hover {
+	transform: translateY(-8px) scale(1.03);
+	box-shadow: 0 8px 32px #61dafb44;
+}
+.super-card-title {
+	font-size: 1.3rem;
+	font-weight: 600;
+	margin-bottom: 1rem;
+	display: flex;
+		text-shadow: none;
+	gap: 0.5rem;
+	color: #61dafb;
+}
+.super-card-desc {
+	font-size: 1rem;
+	color: #e0e7ef;
+}
+
+.super-candidate-reqs {
+	background: linear-gradient(90deg, #232526 0%, #414345 100%);
+	padding: 3rem 2rem;
+	border-radius: 2rem;
+	margin: 2rem 0;
+	box-shadow: 0 4px 24px #2228;
+}
+.super-benefits {
+	background: linear-gradient(90deg, #1e3c72 0%, #2a5298 100%);
+	padding: 3rem 2rem;
+	border-radius: 2rem;
+	margin: 2rem 0;
+	box-shadow: 0 4px 24px #2228;
+}
+
+.super-hiring-process {
+	background: linear-gradient(135deg, #232526 0%, #414345 100%);
+	padding: 3rem 2rem;
+	border-radius: 2rem;
+	margin: 2rem 0;
+	box-shadow: 0 4px 24px #2228;
+}
+.super-process-steps {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 2rem;
+	justify-content: center;
+}
+.super-process-step {
+	background: #222;
+	color: #fff;
+	border-radius: 1rem;
+	box-shadow: 0 2px 12px #61dafb22;
+	padding: 1.5rem 1rem;
+	min-width: 180px;
+	max-width: 220px;
+	text-align: center;
+	transition: transform 0.2s, box-shadow 0.2s;
+}
+.super-process-step:hover {
+	transform: scale(1.05);
+	box-shadow: 0 8px 32px #61dafb44;
+}
+.super-process-icon {
+	font-size: 2rem;
+	color: #61dafb;
+	margin-bottom: 0.5rem;
+}
+.super-process-desc {
+	font-size: 1rem;
+	color: #e0e7ef;
+}
+
+.super-resume-section {
+	background: linear-gradient(90deg, #232526 0%, #414345 100%);
+	padding: 3rem 2rem;
+	border-radius: 2rem;
+	margin: 2rem 0;
+	box-shadow: 0 4px 24px #2228;
+}
+.super-resume-form {
+	max-width: 500px;
+	margin: 0 auto;
+	background: #222;
+	padding: 2rem;
+	border-radius: 1.5rem;
+	box-shadow: 0 2px 12px #61dafb22;
+	display: flex;
+	flex-direction: column;
+	gap: 1.2rem;
+}
+.super-form-input, .super-form-textarea {
+	background: #333;
+	color: #fff;
+	border: none;
+	border-radius: 0.7rem;
+	padding: 0.9rem 1rem;
+	font-size: 1rem;
+	box-shadow: 0 1px 6px #61dafb22;
+	outline: none;
+	transition: box-shadow 0.2s;
+}
+.super-form-input:focus, .super-form-textarea:focus {
+	box-shadow: 0 2px 12px #61dafb44;
+}
+.super-btn {
+	background: linear-gradient(90deg, #61dafb 0%, #2a5298 100%);
+	color: #222;
+	font-weight: 700;
+	border: none;
+	border-radius: 2rem;
+	padding: 1rem 2rem;
+	font-size: 1.1rem;
+	box-shadow: 0 4px 24px #61dafb44;
+	cursor: pointer;
+	transition: background 0.2s, box-shadow 0.2s;
+}
+.super-btn:hover {
+	background: linear-gradient(90deg, #2a5298 0%, #61dafb 100%);
+	box-shadow: 0 8px 32px #61dafb88;
+}
+
+.super-contact-offices {
+	background: linear-gradient(135deg, #232526 0%, #414345 100%);
+	padding: 3rem 2rem;
+	border-radius: 2rem;
+	margin: 2rem 0;
+	box-shadow: 0 4px 24px #2228;
+}
+
+.super-animation-demo {
+	background: linear-gradient(90deg, #1e3c72 0%, #2a5298 100%);
+	padding: 4rem 2rem;
+	border-radius: 2rem;
+	margin: 2rem 0;
+	box-shadow: 0 4px 24px #2228;
+	text-align: center;
+}
+.super-demo-desc {
+	font-size: 1.2rem;
+	color: #e0e7ef;
+	margin-bottom: 2rem;
+}
+
+@media (max-width: 900px) {
+	.super-cards, .super-process-steps {
+		flex-direction: column;
+		gap: 1.5rem;
+	}
+	.super-card, .super-process-step {
+		min-width: 220px;
+		max-width: 100%;
+	}
+}
+.hire-reactjs { background: #e3f2fd; padding: 2rem; border-radius: 12px; }
+.hire-reactjs h1 { color: #61dafb; }
+.hire-reactjs ul { margin-top: 1rem; }
+.hire-reactjs li { color: #1a237e; margin-bottom: 0.5rem; }

@@ -1,0 +1,5 @@
+/* Web Development service page styles */
+.service-web { background: #f5f5f5; padding: 2rem; border-radius: 12px; }
+.service-web h1 { color: #222; }
+.service-web ul { margin-top: 1rem; }
+.service-web li { margin-bottom: 0.5rem; }

@@ -1,0 +1,230 @@
+
+/* Unified Modern Styles for C# Technology Page (matching KnockoutJS) */
+.csharp-modern-page {
+	font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
+	background: linear-gradient(120deg, #fff7ed 0%, #e8f5e9 100%);
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.csharp-hero {
+	background: linear-gradient(90deg, #43a047 0%, #388e3c 100%);
+	color: #fff;
+	padding: 5rem 2rem 3rem 2rem;
+	border-radius: 0 0 2rem 2rem;
+	box-shadow: 0 8px 32px rgba(67, 160, 71, 0.15);
+	width: 100%;
+	max-width: 1200px;
+	text-align: center;
+}
+.csharp-hero-logo {
+	margin-bottom: 1.5rem;
+}
+.csharp-hero-image {
+	width: 90px;
+	height: 90px;
+	border-radius: 50%;
+	background: #fff;
+	box-shadow: 0 2px 12px rgba(67, 160, 71, 0.13);
+	object-fit: contain;
+}
+.csharp-hero-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 1rem;
+	margin-bottom: 0.5rem;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 0.5rem;
+}
+.csharp-hero-icon {
+	font-size: 2.2rem;
+	color: #fff;
+}
+.csharp-hero-desc {
+	font-size: 1.25rem;
+	margin-top: 1rem;
+	margin-bottom: 1.5rem;
+}
+.csharp-hero-btn {
+	margin-top: 1.5rem;
+}
+.csharp-cta-btn {
+	background: #fff;
+	color: #43a047;
+	font-weight: 600;
+	border-radius: 2rem;
+	padding: 0.75rem 2.5rem;
+	font-size: 1.1rem;
+	box-shadow: 0 2px 12px rgba(67, 160, 71, 0.13);
+	transition: background 0.2s, color 0.2s;
+}
+.csharp-cta-btn:hover {
+	background: #e8f5e9;
+	color: #388e3c;
+}
+
+/* Features Section */
+.csharp-features {
+	width: 100%;
+	max-width: 1200px;
+	margin: 2.5rem auto 0 auto;
+	background: #fff;
+	border-radius: 2rem;
+	box-shadow: 0 4px 24px rgba(67, 160, 71, 0.08);
+	padding: 2.5rem 2rem;
+}
+.csharp-features-header {
+	text-align: center;
+	margin-bottom: 2.5rem;
+}
+.csharp-features-cards {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 2rem;
+	justify-content: center;
+}
+.csharp-feature-card {
+	background: #e8f5e9;
+	border: 1px solid #c8e6c9;
+	border-radius: 1rem;
+	box-shadow: 0 2px 12px rgba(67, 160, 71, 0.07);
+	padding: 2rem 1.5rem;
+	width: 270px;
+	text-align: center;
+	transition: transform 0.2s, box-shadow 0.2s;
+}
+.csharp-feature-card:hover {
+	transform: translateY(-4px) scale(1.03);
+	box-shadow: 0 6px 24px rgba(67, 160, 71, 0.13);
+}
+.csharp-feature-icon {
+	font-size: 2.2rem;
+	color: #43a047;
+	margin-bottom: 0.5rem;
+}
+.csharp-feature-card-border {
+	border-top: 4px solid #43a047;
+}
+
+/* About Section */
+.csharp-about {
+	width: 100%;
+	max-width: 1200px;
+	margin: 2.5rem auto 0 auto;
+	background: #e8f5e9;
+	border-radius: 2rem;
+	box-shadow: 0 4px 24px rgba(67, 160, 71, 0.08);
+	padding: 2.5rem 2rem;
+}
+.csharp-about-title {
+	font-size: 2rem;
+	font-weight: 700;
+	margin-bottom: 1.2rem;
+	color: #43a047;
+}
+.csharp-about-text {
+	font-size: 1.15rem;
+	margin-bottom: 1.5rem;
+}
+.csharp-about-extra {
+	background: #fff;
+	border-radius: 1.2rem;
+	padding: 1.5rem 1rem;
+	margin-top: 1.5rem;
+	box-shadow: 0 2px 12px rgba(67, 160, 71, 0.07);
+}
+.csharp-about-extra-accent {
+	border-left: 5px solid #43a047;
+}
+.csharp-why-title {
+	font-size: 1.2rem;
+	font-weight: 600;
+	color: #388e3c;
+	margin-bottom: 0.7rem;
+}
+.csharp-why-list {
+	list-style: disc inside;
+	color: #388e3c;
+	font-size: 1.05rem;
+	margin-left: 1rem;
+}
+
+/* Expertise Section */
+.csharp-expertise {
+	width: 100%;
+	max-width: 1200px;
+	margin: 2.5rem auto 0 auto;
+	background: #fff;
+	border-radius: 2rem;
+	box-shadow: 0 4px 24px rgba(67, 160, 71, 0.08);
+	padding: 2.5rem 2rem;
+}
+.csharp-expertise-list {
+	list-style: disc inside;
+	color: #43a047;
+	font-size: 1.1rem;
+	margin-left: 1rem;
+}
+
+/* Success Stories Section */
+.csharp-success-stories {
+	width: 100%;
+	max-width: 1200px;
+	margin: 2.5rem auto 2.5rem auto;
+	background: #e8f5e9;
+	border-radius: 2rem;
+	box-shadow: 0 4px 24px rgba(67, 160, 71, 0.08);
+	padding: 2.5rem 2rem;
+}
+.csharp-stories-cards {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 2rem;
+	justify-content: center;
+	margin-top: 1.5rem;
+}
+.csharp-story-card {
+	background: #fff;
+	border-radius: 1.2rem;
+	box-shadow: 0 2px 12px rgba(67, 160, 71, 0.07);
+	padding: 1.5rem 1rem;
+	width: 320px;
+	text-align: left;
+	border-left: 5px solid #43a047;
+}
+
+@media (max-width: 1024px) {
+	.csharp-hero,
+	.csharp-features,
+	.csharp-about,
+	.csharp-expertise,
+	.csharp-success-stories {
+		max-width: 98vw;
+		padding-left: 1vw;
+		padding-right: 1vw;
+	}
+	.csharp-feature-card,
+	.csharp-story-card {
+		max-width: 95vw;
+	}
+}
+
+@media (max-width: 768px) {
+	.csharp-hero-title {
+		font-size: 1.5rem;
+	}
+	.csharp-hero-image {
+		width: 60px;
+		height: 60px;
+	}
+	.csharp-features,
+	.csharp-about,
+	.csharp-expertise,
+	.csharp-success-stories {
+		padding: 1.2rem 0.5rem;
+	}
+}

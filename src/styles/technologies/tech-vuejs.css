@@ -1,0 +1,327 @@
+
+/* Unified Modern Styles for VueJS Technology Page */
+.vuejs-modern-page {
+	font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
+	background: linear-gradient(120deg, #e0fff7 0%, #e0f0ff 100%);
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.vuejs-hero {
+	background: linear-gradient(90deg, #42b883 0%, #35495e 100%);
+	color: #fff;
+	padding: 5rem 2rem 3rem 2rem;
+	border-radius: 0 0 2rem 2rem;
+	box-shadow: 0 8px 32px rgba(67, 233, 123, 0.15);
+	width: 100%;
+	max-width: 1200px;
+	text-align: center;
+}
+.vuejs-hero-logo {
+	margin-bottom: 1.5rem;
+}
+.vuejs-hero-image {
+	width: 90px;
+	height: 90px;
+	border-radius: 50%;
+	background: #fff;
+	box-shadow: 0 2px 12px rgba(67, 233, 123, 0.13);
+	object-fit: contain;
+}
+.vuejs-hero-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 1rem;
+	margin-bottom: 0.5rem;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 0.5rem;
+}
+.vuejs-hero-icon {
+	font-size: 2.2rem;
+	color: #fff;
+}
+.vuejs-hero-desc {
+	font-size: 1.25rem;
+	margin-top: 1rem;
+	margin-bottom: 1.5rem;
+}
+.vuejs-hero-btn {
+	margin-top: 1.5rem;
+}
+.vuejs-cta-btn {
+	background: #fff;
+	color: #42b883;
+	font-weight: 600;
+	border-radius: 2rem;
+	padding: 0.75rem 2.5rem;
+	font-size: 1.1rem;
+	box-shadow: 0 2px 12px rgba(67, 233, 123, 0.13);
+	transition: background 0.2s, color 0.2s;
+}
+.vuejs-cta-btn:hover {
+	background: #e0fff7;
+	color: #35495e;
+}
+
+/* Features Section */
+.vuejs-features {
+	width: 100%;
+	max-width: 1200px;
+	margin: 2.5rem auto 0 auto;
+	background: #fff;
+	border-radius: 2rem;
+	box-shadow: 0 4px 24px rgba(67, 233, 123, 0.08);
+	padding: 2.5rem 2rem;
+}
+.vuejs-features-header {
+	text-align: center;
+	margin-bottom: 2.5rem;
+}
+.vuejs-features-cards {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 2rem;
+	justify-content: center;
+}
+.vuejs-feature-card {
+	background: #e0fff7;
+	border: 1px solid #e0f0ff;
+	border-radius: 1rem;
+	box-shadow: 0 2px 12px rgba(67, 233, 123, 0.07);
+	padding: 2rem 1.5rem;
+	width: 270px;
+	text-align: center;
+	transition: transform 0.2s, box-shadow 0.2s;
+}
+.vuejs-feature-card:hover {
+	transform: translateY(-4px) scale(1.03);
+	box-shadow: 0 6px 24px rgba(67, 233, 123, 0.13);
+}
+.vuejs-feature-icon {
+	font-size: 2.2rem;
+	color: #42b883;
+	margin-bottom: 0.5rem;
+}
+.vuejs-feature-card-border {
+	border-top: 4px solid #42b883;
+}
+
+/* About Section */
+.vuejs-about {
+	width: 100%;
+	max-width: 1200px;
+	margin: 2.5rem auto 0 auto;
+	background: #e0f0ff;
+	border-radius: 2rem;
+	box-shadow: 0 4px 24px rgba(67, 233, 123, 0.08);
+	padding: 2.5rem 2rem;
+}
+.vuejs-about-title {
+	font-size: 2rem;
+	font-weight: 700;
+	margin-bottom: 1.2rem;
+	color: #42b883;
+}
+.vuejs-about-text {
+	font-size: 1.15rem;
+	margin-bottom: 1.5rem;
+}
+.vuejs-about-extra {
+	background: #fff;
+	border-radius: 1.2rem;
+	padding: 1.5rem 1rem;
+	margin-top: 1.5rem;
+	box-shadow: 0 2px 12px rgba(67, 233, 123, 0.07);
+}
+.vuejs-about-extra-accent {
+	border-left: 5px solid #42b883;
+}
+.vuejs-why-title {
+	font-size: 1.2rem;
+	font-weight: 600;
+	color: #35495e;
+	margin-bottom: 0.7rem;
+}
+.vuejs-why-list {
+	list-style: disc inside;
+	color: #35495e;
+	font-size: 1.05rem;
+	margin-left: 1rem;
+}
+
+/* Expertise Section */
+.vuejs-expertise {
+	width: 100%;
+	max-width: 1200px;
+	margin: 2.5rem auto 0 auto;
+	background: #fff;
+	border-radius: 2rem;
+	box-shadow: 0 4px 24px rgba(67, 233, 123, 0.08);
+	padding: 2.5rem 2rem;
+}
+.vuejs-expertise ul {
+	list-style: disc inside;
+	color: #42b883;
+	font-size: 1.1rem;
+	margin-left: 1rem;
+}
+
+/* Success Stories Section */
+.vuejs-success-stories {
+	width: 100%;
+	max-width: 1200px;
+	margin: 2.5rem auto 2.5rem auto;
+	background: #e0f0ff;
+	border-radius: 2rem;
+	box-shadow: 0 4px 24px rgba(67, 233, 123, 0.08);
+	padding: 2.5rem 2rem;
+}
+.vuejs-stories-cards {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 2rem;
+	justify-content: center;
+	margin-top: 1.5rem;
+}
+.vuejs-story-card {
+	background: #fff;
+	border-radius: 1.2rem;
+	box-shadow: 0 2px 12px rgba(67, 233, 123, 0.07);
+	padding: 1.5rem 1rem;
+	width: 320px;
+	text-align: left;
+	border-left: 5px solid #42b883;
+}
+
+@media (max-width: 1024px) {
+	.vuejs-hero,
+	.vuejs-features,
+	.vuejs-about,
+	.vuejs-expertise,
+	.vuejs-success-stories {
+		max-width: 98vw;
+		padding-left: 1vw;
+		padding-right: 1vw;
+	}
+	.vuejs-feature-card,
+	.vuejs-story-card {
+		max-width: 95vw;
+	}
+}
+
+@media (max-width: 768px) {
+	.vuejs-hero-title {
+		font-size: 1.5rem;
+	}
+	.vuejs-hero-image {
+		width: 60px;
+		height: 60px;
+	}
+	.vuejs-features,
+	.vuejs-about,
+	.vuejs-expertise,
+	.vuejs-success-stories {
+		padding: 1.2rem 0.5rem;
+	}
+}
+
+@media (max-width: 1024px) {
+	.hero,
+	.vuejs-details,
+	.vuejs-usecases,
+	.vuejs-animation-demo {
+		max-width: 98vw;
+		padding-left: 1vw;
+		padding-right: 1vw;
+	}
+	.feature-card,
+	.usecase-card {
+		max-width: 95vw;
+	}
+}
+
+/* tech-vuejs.css - Modern vibrant styles for VueJS page */
+
+.vuejs-page {
+	font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
+	background: linear-gradient(120deg, #e0f7fa 0%, #e3ffe6 100%);
+	min-height: 100vh;
+}
+
+.hero {
+	background: linear-gradient(90deg, #43e97b 0%, #38f9d7 100%);
+	color: #fff;
+	padding: 5rem 2rem 3rem 2rem;
+	border-radius: 0 0 2rem 2rem;
+	box-shadow: 0 8px 32px rgba(67, 233, 123, 0.15);
+}
+
+.hero h1 {
+	font-size: 3rem;
+	font-weight: 700;
+	letter-spacing: -1px;
+}
+
+.hero p {
+	font-size: 1.25rem;
+	margin-top: 1rem;
+}
+
+.vuejs-details {
+	background: #fff;
+	border-radius: 2rem;
+	box-shadow: 0 4px 24px rgba(67, 233, 123, 0.08);
+	margin-top: -3rem;
+	margin-bottom: 2rem;
+}
+
+.feature-card {
+	background: #f6fff7;
+	border: 1px solid #e0f7fa;
+	border-radius: 1rem;
+	box-shadow: 0 2px 12px rgba(67, 233, 123, 0.07);
+	transition: transform 0.2s;
+}
+.feature-card:hover {
+	transform: translateY(-4px) scale(1.03);
+	box-shadow: 0 6px 24px rgba(67, 233, 123, 0.13);
+}
+
+.vuejs-usecases {
+	margin-top: 2rem;
+}
+
+.usecase-card {
+	background: #e0f7fa;
+	border-radius: 1rem;
+	box-shadow: 0 2px 12px rgba(67, 233, 123, 0.07);
+	margin-bottom: 1rem;
+	transition: box-shadow 0.2s;
+}
+.usecase-card:hover {
+	box-shadow: 0 8px 32px rgba(67, 233, 123, 0.15);
+}
+
+.vuejs-animation-demo {
+	background: linear-gradient(90deg, #43e97b 0%, #38f9d7 100%);
+	color: #fff;
+	border-radius: 2rem;
+	box-shadow: 0 8px 32px rgba(67, 233, 123, 0.12);
+	margin-top: 2rem;
+}
+
+@media (max-width: 768px) {
+	.hero h1 {
+		font-size: 2rem;
+	}
+	.vuejs-details, .vuejs-animation-demo {
+		padding: 2rem 1rem;
+	}
+	.vuejs-usecases {
+		padding: 2rem 1rem;
+	}
+}

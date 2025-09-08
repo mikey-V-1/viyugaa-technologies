@@ -1,0 +1,5 @@
+/* Custom Software Development service page styles */
+.service-custom-software { background: #fffbe6; padding: 2rem; border-radius: 12px; }
+.service-custom-software h1 { color: #ff9800; }
+.service-custom-software ul { margin-top: 1rem; }
+.service-custom-software li { margin-bottom: 0.5rem; }

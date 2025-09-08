@@ -1,0 +1,237 @@
+.home {
+  text-align: center;
+  padding: 50px 20px;
+  background: linear-gradient(to bottom right, #f8f9fa, #e3f2fd);
+}
+
+.hero {
+  padding: 10px 20px;
+  animation: fadeIn 1s ease-in-out;
+}
+
+.hero h1 {
+  font-size: 2.5rem;
+  color: #0d47a1;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  margin-top: 10px;
+  color: #555;
+}
+
+.cta-btn {
+  background-color: #0d47a1;
+  color: white;
+  padding: 12px 25px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+.cta-btn:hover {
+  background-color: #1565c0;
+}
+
+.features {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  margin-top: 50px;
+}
+
+.feature-card {
+  background: white;
+  padding: 20px;
+  width: 280px;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+}
+
+.feature-card:hover {
+  transform: translateY(-8px);
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Team Section */
+.team-home {
+  text-align: center;
+  margin: 60px 0 40px 0;
+}
+.team-title-home {
+  font-size: 2.2rem;
+  color: #0d47a1;
+  margin-bottom: 32px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-align: center;
+}
+.team-grid-home {
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 24px;
+}
+.team-card-home {
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.10);
+  padding: 28px 18px;
+  max-width: 220px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: transform 0.3s, box-shadow 0.3s;
+  animation: fadeInUp 1s;
+}
+.team-card-home:hover {
+  transform: translateY(-8px) scale(1.04);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.14);
+}
+.team-img-wrap-home {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-bottom: 16px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.10);
+}
+.team-img-home {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.team-name-home {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #222;
+  margin-bottom: 6px;
+}
+.team-role-home {
+  color: #00c6fb;
+  font-size: 1em;
+  margin-bottom: 8px;
+  font-weight: 500;
+}
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Logos Section */
+.logos-home {
+  text-align: center;
+  margin: 60px 0 40px 0;
+}
+.logos-grid-home {
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 24px;
+}
+.logo-card-home {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  padding: 12px 18px;
+  max-width: 120px;
+}
+.logo-img-home {
+  width: 48px;
+  height: 48px;
+  object-fit: contain;
+  margin-bottom: 8px;
+}
+.logo-card-home span {
+  font-size: 0.95em;
+  color: #222;
+}
+
+/* Services Section */
+.services-section {
+  margin: 40px 0;
+  padding: 0 20px;
+}
+.services-title {
+  font-size: 2rem;
+  color: #0d47a1;
+  margin-bottom: 24px;
+  font-weight: 700;
+  text-align: center;
+}
+.services-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.services-section ul {
+  margin-top: 0.5rem;
+  padding-left: 1.2rem;
+}
+.services-section ul li {
+  margin-bottom: 0.7rem;
+}
+
+/* Media Queries */
+@media (max-width: 900px) {
+  .home {
+    padding: 30px 8px;
+  }
+  .hero {
+    padding: 40px 8px;
+    flex-direction: column;
+    text-align: center;
+  }
+  .features {
+    flex-direction: column;
+    gap: 12px;
+  }
+  .team-grid-home, .logos-grid-home {
+    gap: 1rem;
+  }
+}
+@media (max-width: 600px) {
+  .home {
+    padding: 16px 2px;
+  }
+  .hero {
+    padding: 20px 2px;
+    font-size: 1.2rem;
+  }
+  .features {
+    flex-direction: column;
+    gap: 8px;
+  }
+  .feature-card {
+    width: 100%;
+    min-width: 0;
+    margin: 0 auto;
+  }
+  .team-grid-home, .logos-grid-home {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.7rem;
+  }
+  .team-home, .logos-home {
+    margin: 32px 0 24px 0;
+    padding: 18px 0;
+  }
+  .team-title-home {
+    font-size: 1.4rem;
+    margin-bottom: 18px;
+  }
+}

@@ -1,0 +1,5 @@
+/* ERP Software Development service page styles */
+.service-erp { background: #f1f8e9; padding: 2rem; border-radius: 12px; }
+.service-erp h1 { color: #43a047; }
+.service-erp ul { margin-top: 1rem; }
+.service-erp li { margin-bottom: 0.5rem; }

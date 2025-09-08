@@ -1,0 +1,294 @@
+
+/* Modern Flutter Page Styles (based on Android/PHP) */
+/* Unified Modern Styles for Flutter Technology Page (matching PHP) */
+/* Unified Modern Styles for Flutter Technology Page (matching NodeJS) */
+.flutter-modern-page {
+	font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
+	background: linear-gradient(120deg, #fff7ed 0%, #ede7f6 100%);
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+/* Hero Section (matching PHP) */
+/* Hero Section (matching NodeJS) */
+.flutter-hero {
+	background: linear-gradient(90deg, #6a1b9a 0%, #8e24aa 100%);
+	color: #fff;
+	padding: 5rem 2rem 3rem 2rem;
+	border-radius: 0 0 2rem 2rem;
+	box-shadow: 0 8px 32px rgba(106, 27, 154, 0.15);
+	width: 100%;
+	max-width: 1200px;
+	text-align: center;
+}
+.flutter-hero-logo {
+	margin-bottom: 1.5rem;
+}
+.flutter-hero-image {
+	width: 90px;
+	height: 90px;
+	border-radius: 50%;
+	background: #fff;
+	box-shadow: 0 2px 12px rgba(124, 77, 255, 0.13);
+	object-fit: contain;
+}
+.flutter-hero-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 1rem;
+	margin-bottom: 0.5rem;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 0.5rem;
+}
+.flutter-hero-icon {
+	font-size: 2.2rem;
+	color: #fff;
+}
+.flutter-hero-desc {
+	font-size: 1.25rem;
+	margin-top: 1rem;
+	margin-bottom: 1.5rem;
+}
+.flutter-hero-btn {
+	margin-top: 1.5rem;
+}
+.flutter-cta-btn {
+	background: #fff;
+	color: #7c4dff;
+	font-weight: 600;
+	border-radius: 2rem;
+	padding: 0.75rem 2.5rem;
+	font-size: 1.1rem;
+	box-shadow: 0 2px 12px rgba(124, 77, 255, 0.13);
+	transition: background 0.2s, color 0.2s;
+}
+.flutter-cta-btn:hover {
+	background: #e3f2fd;
+	color: #00bcd4;
+}
+.flutter-hero-logo {
+	display: flex;
+	justify-content: center;
+}
+.flutter-hero-image {
+	width: 120px;
+	height: 120px;
+	border-radius: 50%;
+	background: #fff;
+	box-shadow: 0 2px 16px rgba(0,0,0,0.08);
+	object-fit: contain;
+}
+.flutter-hero-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 24px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 12px;
+}
+.flutter-hero-icon {
+	font-size: 2.5rem;
+	color: #fff176;
+}
+.flutter-hero-desc {
+	font-size: 1.25rem;
+	margin-top: 16px;
+	opacity: 0.95;
+}
+.flutter-hero-btn {
+	margin-top: 32px;
+}
+.flutter-cta-btn {
+	background: #fff176;
+	color: #232526;
+	font-weight: 700;
+	border-radius: 999px;
+	padding: 14px 36px;
+	font-size: 1.1rem;
+	box-shadow: 0 2px 12px rgba(0, 188, 212, 0.12);
+	border: none;
+	transition: background 0.2s, color 0.2s;
+}
+.flutter-cta-btn:hover {
+	background: #ffe082;
+	color: #232526;
+}
+
+/* Features Section (matching PHP) */
+/* Features Section (matching NodeJS) */
+.flutter-features {
+	width: 100%;
+	max-width: 1200px;
+	margin: 2.5rem auto 0 auto;
+	background: #fff;
+	border-radius: 2rem;
+	box-shadow: 0 4px 24px rgba(106, 27, 154, 0.08);
+	padding: 2.5rem 2rem;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+/* Feature Card Styles (matching NodeJS) */
+/* Feature Card Styles (matching NodeJS) */
+.flutter-feature-card {
+	background: #ede7f6;
+	border: 1px solid #b39ddb;
+	border-radius: 1rem;
+	box-shadow: 0 2px 12px rgba(106, 27, 154, 0.07);
+	padding: 2rem 1.5rem;
+	width: 270px;
+	text-align: center;
+	transition: transform 0.2s, box-shadow 0.2s;
+	color: #232526;
+}
+.flutter-feature-card:hover {
+	transform: translateY(-4px) scale(1.03);
+	box-shadow: 0 6px 24px rgba(106, 27, 154, 0.13);
+}
+.flutter-feature-icon {
+	font-size: 2.2rem;
+	color: #6a1b9a;
+	margin-bottom: 0.5rem;
+}
+.flutter-feature-card-border {
+	border-top: 4px solid #6a1b9a;
+}
+.flutter-feature-card h3 {
+	font-size: 1.18rem;
+	font-weight: 600;
+	margin-bottom: 8px;
+}
+.flutter-feature-card p {
+	color: #444;
+	font-size: 1rem;
+}
+
+/* About Section (matching PHP) */
+/* About Section (matching NodeJS) */
+.flutter-about {
+	width: 100%;
+	max-width: 1200px;
+	margin: 2.5rem auto 0 auto;
+	background: #ede7f6;
+	border-radius: 2rem;
+	box-shadow: 0 4px 24px rgba(106, 27, 154, 0.08);
+	padding: 2.5rem 2rem;
+	text-align: center;
+}
+.flutter-about-title {
+	font-size: 2rem;
+	font-weight: 700;
+	margin-bottom: 1.2rem;
+	color: #6a1b9a;
+}
+.flutter-about-text {
+	font-size: 1.15rem;
+	margin-bottom: 1.5rem;
+	color: #444;
+}
+.flutter-about-extra {
+	background: #fff;
+	border-radius: 1.2rem;
+	padding: 1.5rem 1rem;
+	margin-top: 1.5rem;
+	box-shadow: 0 2px 12px rgba(106, 27, 154, 0.07);
+	text-align: left;
+}
+.flutter-about-extra-accent {
+	border-left: 5px solid #6a1b9a;
+}
+.flutter-why-title {
+	font-size: 1.2rem;
+	font-weight: 600;
+	color: #8e24aa;
+	margin-bottom: 0.7rem;
+}
+.flutter-why-list {
+	list-style: disc inside;
+	color: #8e24aa;
+	font-size: 1.05rem;
+	margin-left: 1rem;
+}
+/* Expertise Section (matching PHP) */
+/* Expertise Section (matching NodeJS) */
+.flutter-expertise {
+	width: 100%;
+	max-width: 1200px;
+	margin: 2.5rem auto 0 auto;
+	background: #fff;
+	border-radius: 2rem;
+	box-shadow: 0 4px 24px rgba(106, 27, 154, 0.08);
+	padding: 2.5rem 2rem;
+	text-align: left;
+	color: #222;
+}
+.flutter-expertise-list {
+	list-style: disc inside;
+	color: #6a1b9a;
+	font-size: 1.1rem;
+	margin-left: 1rem;
+}
+/* Success Stories Section (matching NodeJS) */
+.flutter-success-stories {
+	width: 100%;
+	max-width: 1200px;
+	margin: 2.5rem auto 2.5rem auto;
+	background: #ede7f6;
+	border-radius: 2rem;
+	box-shadow: 0 4px 24px rgba(106, 27, 154, 0.08);
+	padding: 2.5rem 2rem;
+	text-align: center;
+	color: #222;
+}
+.flutter-success-stories h2 {
+	color: #6a1b9a;
+	font-size: 1.5rem;
+	margin-bottom: 24px;
+}
+.flutter-stories-cards {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 2rem;
+	justify-content: center;
+	margin-top: 1.5rem;
+}
+.flutter-story-card {
+	background: #fff;
+	border-radius: 1.2rem;
+	box-shadow: 0 2px 12px rgba(106, 27, 154, 0.07);
+	padding: 1.5rem 1rem;
+	width: 320px;
+	text-align: left;
+	border-left: 5px solid #6a1b9a;
+	color: #222;
+}
+.flutter-story-card h3 {
+	color: #6a1b9a;
+	font-size: 1.1rem;
+	margin-bottom: 8px;
+}
+.flutter-story-card p {
+	color: #000;
+	font-size: 1rem;
+}
+/* Client Stories Section (matching PHP) */
+.flutter-stories-cards {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 2rem;
+	justify-content: center;
+}
+.flutter-story-card {
+	background: #e3f2fd;
+	border: 1px solid #b3e5fc;
+	border-radius: 1rem;
+	box-shadow: 0 2px 12px rgba(124, 77, 255, 0.07);
+	padding: 2rem 1.5rem;
+	width: 320px;
+	text-align: left;
+	color: #232526;
+}

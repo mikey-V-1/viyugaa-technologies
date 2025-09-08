@@ -1,0 +1,76 @@
+/* Company Page Styles */
+.company-page {
+  background: #f8f9fa;
+  padding: 2.5rem 1.2rem;
+  border-radius: 12px;
+  max-width: 900px;
+  margin: 2rem auto;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.07);
+}
+.company-hero h1 {
+  color: #0d47a1;
+  font-size: 2.2rem;
+  margin-bottom: 1.2rem;
+  text-align: center;
+}
+.company-lead {
+  font-size: 1.1rem;
+  color: #444;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+.company-values h2,
+.company-services h2,
+.company-animation h2,
+.company-more-info h2 {
+  color: #007bff;
+  font-size: 1.3rem;
+  margin-bottom: 0.7rem;
+  text-align: center;
+}
+.company-values ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 auto 1.2rem auto;
+  max-width: 500px;
+}
+.company-values li {
+  font-size: 1.08rem;
+  color: #222;
+  margin-bottom: 0.6rem;
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+}
+.service-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+.service-card {
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  padding: 1.2rem 1rem;
+  max-width: 320px;
+  flex: 1 1 280px;
+  text-align: center;
+}
+.service-icon {
+  width: 48px;
+  height: 48px;
+  margin-bottom: 0.7rem;
+}
+.company-3d {
+  margin: 1.2rem auto;
+  max-width: 700px;
+  text-align: center;
+}
+.company-more-info p {
+  font-size: 1.08rem;
+  color: #333;
+  text-align: center;
+  margin-top: 1.2rem;
+}

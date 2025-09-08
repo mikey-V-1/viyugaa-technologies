@@ -1,0 +1,291 @@
+/* Unified Modern Styles for ReactJS Technology Page */
+.reactjs-modern-page {
+	font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
+	background: linear-gradient(120deg, #fff7ed 0%, #f3e8ff 100%);
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.reactjs-hero {
+	background: linear-gradient(90deg, #61dafb 0%, #8f5cff 100%);
+	color: #fff;
+	padding: 5rem 2rem 3rem 2rem;
+	border-radius: 0 0 2rem 2rem;
+	box-shadow: 0 8px 32px rgba(97, 218, 251, 0.15);
+	width: 100%;
+	max-width: 1200px;
+	text-align: center;
+}
+.reactjs-hero-logo {
+	margin-bottom: 1.5rem;
+}
+.reactjs-hero-image {
+	width: 90px;
+	height: 90px;
+	border-radius: 50%;
+	background: #fff;
+	box-shadow: 0 2px 12px rgba(97, 218, 251, 0.13);
+	object-fit: contain;
+}
+.reactjs-hero-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 1rem;
+	margin-bottom: 0.5rem;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 0.5rem;
+	text-align: center;
+	width: 100%;
+}
+.reactjs-hero-icon {
+	font-size: 2.2rem;
+	color: #fff;
+}
+.reactjs-hero-desc {
+	font-size: 1.25rem;
+	margin-top: 1rem;
+	margin-bottom: 1.5rem;
+	text-align: center;
+	width: 100%;
+}
+.reactjs-hero-btn {
+	margin-top: 1.5rem;
+}
+.reactjs-cta-btn {
+	background: #fff;
+	color: #61dafb;
+	font-weight: 600;
+	border-radius: 2rem;
+	padding: 0.75rem 2.5rem;
+	font-size: 1.1rem;
+	box-shadow: 0 2px 12px rgba(97, 218, 251, 0.13);
+	transition: background 0.2s, color 0.2s;
+}
+.reactjs-cta-btn:hover {
+	background: #f3e8ff;
+	color: #8f5cff;
+}
+
+/* Features Section */
+.reactjs-features {
+	width: 100%;
+	max-width: 1200px;
+	margin: 2.5rem auto 0 auto;
+	background: #fff;
+	border-radius: 2rem;
+	box-shadow: 0 4px 24px rgba(97, 218, 251, 0.08);
+	padding: 2.5rem 2rem;
+}
+.reactjs-features-header {
+	text-align: center;
+	margin-bottom: 2rem;
+	width: 100%;
+}
+.reactjs-features-header h2 {
+	font-size: 2rem;
+	font-weight: 700;
+	color: #61dafb;
+}
+.reactjs-features-header p {
+	color: #333;
+	font-size: 1.1rem;
+	margin-top: 10px;
+}
+.reactjs-features-cards {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 28px;
+	justify-content: center;
+	align-items: stretch;
+	width: 100%;
+}
+.reactjs-feature-card {
+	background: #f3e8ff;
+	border-radius: 1rem;
+	box-shadow: 0 2px 12px rgba(97, 218, 251, 0.07);
+	padding: 1.5rem;
+	margin: 1rem 0.5rem;
+	transition: transform 0.2s;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	width: 320px;
+	text-align: center;
+}
+.reactjs-feature-card:hover {
+	transform: translateY(-4px) scale(1.03);
+	box-shadow: 0 6px 24px rgba(97, 218, 251, 0.13);
+}
+.reactjs-feature-icon {
+	font-size: 2.2rem;
+	color: #61dafb;
+	margin-bottom: 0.5rem;
+	align-self: center;
+}
+.reactjs-feature-card-border {
+	border-top: 4px solid #61dafb;
+}
+
+.reactjs-about {
+  max-width: 800px;
+  margin: 0 auto 48px auto;
+  padding: 32px 20px;
+  background: #f6f8fa;
+  border-radius: 18px;
+  text-align: center;
+  box-shadow: 0 2px 12px rgba(97, 218, 251, 0.08);
+}
+.reactjs-about-title {
+  color: #61dafb;
+  font-size: 2rem;
+  font-weight: 800;
+  margin-bottom: 16px;
+  letter-spacing: 0.5px;
+}
+.reactjs-about-text {
+  color: #232526;
+  font-size: 1.15rem;
+  margin-bottom: 18px;
+}
+.reactjs-about-accent {
+  background: #f6f8fa;
+}
+.reactjs-about-extra-accent {
+  background: #fff;
+  border-radius: 12px;
+  margin-top: 28px;
+  padding: 18px 16px 10px 16px;
+  box-shadow: 0 1px 6px rgba(97, 218, 251, 0.06);
+  text-align: left;
+}
+.reactjs-why-title {
+  color: #232526;
+  font-size: 1.15rem;
+  font-weight: 800;
+  margin-bottom: 8px;
+  letter-spacing: 0.2px;
+}
+.reactjs-why-list {
+  color: #374151;
+  font-size: 1.05rem;
+  margin-left: 16px;
+  list-style: disc inside;
+  font-weight: 500;
+}
+.reactjs-expertise {
+  max-width: 900px;
+  margin: 40px auto 0 auto;
+  padding: 32px 20px;
+  background: #fff;
+  border-radius: 18px;
+  color: #fff;
+  box-shadow: 0 2px 12px rgba(97, 218, 251, 0.08);
+  text-align: left;
+}
+.reactjs-expertise h2 {
+  color: #61dafb;
+  font-size: 1.5rem;
+  margin-bottom: 16px;
+}
+.reactjs-expertise ul {
+  list-style: disc inside;
+  color: #000;
+  font-size: 1.1rem;
+  margin-left: 16px;
+}
+.reactjs-success-stories {
+  max-width: 1100px;
+  margin: 40px auto 0 auto;
+  padding: 32px 20px;
+  background: #fff;
+  border-radius: 18px;
+  color: #fff;
+  box-shadow: 0 2px 12px rgba(97, 218, 251, 0.08);
+  text-align: center;
+}
+.reactjs-success-stories h2 {
+  color: #61dafb;
+  font-size: 1.5rem;
+  margin-bottom: 24px;
+}
+.reactjs-stories-cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  justify-content: center;
+}
+.reactjs-story-card {
+  background: #fff;
+  border-radius: 14px;
+  box-shadow: 0 2px 8px rgba(97, 218, 251, 0.10);
+  padding: 24px 18px;
+  min-width: 260px;
+  max-width: 340px;
+  color: #000;
+  text-align: left;
+}
+.reactjs-story-card h3 {
+  color: #61dafb;
+  font-size: 1.1rem;
+  margin-bottom: 8px;
+}
+.reactjs-story-card p {
+  color: #000;
+  font-size: 1rem;
+}
+.reactjs-about-extra {
+  margin-top: 32px;
+  text-align: left;
+}
+.reactjs-about-extra h3 {
+  color: #61dafb;
+  font-size: 1.1rem;
+  margin-bottom: 8px;
+}
+.reactjs-about-extra ul {
+  list-style: disc inside;
+  color: #000;
+  font-size: 1rem;
+  margin-left: 16px;
+}
+
+.services .p-6:hover {
+  box-shadow: 0 8px 24px rgba(0,0,0,0.14);
+  transform: scale(1.04);
+}
+.services img {
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+.process .grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.2rem;
+  justify-content: center;
+}
+.process .p-4 {
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  min-width: 140px;
+  margin-bottom: 0.5rem;
+}
+.process .text-indigo-600 {
+  color: #6366f1;
+}
+.cta {
+  background: linear-gradient(90deg, #a78bfa 60%, #6366f1 100%);
+  border-radius: 16px;
+  box-shadow: 0 4px 16px rgba(99,102,241,0.09);
+}
+.cta .Button {
+  margin: 0 0.5rem;
+}
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}

@@ -1,0 +1,111 @@
+/* Responsive styles for mobile, tablet, and desktop based on Wix template 3291 */
+
+/* Base styles (desktop first) */
+body {
+  font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
+  background: #f8f9fa;
+  color: #222;
+  margin: 0;
+  padding: 0;
+}
+
+.main, .page {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem;
+}
+
+.header, .footer {
+  width: 100%;
+}
+
+.hero {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  padding: 3rem 0 2rem 0;
+}
+.hero-content {
+  flex: 1;
+}
+.hero-image img {
+  max-width: 320px;
+  width: 100%;
+  border-radius: 16px;
+}
+
+.service-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+}
+
+.team-grid {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.auth-form, .contact-form {
+  max-width: 400px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+/* Tablet styles */
+@media (max-width: 900px) {
+  .main, .page {
+    padding: 1.5rem 0.7rem;
+  }
+  .hero {
+    flex-direction: column;
+    text-align: center;
+    gap: 1.5rem;
+  }
+  .service-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.2rem;
+  }
+  .team-grid {
+    flex-direction: column;
+    align-items: center;
+    gap: 1.2rem;
+  }
+}
+
+/* Mobile styles */
+@media (max-width: 600px) {
+  .main, .page {
+    padding: 1rem 0.3rem;
+  }
+  .header-inner, .footer-inner {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.7rem;
+  }
+  .hero {
+    flex-direction: column;
+    text-align: center;
+    gap: 1rem;
+    padding: 2rem 0 1rem 0;
+  }
+  .hero-image img {
+    max-width: 180px;
+  }
+  .service-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  .team-grid {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.7rem;
+  }
+  .auth-form, .contact-form {
+    max-width: 100%;
+    padding: 0 0.2rem;
+  }
+}

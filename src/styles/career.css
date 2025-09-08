@@ -1,0 +1,111 @@
+/* Career Page Styles */
+.career-page {
+  background: linear-gradient(120deg, #f5f7fa 0%, #c3cfe2 100%);
+  min-height: 100vh;
+  padding: 60px 0 40px 0;
+  position: relative;
+  font-family: 'Segoe UI', Arial, sans-serif;
+}
+.career-hero {
+  max-width: 700px;
+  margin: 0 auto 40px auto;
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.07);
+  padding: 40px 32px;
+  text-align: center;
+}
+.career-hero h1 {
+  font-size: 2.5rem;
+  color: #0078d4;
+  margin-bottom: 16px;
+}
+.career-hero p {
+  font-size: 1.2rem;
+  color: #222;
+}
+.career-openings {
+  max-width: 700px;
+  margin: 0 auto 32px auto;
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.07);
+  padding: 32px;
+}
+.career-openings h2 {
+  color: #0078d4;
+  margin-bottom: 18px;
+}
+.career-openings ul {
+  list-style: none;
+  padding: 0;
+}
+.career-openings li {
+  background: #e3f2fd;
+  margin-bottom: 12px;
+  padding: 14px 18px;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  color: #222;
+}
+.career-apply {
+  max-width: 700px;
+  margin: 0 auto;
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.07);
+  padding: 32px;
+  text-align: center;
+}
+.career-apply h2 {
+  color: #0078d4;
+  margin-bottom: 14px;
+}
+.career-apply p {
+  font-size: 1.1rem;
+  color: #222;
+}
+.career-culture {
+  max-width: 700px;
+  margin: 0 auto;
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.07);
+  padding: 32px;
+  text-align: center;
+  margin-top: 32px;
+}
+.career-culture h2 {
+  color: #0078d4;
+  margin-bottom: 14px;
+}
+.career-culture p {
+  font-size: 1.1rem;
+  color: #222;
+}
+.career-robot {
+  width: 120px;
+  height: 120px;
+  background: url('/assets/robot.png') no-repeat center/contain;
+  position: fixed;
+  left: -180px;
+  top: 60%;
+  transform: translateY(-50%);
+  will-change: transform;
+  z-index: 10;
+}
+@media (max-width: 900px) {
+  .career-hero, .career-openings, .career-apply, .career-culture {
+    max-width: 98vw;
+    padding: 1.2rem 0.5rem;
+  }
+}
+@media (max-width: 600px) {
+  .career-hero, .career-openings, .career-apply, .career-culture {
+    padding: 1rem 0.2rem;
+  }
+  .career-robot {
+    width: 80px;
+    height: 80px;
+  }
+}

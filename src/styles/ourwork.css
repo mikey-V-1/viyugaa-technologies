@@ -1,0 +1,65 @@
+/* Our Work Page Styles */
+.ourwork-page {
+  background: #f8f9fa;
+  padding: 2.5rem 1.2rem;
+  border-radius: 12px;
+  max-width: 900px;
+  margin: 2rem auto;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.07);
+}
+.ourwork-page h1 {
+  color: #0d47a1;
+  font-size: 2.2rem;
+  margin-bottom: 1.2rem;
+  text-align: center;
+}
+.ourwork-page p {
+  font-size: 1.1rem;
+  color: #444;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+.project-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+.project-card {
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  padding: 1.2rem 1rem;
+  max-width: 320px;
+  flex: 1 1 280px;
+}
+.project-card h2 {
+  color: #007bff;
+  font-size: 1.2rem;
+  margin-bottom: 0.6rem;
+}
+.project-card p {
+  color: #333;
+  font-size: 1rem;
+}
+.work-examples {
+  margin-top: 2rem;
+  background: #e3f2fd;
+  border-radius: 10px;
+  padding: 1.2rem 1rem;
+}
+.work-examples h2 {
+  color: #0d47a1;
+  font-size: 1.3rem;
+  margin-bottom: 0.7rem;
+}
+.work-examples ul {
+  margin: 0;
+  padding-left: 1.2rem;
+}
+.work-examples li {
+  color: #222;
+  margin-bottom: 0.5rem;
+  font-size: 1.05rem;
+}
