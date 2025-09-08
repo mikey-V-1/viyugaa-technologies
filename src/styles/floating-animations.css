@@ -1,0 +1,44 @@
+/* Responsive styles for floating WhatsApp and chatbot animations */
+.floating-animations {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  top: 80%;
+  left: 0;
+  right: 0;
+  z-index: 9999;
+  pointer-events: none;
+}
+.floating-chatbot, .floating-whatsapp {
+  pointer-events: auto;
+}
+@media (max-width: 900px) {
+  .floating-animations {
+    top: 75%;
+    left: 0;
+    right: 0;
+    padding: 0 2vw;
+  }
+  .floating-chatbot, .floating-whatsapp {
+    margin: 0 0.5vw;
+  }
+}
+@media (max-width: 600px) {
+  .floating-animations {
+    top: auto;
+    bottom: 10px;
+    left: 0;
+    right: 0;
+    justify-content: center;
+    gap: 8vw;
+    padding: 0;
+  }
+  .floating-chatbot, .floating-whatsapp {
+    margin: 0;
+  }
+  .floating-chatbot > div, .floating-whatsapp > div {
+    width: 70px !important;
+    height: 70px !important;
+  }
+}

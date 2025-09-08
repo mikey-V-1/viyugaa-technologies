@@ -3,6 +3,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import "./styles/floating-animations.css";
 import Lottie from "lottie-react";
 
 import Header from "./components/Header";
@@ -63,12 +64,32 @@ function App() {
   return (
     <Router>
       <Header />
-      <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", position: "fixed", top: "80%", left: 0, right: 0, zIndex: 9999 }}>
-        <div style={{ marginLeft: "1vw", cursor: "pointer" }}>
-          <Lottie animationData={chatbotAnimation} style={{ width: 200, height: 200 }} />
+      <div
+        className="floating-animations"
+        style={{
+          display: "flex",
+          justifyContent: "space-between",
+          alignItems: "center",
+          position: "fixed",
+          top: "80%",
+          left: 0,
+          right: 0,
+          zIndex: 9999,
+          pointerEvents: "none"
+        }}
+      >
+        <div
+          className="floating-chatbot"
+          style={{ marginLeft: "1vw", cursor: "pointer", pointerEvents: "auto" }}
+        >
+          <Lottie animationData={chatbotAnimation} style={{ width: "clamp(90px, 22vw, 200px)", height: "clamp(90px, 22vw, 200px)" }} />
         </div>
-        <div style={{ marginRight: "1vw", cursor: "pointer" }} onClick={() => window.open("https://wa.me/9043236861", "_blank") }>
-          <Lottie animationData={whatsappAnimation} style={{ width: 200, height: 200 }} />
+        <div
+          className="floating-whatsapp"
+          style={{ marginRight: "1vw", cursor: "pointer", pointerEvents: "auto" }}
+          onClick={() => window.open("https://wa.me/9043236861", "_blank")}
+        >
+          <Lottie animationData={whatsappAnimation} style={{ width: "clamp(90px, 22vw, 200px)", height: "clamp(90px, 22vw, 200px)" }} />
         </div>
       </div>
       <AnimatePresence mode="wait">

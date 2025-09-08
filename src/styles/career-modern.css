@@ -1,3 +1,50 @@
+@media (max-width: 600px) {
+  .career-modern-hero {
+    padding: 32px 8px 12px 8px;
+  }
+  .career-modern-title {
+    font-size: 2rem;
+  }
+  .career-modern-desc {
+    font-size: 1rem;
+  }
+  .career-modern-cards {
+    gap: 0.7rem;
+    max-width: 100vw;
+    margin: 24px auto 0 auto;
+  }
+  .career-modern-card {
+    width: 95vw;
+    padding: 1.2rem 0.5rem;
+  }
+  .career-modern-card img {
+    width: 40px;
+    height: 40px;
+  }
+  .career-modern-card-title {
+    font-size: 1rem;
+  }
+  .career-modern-card-desc {
+    font-size: 0.95rem;
+  }
+  .career-modern-apply {
+    padding: 1rem 0.5rem;
+    margin: 24px auto 0 auto;
+  }
+  .career-modern-culture {
+    gap: 0.7rem;
+    max-width: 100vw;
+    margin: 24px auto 0 auto;
+  }
+  .career-modern-culture-img {
+    width: 95vw;
+    height: 120px;
+  }
+  .career-modern-culture-desc {
+    padding: 1rem 0.5rem;
+    font-size: 1rem;
+  }
+}
 /* Modern Career Page Styles with Glassmorphism and Animation */
 .career-modern-page {
   background: linear-gradient(120deg, #f8fffa 0%, #e0eafc 100%);
