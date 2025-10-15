@@ -4,9 +4,10 @@ import '../../styles/technologies/tech-mssqlserver.css';
 import { motion } from 'framer-motion';
 import { Button } from '../../components/Button';
 import { FaDatabase, FaCogs, FaLayerGroup, FaRocket, FaBolt, FaTools, FaCloud } from 'react-icons/fa';
-
+import { useNavigate } from 'react-router-dom';
 
 export default function MSSQLServer() {
+  const navigate = useNavigate();
   const features = [
     {
       icon: <FaDatabase className="mssqlserver-feature-icon" />,
@@ -70,7 +71,7 @@ export default function MSSQLServer() {
           animate={{ opacity: 1 }}
           transition={{ delay: 1 }}
         >
-          <Button className="mssqlserver-cta-btn">
+          <Button className="mssqlserver-cta-btn" onClick={() => navigate('/contact')}>
             Get a Free Consultation
           </Button>
         </motion.div>

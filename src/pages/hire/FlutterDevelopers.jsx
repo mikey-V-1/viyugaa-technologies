@@ -4,8 +4,11 @@ import { motion } from 'framer-motion';
 import { Button } from '../../components/Button';
 import { SiFlutter } from 'react-icons/si';
 import { FaCode, FaTools, FaCogs, FaRocket, FaLayerGroup, FaBolt, FaMobileAlt, FaUserGraduate, FaUserTie, FaEnvelope, FaGlobe } from 'react-icons/fa';
+import { useNavigate } from 'react-router-dom';
+
 
 export default function FlutterDevelopers() {
+  const navigate = useNavigate();
   return (
     <div className="hire-flutter-super">
       {/* Super Styled Hero Section */}
@@ -121,7 +124,7 @@ export default function FlutterDevelopers() {
       <motion.div initial={{ x: -60, opacity: 0 }} animate={{ x: 0, opacity: 1 }} transition={{ duration: 1 }} className="super-animation-demo">
         <h2 className="super-section-title">Animated Demo</h2>
         <p className="super-demo-desc">Our Flutter developers deliver beautiful, high-performance, and scalable mobile experiences for every business.</p>
-        <Button onClick={() => alert('Flutter powers your next project!')} className="super-btn">Get Started with Flutter</Button>
+        <Button onClick={() => navigate('/contact')} className="super-btn">Get Started with Flutter</Button>
       </motion.div>
     </div>
   );

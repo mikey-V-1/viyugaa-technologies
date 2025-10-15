@@ -2,8 +2,10 @@ import React from 'react';
 import '../../styles/hire/hire-ios.css';
 import { FaApple, FaCode, FaTools, FaCogs, FaRocket, FaLayerGroup, FaBolt, FaMobileAlt, FaUserGraduate, FaUserTie, FaEnvelope, FaGlobe } from 'react-icons/fa';
 import { motion } from 'framer-motion';
+import { useNavigate } from 'react-router-dom';
 
 export default function iOSDevelopers() {
+  const navigate = useNavigate();
   return (
     <div className="hire-ios-super">
       {/* Super Styled Hero Section */}
@@ -118,7 +120,7 @@ export default function iOSDevelopers() {
       <motion.div initial={{ x: -60, opacity: 0 }} animate={{ x: 0, opacity: 1 }} transition={{ duration: 1 }} className="super-animation-demo">
         <h2 className="super-section-title">Animated Demo</h2>
         <p className="super-demo-desc">Our iOS developers deliver elegant, high-performance, and secure mobile experiences for every business.</p>
-        <button onClick={() => alert('iOS powers your next project!')} className="super-btn">Get Started with iOS</button>
+        <button onClick={() => navigate('/contact')} className="super-btn">Get Started with iOS</button>
       </motion.div>
     </div>
   );

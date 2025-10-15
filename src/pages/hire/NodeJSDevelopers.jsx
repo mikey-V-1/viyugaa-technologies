@@ -3,8 +3,10 @@ import '../../styles/hire/hire-nodejs.css';
 import { motion } from 'framer-motion';
 import { Button } from '../../components/Button';
 import { FaServer, FaCode, FaTools, FaCogs, FaRocket, FaLayerGroup, FaBolt, FaMobileAlt, FaUserGraduate, FaUserTie, FaEnvelope, FaGlobe } from 'react-icons/fa';
+import { useNavigate } from 'react-router-dom';
 
 export default function NodeJSDevelopers() {
+  const navigate = useNavigate();
   return (
     <div className="hire-nodejs-super">
       {/* Super Styled Hero Section */}
@@ -120,7 +122,7 @@ export default function NodeJSDevelopers() {
       <motion.div initial={{ x: -60, opacity: 0 }} animate={{ x: 0, opacity: 1 }} transition={{ duration: 1 }} className="super-animation-demo">
         <h2 className="super-section-title">Animated Demo</h2>
         <p className="super-demo-desc">Our Node.js developers deliver scalable, high-performance, and secure backend experiences for every business.</p>
-        <Button onClick={() => alert('Node.js powers your next project!')} className="super-btn">Get Started with Node.js</Button>
+        <Button onClick={() => navigate('/contact')} className="super-btn">Get Started with Node.js</Button>
       </motion.div>
     </div>
   );

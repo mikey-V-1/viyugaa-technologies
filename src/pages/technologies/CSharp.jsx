@@ -3,6 +3,7 @@ import '../../styles/technologies/tech-csharp.css';
 import { motion } from 'framer-motion';
 import { Button } from '../../components/Button';
 import { FaDesktop, FaGlobe, FaMobileAlt, FaGamepad, FaCogs, FaCode } from 'react-icons/fa';
+import { useNavigate } from 'react-router-dom';
 
 const featureCardVariants = {
   hidden: { opacity: 0, y: 40 },
@@ -17,6 +18,7 @@ const featureCardVariants = {
 };
 
 export default function CSharp() {
+  const navigate = useNavigate();
   const features = [
     {
       icon: <FaDesktop className="csharp-feature-icon" />,
@@ -80,7 +82,7 @@ export default function CSharp() {
           animate={{ opacity: 1 }}
           transition={{ delay: 1 }}
         >
-          <Button className="csharp-cta-btn">
+          <Button className="csharp-cta-btn" onClick={() => navigate('/contact')}>
             Get a Free Consultation
           </Button>
         </motion.div>

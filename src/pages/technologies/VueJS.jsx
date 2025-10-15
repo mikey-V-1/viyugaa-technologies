@@ -4,6 +4,8 @@ import '../../styles/technologies/tech-vuejs.css';
 import { motion } from 'framer-motion';
 import { Button } from '../../components/Button';
 import { FaCogs, FaLayerGroup, FaRocket, FaMobileAlt, FaChalkboardTeacher, FaBolt } from 'react-icons/fa';
+import { useNavigate } from 'react-router-dom';
+
 
 const featureCardVariants = {
   hidden: { opacity: 0, y: 40 },
@@ -18,6 +20,7 @@ const featureCardVariants = {
 };
 
 export default function VueJS() {
+  const navigate = useNavigate();
   return (
     <div className="vuejs-modern-page">
       {/* Hero Section */}
@@ -53,7 +56,7 @@ export default function VueJS() {
           animate={{ opacity: 1 }}
           transition={{ delay: 1 }}
         >
-          <Button className="vuejs-cta-btn" onClick={() => alert('Contact us for Vue.js projects!')}>
+          <Button className="vuejs-cta-btn" onClick={() => navigate('/contact')}>
             Get a Free Consultation
           </Button>
         </motion.div>

@@ -3,6 +3,7 @@ import '../../styles/technologies/tech-vbnet.css';
 import { motion } from 'framer-motion';
 import { Button } from '../../components/Button';
 import { FaDesktop, FaWindows, FaDatabase, FaHistory, FaCogs, FaCode } from 'react-icons/fa';
+import { useNavigate } from 'react-router-dom';
 
 const featureCardVariants = {
   hidden: { opacity: 0, y: 40 },
@@ -17,6 +18,7 @@ const featureCardVariants = {
 };
 
 export default function VBNet() {
+  const navigate = useNavigate();
   const features = [
     {
       icon: <FaDesktop className="vbnet-feature-icon" />,
@@ -80,7 +82,7 @@ export default function VBNet() {
           animate={{ opacity: 1 }}
           transition={{ delay: 1 }}
         >
-          <Button className="vbnet-cta-btn">
+          <Button className="vbnet-cta-btn" onClick={() => navigate('/contact')}>
             Get a Free Consultation
           </Button>
         </motion.div>

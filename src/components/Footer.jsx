@@ -1,5 +1,5 @@
 import React, { useRef } from 'react';
-import { useLocation } from 'react-router-dom';
+import { useLocation, Link } from 'react-router-dom';
 import '../styles/footer.css';
 
 export default function Footer() {
@@ -52,10 +52,10 @@ export default function Footer() {
         <nav className="footer-menu">
           <h4>Menu</h4>
           <ul>
-            <li><a href="/about">About</a></li>
+            <li><a href="#">About</a></li>
             <li><a href="#">Product</a></li>
             <li><a href="#">Resources</a></li>
-            <li><a href="/contact">Contact</a></li>
+            <li><a href="#">Contact</a></li>
             <li><a href="#">Policy</a></li>
           </ul>
         </nav>

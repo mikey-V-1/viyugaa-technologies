@@ -4,6 +4,7 @@ import '../../styles/technologies/tech-aspnetcore.css';
 import { motion } from 'framer-motion';
 import { Button } from '../../components/Button';
 import { FaCloud, FaCogs, FaServer, FaCode, FaLock, FaDatabase } from 'react-icons/fa';
+import { useNavigate } from 'react-router-dom';
 
 const featureCardVariants = {
   hidden: { opacity: 0, y: 40 },
@@ -18,6 +19,7 @@ const featureCardVariants = {
 };
 
 export default function AspNetCore() {
+  const navigate = useNavigate();
   const features = [
     {
       icon: <FaCloud className="aspnetcore-feature-icon" />,
@@ -81,7 +83,7 @@ export default function AspNetCore() {
           animate={{ opacity: 1 }}
           transition={{ delay: 1 }}
         >
-          <Button className="aspnetcore-cta-btn">
+          <Button className="aspnetcore-cta-btn" onClick={() => navigate('/contact')}>
             Get a Free Consultation
           </Button>
         </motion.div>

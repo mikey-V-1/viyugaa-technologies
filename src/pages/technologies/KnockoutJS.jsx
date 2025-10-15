@@ -5,6 +5,7 @@ import '../../styles/technologies/tech-knockoutjs.css';
 import { motion } from 'framer-motion';
 import { Button } from '../../components/Button';
 import { FaCode, FaCogs, FaLayerGroup, FaRocket, FaBolt, FaTools } from 'react-icons/fa';
+import { useNavigate } from 'react-router-dom';
 
 const featureCardVariants = {
   hidden: { opacity: 0, y: 40 },
@@ -19,6 +20,7 @@ const featureCardVariants = {
 };
 
 export default function KnockoutJS() {
+  const navigate = useNavigate();
   return (
     <div className="knockoutjs-modern-page">
       {/* Hero Section */}
@@ -54,7 +56,7 @@ export default function KnockoutJS() {
           animate={{ opacity: 1 }}
           transition={{ delay: 1 }}
         >
-          <Button className="knockoutjs-cta-btn" onClick={() => alert('Contact us for Knockout.js projects!')}>
+          <Button className="knockoutjs-cta-btn" onClick={() => navigate('/contact')}>
             Get a Free Consultation
           </Button>
         </motion.div>

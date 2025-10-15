@@ -1,4 +1,5 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import '../../styles/hire/hire-angularjs.css';
 import { motion } from 'framer-motion';
 import { Button } from '../../components/Button';
@@ -6,6 +7,7 @@ import { SiAngular } from 'react-icons/si';
 import { FaCode, FaTools, FaCogs, FaRocket, FaLayerGroup, FaBolt, FaMobileAlt, FaUserGraduate, FaUserTie, FaEnvelope, FaGlobe } from 'react-icons/fa';
 
 export default function AngularJSDevelopers() {
+  const navigate = useNavigate();
   return (
     <div className="hire-angularjs-super">
       {/* Super Styled Hero Section */}
@@ -121,7 +123,7 @@ export default function AngularJSDevelopers() {
       <motion.div initial={{ x: -60, opacity: 0 }} animate={{ x: 0, opacity: 1 }} transition={{ duration: 1 }} className="super-animation-demo">
         <h2 className="super-section-title">Animated Demo</h2>
         <p className="super-demo-desc">Our AngularJS developers deliver robust, scalable, and high-performance web experiences for every business.</p>
-        <Button onClick={() => alert('AngularJS powers your next project!')} className="super-btn">Get Started with AngularJS</Button>
+        <Button onClick={() => navigate('/contact')} className="super-btn">Get Started with AngularJS</Button>
       </motion.div>
     </div>
   );

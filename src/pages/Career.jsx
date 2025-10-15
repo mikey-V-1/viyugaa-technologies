@@ -56,8 +56,6 @@ export default function Career() {
       </section>
 
       <div className="career-modern-culture">
-        <img src={teamImg1} alt="Team Culture" className="career-modern-culture-img" />
-        <img src={teamImg2} alt="Team Event" className="career-modern-culture-img" />
         <div className="career-modern-culture-desc">
           <div>
             <h2>Our Culture</h2>

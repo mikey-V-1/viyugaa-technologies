@@ -4,9 +4,10 @@ import '../../styles/technologies/tech-ondemandapp.css';
 import { motion } from 'framer-motion';
 import { Button } from '../../components/Button';
 import { FaMobileAlt, FaMapMarkerAlt, FaMoneyBillWave, FaBell, FaChartBar, FaCogs } from 'react-icons/fa';
-
+import { useNavigate } from 'react-router-dom';
 
 export default function OnDemandAppSolutions() {
+  const navigate = useNavigate();
   const features = [
     {
       icon: <FaMobileAlt className="ondemandapp-feature-icon" />,
@@ -70,7 +71,7 @@ export default function OnDemandAppSolutions() {
           animate={{ opacity: 1 }}
           transition={{ delay: 1 }}
         >
-          <Button className="ondemandapp-cta-btn">
+          <Button className="ondemandapp-cta-btn" onClick={() => navigate('/contact')}>
             Get a Free Consultation
           </Button>
         </motion.div>

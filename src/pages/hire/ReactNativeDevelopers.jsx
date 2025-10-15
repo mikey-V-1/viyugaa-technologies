@@ -3,8 +3,10 @@ import '../../styles/hire/hire-react-native.css';
 import { motion } from 'framer-motion';
 import { Button } from '../../components/Button';
 import { FaMobileAlt, FaCode, FaTools, FaCogs, FaRocket, FaLayerGroup, FaBolt, FaUserGraduate, FaUserTie, FaEnvelope, FaGlobe } from 'react-icons/fa';
+import { useNavigate } from 'react-router-dom';
 
 export default function ReactNativeDevelopers() {
+  const navigate = useNavigate();
   return (
     <div className="hire-react-native-super">
       {/* Super Styled Hero Section */}
@@ -120,7 +122,7 @@ export default function ReactNativeDevelopers() {
       <motion.div initial={{ x: -60, opacity: 0 }} animate={{ x: 0, opacity: 1 }} transition={{ duration: 1 }} className="super-animation-demo">
         <h2 className="super-section-title">Animated Demo</h2>
         <p className="super-demo-desc">Our React Native developers deliver robust, cross-platform, and high-performance mobile experiences for every business.</p>
-        <Button onClick={() => alert('React Native powers your next project!')} className="super-btn">Get Started with React Native</Button>
+        <Button onClick={() => navigate('/contact')} className="super-btn">Get Started with React Native</Button>
       </motion.div>
     </div>
   );

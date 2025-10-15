@@ -3,8 +3,10 @@ import '../../styles/hire/hire-web.css';
 import { motion } from 'framer-motion';
 import { Button } from '../../components/Button';
 import { FaGlobe, FaCode, FaTools, FaCogs, FaRocket, FaLayerGroup, FaBolt, FaMobileAlt, FaUserGraduate, FaUserTie, FaEnvelope } from 'react-icons/fa';
+import { useNavigate } from 'react-router-dom';
 
 export default function WebDevelopers() {
+  const navigate = useNavigate();
   return (
     <div className="hire-web-super">
       {/* Super Styled Hero Section */}
@@ -120,7 +122,7 @@ export default function WebDevelopers() {
       <motion.div initial={{ x: -60, opacity: 0 }} animate={{ x: 0, opacity: 1 }} transition={{ duration: 1 }} className="super-animation-demo">
         <h2 className="super-section-title">Animated Demo</h2>
         <p className="super-demo-desc">Our web developers deliver exceptional, high-performance, and scalable web experiences for every business.</p>
-        <Button onClick={() => alert('Web powers your next project!')} className="super-btn">Get Started with Web</Button>
+        <Button onClick={() => navigate('/contact')} className="super-btn">Get Started with Web</Button>
       </motion.div>
     </div>
   );

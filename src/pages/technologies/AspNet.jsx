@@ -3,6 +3,7 @@ import '../../styles/technologies/tech-aspnet.css';
 import { motion } from 'framer-motion';
 import { Button } from '../../components/Button';
 import { FaCogs, FaLayerGroup, FaBolt, FaTools, FaWindows } from 'react-icons/fa';
+import { useNavigate } from 'react-router-dom';
 
 const featureCardVariants = {
   hidden: { opacity: 0, y: 40 },
@@ -17,6 +18,7 @@ const featureCardVariants = {
 };
 
 export default function AspNet() {
+  const navigate = useNavigate();
   const features = [
     {
       icon: <FaCogs className="aspnet-feature-icon" />, 
@@ -75,7 +77,7 @@ export default function AspNet() {
           animate={{ opacity: 1 }}
           transition={{ delay: 1 }}
         >
-          <Button className="aspnet-cta-btn">
+          <Button className="aspnet-cta-btn" onClick={() => navigate('/contact')}>
             Get a Free Consultation
           </Button>
         </motion.div>

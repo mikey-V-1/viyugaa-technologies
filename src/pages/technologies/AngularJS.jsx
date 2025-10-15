@@ -20,7 +20,7 @@ const featureCardVariants = {
 export default function AngularJS() {
   const navigate = useNavigate();
   return (
-    <div className="angularjs-page">
+  <div className="angularjs-modern-page">
       {/* Hero Section */}
       <section className="angularjs-hero">
         <motion.div

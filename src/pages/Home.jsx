@@ -1,5 +1,6 @@
 
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { FaMobileAlt, FaCode, FaCogs, FaRocket, FaUsers, FaBook, FaCloud, FaShieldAlt, FaDraftingCompass, FaChartLine, FaIndustry, FaHospital, FaHeartbeat, FaGraduationCap, FaMoneyBillWave, FaBriefcase } from 'react-icons/fa';
 import { Player } from '@lottiefiles/react-lottie-player';
 import { motion } from 'framer-motion';
@@ -22,7 +23,7 @@ export default function Home() {
           <p style={{fontSize:'1.15rem',color:'#fff',lineHeight:'1.8',marginBottom:'1.5rem'}}>
             Empowering businesses with innovative digital solutions, Viyugaa Technologies delivers custom software, web, and mobile app development for startups, SMEs, and enterprises. Our team blends creativity, technical expertise, and industry best practices to engineer scalable, secure, and user-centric applications. We help you transform ideas into impactful products that drive growth and digital transformation.
           </p>
-          <a className="cta-btn" href="/contact">Get Started</a>
+          <Link className="cta-btn" to="/contact">Get Started</Link>
         </motion.div>
         <motion.div style={{flex:'0 0 340px',display:'flex',justifyContent:'center',alignItems:'center'}} initial={{ opacity: 0, x: 40 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.8, delay: 0.4 }}>
           <Player src="phone-app-animation.json" style={{width:'320px',height:'320px'}} loop autoplay />
@@ -118,7 +119,7 @@ export default function Home() {
       >
         <h2 style={{fontSize:'1.4rem',marginBottom:'1rem'}}><FaRocket style={{marginRight:'8px'}}/>Ready to Start Your Project?</h2>
         <p style={{fontSize:'1.08rem',marginBottom:'1.2rem'}}>Contact us today and let's build something amazing together.</p>
-        <a className="cta-btn" href="/contact">Contact Us</a>
+  <Link className="cta-btn" to="/contact">Contact Us</Link>
       </motion.section>
     </main>
   );

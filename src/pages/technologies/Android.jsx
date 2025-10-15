@@ -2,6 +2,8 @@ import React from 'react';
 import '../../styles/technologies/tech-android.css';
 import { motion } from 'framer-motion';
 import { Button } from '../../components/Button';
+
+import { useNavigate } from 'react-router-dom';
 import { FaAndroid, FaCogs, FaLayerGroup, FaBolt, FaTools } from 'react-icons/fa';
 
 const featureCardVariants = {
@@ -17,34 +19,7 @@ const featureCardVariants = {
 };
 
 export default function Android() {
-  const features = [
-    {
-      icon: <FaAndroid className="android-feature-icon" />,
-      title: 'Native Apps',
-      desc: 'Build robust native Android applications with Kotlin and Java.'
-    },
-    {
-      icon: <FaCogs className="android-feature-icon" />,
-      title: 'Custom Solutions',
-      desc: 'Tailored UI/UX, APIs, and integrations for your business.'
-    },
-    {
-      icon: <FaLayerGroup className="android-feature-icon" />,
-      title: 'Frameworks',
-      desc: 'Expertise in Jetpack, Compose, and AndroidX.'
-    },
-    {
-      icon: <FaBolt className="android-feature-icon" />,
-      title: 'Performance',
-      desc: 'Fast, reliable, and battery-efficient apps.'
-    },
-    {
-      icon: <FaTools className="android-feature-icon" />,
-      title: 'Full Lifecycle',
-      desc: 'From concept to Play Store launch and ongoing support.'
-    }
-  ];
-
+  const navigate = useNavigate();
   return (
     <div className="android-modern-page">
       {/* Hero Section */}
@@ -80,7 +55,7 @@ export default function Android() {
           animate={{ opacity: 1 }}
           transition={{ delay: 1 }}
         >
-          <Button className="android-cta-btn">
+          <Button className="android-cta-btn" onClick={() => navigate('/contact')}>
             Get a Free Consultation
           </Button>
         </motion.div>

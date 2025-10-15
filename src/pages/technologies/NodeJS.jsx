@@ -3,6 +3,7 @@ import '../../styles/technologies/tech-nodejs.css';
 import { motion } from 'framer-motion';
 import { Button } from '../../components/Button';
 import { FaNodeJs, FaServer, FaDatabase, FaBolt, FaTools, FaLayerGroup, FaRocket ,FaCogs } from 'react-icons/fa';
+import { useNavigate } from 'react-router-dom';
 
 const featureCardVariants = {
   hidden: { opacity: 0, y: 40 },
@@ -17,6 +18,7 @@ const featureCardVariants = {
 };
 
 export default function NodeJS() {
+  const navigate = useNavigate();
   const features = [
     {
       icon: <FaNodeJs className="nodejs-feature-icon" />,
@@ -80,7 +82,7 @@ export default function NodeJS() {
           animate={{ opacity: 1 }}
           transition={{ delay: 1 }}
         >
-          <Button className="nodejs-cta-btn">
+          <Button className="nodejs-cta-btn" onClick={() => navigate('/contact')}>
             Get a Free Consultation
           </Button>
         </motion.div>

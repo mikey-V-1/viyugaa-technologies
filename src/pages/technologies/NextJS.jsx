@@ -5,6 +5,7 @@ import '../../styles/technologies/tech-nextjs.css';
 import { motion } from 'framer-motion';
 import { Button } from '../../components/Button';
 import { FaRocket, FaCogs, FaLayerGroup, FaBolt, FaTools, FaCode } from 'react-icons/fa';
+import { useNavigate } from 'react-router-dom';
 
 const featureCardVariants = {
   hidden: { opacity: 0, y: 40 },
@@ -19,6 +20,7 @@ const featureCardVariants = {
 };
 
 export default function NextJS() {
+  const navigate = useNavigate();
   return (
     <div className="nextjs-modern-page">
       {/* Hero Section */}
@@ -54,7 +56,7 @@ export default function NextJS() {
           animate={{ opacity: 1 }}
           transition={{ delay: 1 }}
         >
-          <Button className="nextjs-cta-btn" onClick={() => alert('Contact us for Next.js projects!')}>
+          <Button className="nextjs-cta-btn"onClick={() => navigate('/contact')}>
             Get a Free Consultation
           </Button>
         </motion.div>

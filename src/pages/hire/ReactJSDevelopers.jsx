@@ -4,8 +4,10 @@ import '../../styles/hire/hire-reactjs.css';
 import { motion } from 'framer-motion';
 import { Button } from '../../components/Button';
 import { FaReact, FaCode, FaTools, FaCogs, FaRocket, FaLayerGroup, FaBolt, FaMobileAlt, FaUserGraduate, FaUserTie, FaEnvelope, FaGlobe } from 'react-icons/fa';
+import { useNavigate } from 'react-router-dom';
 
 export default function ReactJSDevelopers() {
+  const navigate = useNavigate();
   return (
     <div className="hire-reactjs-super">
       {/* Super Styled Hero Section */}
@@ -130,7 +132,7 @@ export default function ReactJSDevelopers() {
         <p className="super-demo-desc">
           ReactJS developers deliver fast, interactive, and scalable web experiences for modern businesses.
         </p>
-        <Button onClick={() => alert('ReactJS powers your next project!')} className="super-btn">
+        <Button onClick={() => navigate('/contact')} className="super-btn">
           Get Started with ReactJS
         </Button>
       </motion.div>
