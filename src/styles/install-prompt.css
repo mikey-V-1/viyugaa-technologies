@@ -1,0 +1,13 @@
+.install-btn {
+  background: linear-gradient(90deg, #2e3192, #6a00f4);
+  color: #fff;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.install-btn:hover {
+  opacity: 0.95;
+}

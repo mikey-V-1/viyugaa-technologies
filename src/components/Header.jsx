@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { Link, NavLink } from 'react-router-dom'
 import '../styles/header.css'
+import InstallPrompt from './InstallPrompt'
 
 export default function Header() {
   const [showTechDropdown, setShowTechDropdown] = useState(false);
@@ -127,6 +128,9 @@ export default function Header() {
             <NavLink to="/career" className="nav-btn">Career</NavLink>
             <NavLink to="/contact" className="nav-btn">Contact Us</NavLink>
           </nav>
+          <div style={{ marginLeft: 12 }}>
+            <InstallPrompt />
+          </div>
         </div>
       </div>
     </header>
