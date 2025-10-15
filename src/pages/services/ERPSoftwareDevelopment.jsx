@@ -39,12 +39,13 @@ export default function ERPSoftwareDevelopment() {
       <div className="super-hero-flex" style={{ display: "flex", alignItems: "center", justifyContent: "space-between", gap: "32px", margin: "32px 0", background: "linear-gradient(90deg, #2a5298 0%, #a8dadc 100%)", borderRadius: "32px", boxShadow: "0 4px 24px rgba(0,0,0,0.06)" }}>
         <div style={{ flex: 1 }}>
           <h1 className="super-title"><FaDatabase className="super-icon" /> ERP Software Development</h1>
-          <p className="super-desc">Empower your business with custom ERP solutions that streamline operations, improve efficiency, and drive growth.<br /><br />
-Our ERP systems are tailored to your unique needs, integrating modules for finance, HR, inventory, and more. We focus on scalability, usability, and seamless integration with your existing tools.</p>
+          <p className="super-desc">Serve your common and specific purposes with the easiest ERP solutions built by engineers you like. We deliver modular, secure ERP platforms that simplify operations and reporting.</p>
         </div>
-        <div style={{ flex: "0 0 320px", display: "flex", justifyContent: "center", alignItems: "center", background: "linear-gradient(90deg, #2a5298 0%, #a8dadc 100%)", borderRadius: "24px", boxShadow: "0 4px 24px rgba(0,0,0,0.08)", padding: "24px", maxWidth: "320px", width: "320px" }}>
-          <LazyLottie animationUrl={'/animations/erp.json'} loop={true} style={{ width: "100%", height: "320px" }} />
-        </div>
+          <div className="lottie-container" style={{ display: "flex", justifyContent: "center", alignItems: "center" }}>
+            <div style={{ width: "420px", maxWidth: "42vw", minWidth: "320px" }}>
+              <LazyLottie animationUrl={'/animations/erp.json'} loop={true} style={{ width: "100%", height: "420px" }} />
+            </div>
+          </div>
       </div>
       <div className="service-erp-super">
         {/* Services Section */}

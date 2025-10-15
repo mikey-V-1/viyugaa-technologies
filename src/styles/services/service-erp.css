@@ -3,3 +3,9 @@
 .service-erp h1 { color: #43a047; }
 .service-erp ul { margin-top: 1rem; }
 .service-erp li { margin-bottom: 0.5rem; }
+
+.super-hero-flex .lottie-container { flex: 0 0 320px; max-width: 320px; width: 100%; }
+@media (max-width: 768px) {
+	.super-hero-flex { flex-direction: column; text-align: center; }
+	.super-hero-flex .lottie-container > div { height: 260px; }
+}

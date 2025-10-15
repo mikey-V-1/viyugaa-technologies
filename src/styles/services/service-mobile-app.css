@@ -2,3 +2,11 @@
 .service-mobile-app h1 { color: #1e293b; }
 .service-mobile-app ul { margin-top: 1rem; }
 .service-mobile-app li { color: #334155; margin-bottom: 0.5rem; }
+
+/* Shared hero responsive enhancements */
+.super-hero-flex { gap: 32px; }
+.super-hero-flex .lottie-container { flex: 0 0 320px; max-width: 320px; width: 100%; }
+@media (max-width: 768px) {
+	.super-hero-flex { flex-direction: column; text-align: center; }
+	.super-hero-flex .lottie-container > div { height: 260px; }
+}

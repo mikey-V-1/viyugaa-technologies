@@ -39,12 +39,13 @@ export default function SoftwareProductDevelopment() {
       <div className="super-hero-flex" style={{ display: "flex", alignItems: "center", justifyContent: "space-between", gap: "32px", margin: "32px 0", background: "linear-gradient(90deg, #457b9d 0%, #a8dadc 100%)", borderRadius: "32px", boxShadow: "0 4px 24px rgba(0,0,0,0.06)" }}>
         <div style={{ flex: 1 }}>
           <h1 className="super-title"><FaCubes className="super-icon" /> Software Product Development</h1>
-          <p className="super-desc">Transform your ideas into market-ready software products. We guide you from concept to launch, delivering innovative solutions that drive business growth.<br /><br />
-Our team combines strategy, design, and engineering to build products that solve real problems and delight users. We focus on scalability, usability, and speed to help you succeed in competitive markets.</p>
+          <p className="super-desc">Grab the best software products for your varied business needs and explore how we deliver it. We help you choose, customize, and deploy solutions that accelerate your operations and value.</p>
         </div>
-  <div style={{ flex: "0 0 320px", display: "flex", justifyContent: "center", alignItems: "center", background: "linear-gradient(90deg, #457b9d 0%, #a8dadc 100%)", borderRadius: "24px", boxShadow: "0 4px 24px rgba(0,0,0,0.08)", padding: "24px", maxWidth: "320px", width: "320px" }}>
-  <LazyLottie animationUrl={'/animations/softwareproduct.json'} loop={true} style={{ width: "100%", height: "320px" }} />
-        </div>
+          <div className="lottie-container" style={{ display: "flex", justifyContent: "center", alignItems: "center" }}>
+            <div style={{ width: "420px", maxWidth: "42vw", minWidth: "320px" }}>
+              <LazyLottie animationUrl={'/animations/softwareproduct.json'} loop={true} style={{ width: "100%", height: "420px" }} />
+            </div>
+          </div>
       </div>
       <div className="service-product-super">
         {/* Services Section */}

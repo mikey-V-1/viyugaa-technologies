@@ -15,7 +15,7 @@ export default function Career() {
     <div className="career-modern-page">
       <section className="career-modern-hero">
         <div className="career-modern-animation">
-          <LazyLottie animationLoader={() => import('../assets/softwareproduct.json')} loop={true} />
+          <LazyLottie animationUrl={'/animations/softwareproduct.json'} loop={true} />
         </div>
         <h1 className="career-modern-title">Grow With Us</h1>
         <p className="career-modern-desc">

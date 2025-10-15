@@ -37,12 +37,13 @@ export default function UIUXDesign() {
       <div className="super-hero-flex" style={{ display: "flex", alignItems: "center", justifyContent: "space-between", gap: "32px", margin: "32px 0", background: "linear-gradient(90deg, #e63946 0%, #f1faee 100%)", borderRadius: "32px", boxShadow: "0 4px 24px rgba(0,0,0,0.06)" }}>
         <div style={{ flex: 1 }}>
           <h1 className="super-title"><FaPalette className="super-icon" /> UI/UX Design</h1>
-          <p className="super-desc">We craft digital experiences that delight users and drive engagement. Our UI/UX design services blend creativity, usability, and strategy to deliver interfaces that are both beautiful and functional.<br /><br />
-From wireframes to final visuals, we focus on every detail to ensure your app or website is intuitive, accessible, and memorable. Our designers collaborate with you to understand your brand, audience, and goals, creating solutions that stand out in a crowded market.</p>
+          <p className="super-desc">We design app and website that not just matches trends but also helps your visitors navigate easily. Our process balances aesthetics with usability to increase conversions and engagement.</p>
         </div>
-        <div style={{ flex: "0 0 320px", display: "flex", justifyContent: "center", alignItems: "center", background: "linear-gradient(90deg, #e63946 0%, #f1faee 100%)", borderRadius: "24px", boxShadow: "0 4px 24px rgba(0,0,0,0.08)", padding: "24px", maxWidth: "320px", width: "320px" }}>
-          <LazyLottie animationLoader={() => import('../../assets/uiux.json')} loop={true} style={{ width: "100%", height: "320px" }} />
-        </div>
+          <div className="lottie-container" style={{ display: "flex", justifyContent: "center", alignItems: "center" }}>
+            <div style={{ width: "420px", maxWidth: "42vw", minWidth: "320px" }}>
+              <LazyLottie animationUrl={'/animations/uiux.json'} loop={true} style={{ width: "100%", height: "420px" }} />
+            </div>
+          </div>
       </div>
       <div className="service-uiux-super">
         {/* Services Section */}

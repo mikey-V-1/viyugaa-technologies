@@ -38,11 +38,14 @@ export default function SoftwareMaintenanceSupport() {
       <div className="super-hero-flex" style={{ display: "flex", alignItems: "center", justifyContent: "space-between", gap: "32px", margin: "32px 0", background: "linear-gradient(90deg, #264653 0%, #e9c46a 100%)", borderRadius: "32px", boxShadow: "0 4px 24px rgba(0,0,0,0.06)" }}>
         <div style={{ flex: 1 }}>
           <h1 className="super-title"><FaTools className="super-icon" /> Software Maintenance & Support</h1>
-          <p className="super-desc">Keep your software running at peak performance with our comprehensive maintenance and support services. We ensure reliability, security, and continuous improvement for your business-critical systems.<br /><br />
-Our team provides proactive monitoring, rapid issue resolution, and regular updates to minimize downtime and maximize value.</p>
+          <p className="super-desc">Ensuring optimal software performance through reliable maintenance and comprehensive support services. We provide proactive monitoring, updates and redesign when needed to keep your systems healthy.</p>
         </div>
         <div style={{ flex: "0 0 320px", display: "flex", justifyContent: "center", alignItems: "center", background: "linear-gradient(90deg, #264653 0%, #e9c46a 100%)", borderRadius: "24px", boxShadow: "0 4px 24px rgba(0,0,0,0.08)", padding: "24px", maxWidth: "320px", width: "320px" }}>
-          <LazyLottie animationLoader={() => import('../../assets/softwaremaintance.json')} loop={true} style={{ width: "100%", height: "320px" }} />
+            <div className="lottie-container" style={{ display: "flex", justifyContent: "center", alignItems: "center" }}>
+              <div style={{ width: "420px", maxWidth: "42vw", minWidth: "320px" }}>
+                <LazyLottie animationUrl={'/animations/softwaremaintance.json'} loop={true} style={{ width: "100%", height: "420px" }} />
+              </div>
+            </div>
         </div>
       </div>
       <div className="service-maintenance-super">

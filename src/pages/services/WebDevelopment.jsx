@@ -43,12 +43,13 @@ export default function WebDevelopment() {
       <div className="super-hero-flex" style={{ display: "flex", alignItems: "center", justifyContent: "space-between", gap: "32px", margin: "32px 0", background: "linear-gradient(90deg, #1e3c72 0%, #2a5298 100%)", borderRadius: "32px", boxShadow: "0 4px 24px rgba(0,0,0,0.06)" }}>
         <div style={{ flex: 1 }}>
           <h1 className="super-title"><FaGlobe className="super-icon" /> Web Development</h1>
-          <p className="super-desc">Build exceptional web applications and websites that drive results. Our team delivers responsive, high-performing, and secure web solutions tailored to your business goals.<br /><br />
-We combine creativity, technical expertise, and industry best practices to ensure your online presence stands out. From concept to launch, we work closely with you to understand your vision, address your challenges, and deliver a product that exceeds expectations.<br /><br />
-Whether you need a simple landing page or a complex enterprise platform, our web development services are designed to help you grow, engage your audience, and achieve measurable success.</p>
+          <p className="super-desc">Leave no space for ordinary websites; create exceptional web applications for your business. We design and build high-performance, secure web applications that scale with your customers and goals.<br /><br />
+We focus on fast load times, accessibility, and maintainable architectures so your product performs in both mobile and desktop contexts.</p>
         </div>
-        <div style={{ flex: "0 0 320px", display: "flex", justifyContent: "center", alignItems: "center", background: "linear-gradient(90deg, #1e3c72 0%, #2a5298 100%)", borderRadius: "24px", boxShadow: "0 4px 24px rgba(0,0,0,0.08)", padding: "24px", maxWidth: "320px", width: "320px" }}>
-          <LazyLottie animationLoader={() => import('../../assets/Web Development Animation.json')} loop={true} style={{ width: "100%", height: "320px" }} />
+        <div className="lottie-container" style={{ display: "flex", justifyContent: "center", alignItems: "center", background: "linear-gradient(90deg, #1e3c72 0%, #2a5298 100%)", borderRadius: "24px", boxShadow: "0 4px 24px rgba(0,0,0,0.08)", padding: "24px" }}>
+          <div>
+            <LazyLottie animationUrl={'/animations/Web Development Animation.json'} loop={true} style={{ width: "100%", height: "320px" }} />
+          </div>
         </div>
       </div>
       <div className="service-web-super">

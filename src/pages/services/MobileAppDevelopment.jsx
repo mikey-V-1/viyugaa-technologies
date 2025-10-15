@@ -33,12 +33,14 @@ export default function MobileAppDevelopment() {
             <FaMobileAlt className="super-icon" /> Mobile App Development
           </h1>
           <p className="super-desc">
-            Deliver the best experiences to your customers with modernized and optimized mobile app development services coupled with quality and expertise at affordable development costs. Our vetted engineers build native and cross-platform apps for all business needs, ensuring seamless performance, security, and user satisfaction.
+            Build custom mobile apps and solutions using the latest technologies powered by a vetted team of engineers. We deliver performant, secure, and user-friendly mobile applications for both Android and iOS.
           </p>
         </div>
-        <div style={{ flex: "0 0 320px", display: "flex", justifyContent: "center", alignItems: "center", background: "linear-gradient(90deg, #1e3c72 0%, #2a5298 100%)", borderRadius: "24px", boxShadow: "0 4px 24px rgba(0,0,0,0.08)", padding: "24px", maxWidth: "320px", width: "320px" }}>
-          <LazyLottie animationLoader={() => import('../../assets/mobiledevelopment.json')} loop={true} style={{ width: "100%", height: "320px" }} />
-        </div>
+          <div className="lottie-container" style={{ display: "flex", alignItems: "center", justifyContent: "center" }}>
+            <div style={{ width: "420px", maxWidth: "42vw", minWidth: "320px" }}>
+                <LazyLottie animationUrl={'/animations/mobiledevelopment.json'} loop={true} style={{ width: "100%", height: "320px" }} />
+              </div>
+          </div>
       </div>
       <div className="service-mobile-app-super">
         {/* Services Section */}

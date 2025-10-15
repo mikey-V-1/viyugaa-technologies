@@ -38,11 +38,14 @@ export default function CustomSoftwareDevelopment() {
       <div className="super-hero-flex" style={{ display: "flex", alignItems: "center", justifyContent: "space-between", gap: "32px", margin: "32px 0", background: "linear-gradient(90deg, #2a5298 0%, #f4a261 100%)", borderRadius: "32px", boxShadow: "0 4px 24px rgba(0,0,0,0.06)" }}>
         <div style={{ flex: 1 }}>
           <h1 className="super-title"><FaCode className="super-icon" /> Custom Software Development</h1>
-          <p className="super-desc">Unlock your business potential with custom software solutions designed just for you. We build scalable, secure, and cost-effective applications that solve your unique challenges.<br /><br />
-Our team works closely with you to understand your goals, automate processes, and deliver software that grows with your business.</p>
+          <p className="super-desc">Explore how custom software keeps your business thriving and get one for you cost effectively. We build tailored solutions that automate workflows and deliver measurable ROI.</p>
         </div>
         <div style={{ flex: "0 0 320px", display: "flex", justifyContent: "center", alignItems: "center", background: "linear-gradient(90deg, #2a5298 0%, #f4a261 100%)", borderRadius: "24px", boxShadow: "0 4px 24px rgba(0,0,0,0.08)", padding: "24px", maxWidth: "320px", width: "320px" }}>
-          <LazyLottie animationLoader={() => import('../../assets/customsoftware.json')} loop={true} style={{ width: "100%", height: "320px" }} />
+            <div className="lottie-container" style={{ display: "flex", justifyContent: "center", alignItems: "center" }}>
+              <div style={{ width: "420px", maxWidth: "42vw", minWidth: "320px" }}>
+                <LazyLottie animationUrl={'/animations/customsoftware.json'} loop={true} style={{ width: "100%", height: "420px" }} />
+              </div>
+            </div>
         </div>
       </div>
       <div className="service-custom-software-super">
