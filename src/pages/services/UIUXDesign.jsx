@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import '../../styles/services/service-uiux.css';
-import Lottie from "lottie-react";
+import LazyLottie from '../../components/LazyLottie';
 import uiux from "../../assets/uiux.json";
 import {
   FaPalette,
@@ -41,7 +41,7 @@ export default function UIUXDesign() {
 From wireframes to final visuals, we focus on every detail to ensure your app or website is intuitive, accessible, and memorable. Our designers collaborate with you to understand your brand, audience, and goals, creating solutions that stand out in a crowded market.</p>
         </div>
         <div style={{ flex: "0 0 320px", display: "flex", justifyContent: "center", alignItems: "center", background: "linear-gradient(90deg, #e63946 0%, #f1faee 100%)", borderRadius: "24px", boxShadow: "0 4px 24px rgba(0,0,0,0.08)", padding: "24px", maxWidth: "320px", width: "320px" }}>
-         <Lottie animationData={uiux} loop={true} style={{ width: "100%", height: "320px" }} />
+          <LazyLottie animationData={uiux} loop={true} style={{ width: "100%", height: "320px" }} />
         </div>
       </div>
       <div className="service-uiux-super">

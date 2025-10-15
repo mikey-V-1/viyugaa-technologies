@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import '../../styles/services/service-erp.css';
-import Lottie from "lottie-react";
+import LazyLottie from '../../components/LazyLottie';
 import erp from "../../assets/erp.json";
 import {
   FaProjectDiagram,
@@ -44,7 +44,7 @@ export default function ERPSoftwareDevelopment() {
 Our ERP systems are tailored to your unique needs, integrating modules for finance, HR, inventory, and more. We focus on scalability, usability, and seamless integration with your existing tools.</p>
         </div>
         <div style={{ flex: "0 0 320px", display: "flex", justifyContent: "center", alignItems: "center", background: "linear-gradient(90deg, #2a5298 0%, #a8dadc 100%)", borderRadius: "24px", boxShadow: "0 4px 24px rgba(0,0,0,0.08)", padding: "24px", maxWidth: "320px", width: "320px" }}>
-          <Lottie animationData={erp} loop={true} style={{ width: "100%", height: "320px" }} />
+          <LazyLottie animationData={erp} loop={true} style={{ width: "100%", height: "320px" }} />
         </div>
       </div>
       <div className="service-erp-super">

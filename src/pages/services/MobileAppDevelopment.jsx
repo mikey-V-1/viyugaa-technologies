@@ -15,7 +15,7 @@ function FAQItem({ item }) {
   );
 }
 import { motion, useViewportScroll, useTransform } from 'framer-motion';
-import Lottie from "lottie-react";
+import LazyLottie from '../../components/LazyLottie';
 import mobiledevelopment from "../../assets/mobiledevelopment.json";
 import '../../styles/services/service-mobile-app.css';
 import { FaMobileAlt, FaApple, FaAndroid, FaReact, FaTools, FaCogs, FaRocket, FaPalette, FaLifeRing } from 'react-icons/fa';
@@ -38,7 +38,7 @@ export default function MobileAppDevelopment() {
           </p>
         </div>
         <div style={{ flex: "0 0 320px", display: "flex", justifyContent: "center", alignItems: "center", background: "linear-gradient(90deg, #1e3c72 0%, #2a5298 100%)", borderRadius: "24px", boxShadow: "0 4px 24px rgba(0,0,0,0.08)", padding: "24px", maxWidth: "320px", width: "320px" }}>
-          <Lottie animationData={mobiledevelopment} loop={true} style={{ width: "100%", height: "320px" }} />
+          <LazyLottie animationData={mobiledevelopment} loop={true} style={{ width: "100%", height: "320px" }} />
         </div>
       </div>
       <div className="service-mobile-app-super">

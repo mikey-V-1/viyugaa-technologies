@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import '../../styles/services/service-maintenance.css';
-import Lottie from "lottie-react";
+import LazyLottie from '../../components/LazyLottie';
 import softwaremaintance from "../../assets/softwaremaintance.json";
 import {
   FaTools,
@@ -42,7 +42,7 @@ export default function SoftwareMaintenanceSupport() {
 Our team provides proactive monitoring, rapid issue resolution, and regular updates to minimize downtime and maximize value.</p>
         </div>
         <div style={{ flex: "0 0 320px", display: "flex", justifyContent: "center", alignItems: "center", background: "linear-gradient(90deg, #264653 0%, #e9c46a 100%)", borderRadius: "24px", boxShadow: "0 4px 24px rgba(0,0,0,0.08)", padding: "24px", maxWidth: "320px", width: "320px" }}>
-          <Lottie animationData={softwaremaintance} loop={true} style={{ width: "100%", height: "320px" }} />
+          <LazyLottie animationData={softwaremaintance} loop={true} style={{ width: "100%", height: "320px" }} />
         </div>
       </div>
       <div className="service-maintenance-super">

@@ -1,7 +1,7 @@
 
 import React from "react";
 import "../styles/career-modern.css";
-import Lottie from "lottie-react";
+import LazyLottie from '../components/LazyLottie';
 import careerAnimation from "../assets/softwareproduct.json";
 import frontendIcon from "../assets/robot.png";
 import backendIcon from "../assets/robot.png";
@@ -16,7 +16,7 @@ export default function Career() {
     <div className="career-modern-page">
       <section className="career-modern-hero">
         <div className="career-modern-animation">
-          <Lottie animationData={careerAnimation} loop={true} />
+          <LazyLottie animationData={careerAnimation} loop={true} />
         </div>
         <h1 className="career-modern-title">Grow With Us</h1>
         <p className="career-modern-desc">

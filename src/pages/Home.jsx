@@ -2,7 +2,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { FaMobileAlt, FaCode, FaCogs, FaRocket, FaUsers, FaBook, FaCloud, FaShieldAlt, FaDraftingCompass, FaChartLine, FaIndustry, FaHospital, FaHeartbeat, FaGraduationCap, FaMoneyBillWave, FaBriefcase } from 'react-icons/fa';
-import { Player } from '@lottiefiles/react-lottie-player';
+import LazyPlayer from '../components/LazyPlayer';
 import { motion } from 'framer-motion';
 import '../styles/home.css';
 
@@ -26,7 +26,7 @@ export default function Home() {
           <Link className="cta-btn" to="/contact">Get Started</Link>
         </motion.div>
         <motion.div style={{flex:'0 0 340px',display:'flex',justifyContent:'center',alignItems:'center'}} initial={{ opacity: 0, x: 40 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.8, delay: 0.4 }}>
-          <Player src="phone-app-animation.json" style={{width:'320px',height:'320px'}} loop autoplay />
+          <LazyPlayer src="phone-app-animation.json" style={{width:'320px',height:'320px'}} loop autoplay />
         </motion.div>
       </motion.section>
 

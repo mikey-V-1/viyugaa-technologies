@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import '../../styles/services/service-custom-software.css';
-import Lottie from "lottie-react";
+import LazyLottie from '../../components/LazyLottie';
 import customsoftware from "../../assets/customsoftware.json";
 import {
   FaCode,
@@ -43,7 +43,7 @@ export default function CustomSoftwareDevelopment() {
 Our team works closely with you to understand your goals, automate processes, and deliver software that grows with your business.</p>
         </div>
         <div style={{ flex: "0 0 320px", display: "flex", justifyContent: "center", alignItems: "center", background: "linear-gradient(90deg, #2a5298 0%, #f4a261 100%)", borderRadius: "24px", boxShadow: "0 4px 24px rgba(0,0,0,0.08)", padding: "24px", maxWidth: "320px", width: "320px" }}>
-          <Lottie animationData={customsoftware} loop={true} style={{ width: "100%", height: "320px" }} />
+          <LazyLottie animationData={customsoftware} loop={true} style={{ width: "100%", height: "320px" }} />
         </div>
       </div>
       <div className="service-custom-software-super">
