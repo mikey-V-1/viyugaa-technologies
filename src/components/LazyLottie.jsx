@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react'
 // Dynamically import the lottie-react component to keep it out of the main bundle.
 // Supports either passing `animationData` directly or `animationLoader` which
 // is a function returning a dynamic import for the JSON (so JSONs are code-split).
-export default function LazyLottie({ animationData, animationLoader, style, ...rest }) {
+export default function LazyLottie({ animationData, animationLoader, animationUrl, style, ...rest }) {
   const [LottieComp, setLottieComp] = useState(null)
   const [data, setData] = useState(animationData || null)
 
@@ -15,12 +15,21 @@ export default function LazyLottie({ animationData, animationLoader, style, ...r
       })
       .catch(() => {})
 
-    if (!animationData && typeof animationLoader === 'function') {
-      animationLoader()
-        .then((m) => {
-          if (mounted) setData(m.default || m)
-        })
-        .catch(() => {})
+    if (!animationData) {
+      if (typeof animationLoader === 'function') {
+        animationLoader()
+          .then((m) => {
+            if (mounted) setData(m.default || m)
+          })
+          .catch(() => {})
+      } else if (typeof animationUrl === 'string') {
+        fetch(animationUrl)
+          .then((r) => r.json())
+          .then((json) => {
+            if (mounted) setData(json)
+          })
+          .catch(() => {})
+      }
     }
 
     return () => {

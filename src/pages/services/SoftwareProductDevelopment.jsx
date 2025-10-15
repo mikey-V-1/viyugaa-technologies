@@ -43,7 +43,7 @@ export default function SoftwareProductDevelopment() {
 Our team combines strategy, design, and engineering to build products that solve real problems and delight users. We focus on scalability, usability, and speed to help you succeed in competitive markets.</p>
         </div>
   <div style={{ flex: "0 0 320px", display: "flex", justifyContent: "center", alignItems: "center", background: "linear-gradient(90deg, #457b9d 0%, #a8dadc 100%)", borderRadius: "24px", boxShadow: "0 4px 24px rgba(0,0,0,0.08)", padding: "24px", maxWidth: "320px", width: "320px" }}>
-  <LazyLottie animationLoader={() => import('../../assets/softwareproduct.json')} loop={true} style={{ width: "100%", height: "320px" }} />
+  <LazyLottie animationUrl={'/animations/softwareproduct.json'} loop={true} style={{ width: "100%", height: "320px" }} />
         </div>
       </div>
       <div className="service-product-super">
