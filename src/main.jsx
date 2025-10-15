@@ -11,3 +11,16 @@ createRoot(document.getElementById('root')).render(
     <App />
   </React.StrictMode>
 )
+
+// Register service worker in production to enable PWA install prompt on supported browsers
+if (import.meta.env && import.meta.env.PROD && 'serviceWorker' in navigator) {
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('/sw.js').then(reg => {
+      // registration successful
+      // console.log('Service worker registered:', reg);
+    }).catch(err => {
+      // registration failed
+      // console.warn('Service worker registration failed:', err);
+    });
+  });
+}
