@@ -2,7 +2,6 @@
 import React, { useState } from 'react';
 import '../../styles/services/service-web.css';
 import LazyLottie from '../../components/LazyLottie';
-import Webdevelopment from "../../assets/Web Development Animation.json";
 import {
   FaClock,
   FaLifeRing,
@@ -49,7 +48,7 @@ We combine creativity, technical expertise, and industry best practices to ensur
 Whether you need a simple landing page or a complex enterprise platform, our web development services are designed to help you grow, engage your audience, and achieve measurable success.</p>
         </div>
         <div style={{ flex: "0 0 320px", display: "flex", justifyContent: "center", alignItems: "center", background: "linear-gradient(90deg, #1e3c72 0%, #2a5298 100%)", borderRadius: "24px", boxShadow: "0 4px 24px rgba(0,0,0,0.08)", padding: "24px", maxWidth: "320px", width: "320px" }}>
-          <LazyLottie animationData={Webdevelopment} loop={true} style={{ width: "100%", height: "320px" }} />
+          <LazyLottie animationLoader={() => import('../../assets/Web Development Animation.json')} loop={true} style={{ width: "100%", height: "320px" }} />
         </div>
       </div>
       <div className="service-web-super">

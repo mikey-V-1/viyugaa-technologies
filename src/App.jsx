@@ -51,8 +51,7 @@ const Contact = React.lazy(() => import('./pages/Contact'))
 const OurWork = React.lazy(() => import('./pages/OurWork'))
 const ReactNative = React.lazy(() => import('./pages/technologies/ReactNative'))
 const Company = React.lazy(() => import('./pages/Company'))
-import whatsappAnimation from "./assets/WhatsApp.json";
-import chatbotAnimation from "./assets/Live chatbot.json";
+// floating animations will be dynamically loaded via LazyLottie animationLoader
 import WhatsAppPage from "./pages/WhatsAppPage";
 import NotFound from "./pages/NotFound";
 
@@ -82,14 +81,14 @@ function App() {
           className="floating-chatbot"
           style={{ marginLeft: "1vw", cursor: "pointer", pointerEvents: "auto" }}
         >
-          <LazyLottie animationData={chatbotAnimation} style={{ width: "clamp(90px, 22vw, 200px)", height: "clamp(90px, 22vw, 200px)" }} />
+          <LazyLottie animationLoader={() => import('./assets/Live chatbot.json')} style={{ width: "clamp(90px, 22vw, 200px)", height: "clamp(90px, 22vw, 200px)" }} />
         </div>
         <div
           className="floating-whatsapp"
           style={{ marginRight: "1vw", cursor: "pointer", pointerEvents: "auto" }}
           onClick={() => window.open("https://wa.me/9043236861", "_blank")}
         >
-          <LazyLottie animationData={whatsappAnimation} style={{ width: "clamp(90px, 22vw, 200px)", height: "clamp(90px, 22vw, 200px)" }} />
+          <LazyLottie animationLoader={() => import('./assets/WhatsApp.json')} style={{ width: "clamp(90px, 22vw, 200px)", height: "clamp(90px, 22vw, 200px)" }} />
         </div>
       </div>
       <AnimatePresence mode="wait">
