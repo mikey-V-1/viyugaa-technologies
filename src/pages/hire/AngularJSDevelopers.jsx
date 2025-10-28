@@ -122,7 +122,7 @@ export default function AngularJSDevelopers() {
       {/* Animated Demo Section */}
       <motion.div initial={{ x: -60, opacity: 0 }} animate={{ x: 0, opacity: 1 }} transition={{ duration: 1 }} className="super-animation-demo">
         <h2 className="super-section-title">Animated Demo</h2>
-        <p className="super-demo-desc">Our AngularJS developers deliver robust, scalable, and high-performance web experiences for every business.</p>
+        <p className="super-demo-desc">Our angularJS developers deliver robust, scalable, and high-performance web experiences for every business.</p>
         <Button onClick={() => navigate('/contact')} className="super-btn">Get Started with AngularJS</Button>
       </motion.div>
     </div>
