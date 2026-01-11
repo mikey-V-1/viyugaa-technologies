@@ -305,7 +305,6 @@
   .hire-react-native ul { gap: 0.7rem; }
   .hire-react-native li { min-width: 100px; font-size: 1rem; padding: 0.6rem 1rem; }
   .hire-react-native .hire-card { margin-bottom: 1.2rem; text-align: center; align-items: center; }
-}
   .hire-react-native .hire-illustration { position: absolute; right: 1rem; bottom: -12px; width: 46%; max-width: 260px; z-index: 2; }
   .hire-react-native .hire-hero-text { z-index: 3; }
   .hire-react-native .hire-cards { grid-template-columns: 1fr; }
