@@ -1,0 +1,76 @@
+.hire-resume-common {
+  padding: 2rem 1rem;
+  text-align: center;
+  background: linear-gradient(135deg, #f8f9fa 0%, #f0f0f0 100%);
+}
+
+.hire-resume-common .dev-title {
+  font-size: 1.75rem;
+  margin-bottom: 1rem;
+  background: linear-gradient(135deg, #caba64ff 0%, #ffc800 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-fill-color: transparent;
+}
+
+.resume-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.resume-form label {
+  align-self: flex-start;
+  margin: 0.25rem 0;
+  font-weight: 600;
+  color: #333;
+}
+
+.resume-form input[type="text"],
+.resume-form input[type="email"],
+.resume-form input[type="file"],
+.resume-form textarea {
+  width: 100%;
+  padding: 10px 12px;
+  border: 2px solid rgba(0,0,0,0.12);
+  border-radius: 6px;
+  margin-bottom: 0.75rem;
+  font-size: 0.95rem;
+  transition: all 0.3s ease;
+}
+
+.resume-form input[type="text"]:focus,
+.resume-form input[type="email"]:focus,
+.resume-form input[type="file"]:focus,
+.resume-form textarea:focus {
+  outline: none;
+  border-color: #ffd700;
+  box-shadow: 0 0 0 3px rgba(255, 215, 0, 0.1);
+}
+
+.resume-form textarea { min-height: 120px; resize: vertical; }
+
+.resume-submit-btn {
+  padding: 12px 24px;
+  background: linear-gradient(135deg, #ffd700 0%, #ffc800 100%);
+  color: #000;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 700;
+  transition: all 0.3s ease;
+}
+
+.resume-submit-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 16px rgba(255, 215, 0, 0.3);
+}
+
+.resume-submit-btn[disabled] {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}

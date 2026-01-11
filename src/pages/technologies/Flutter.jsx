@@ -21,14 +21,7 @@ export default function Flutter() {
     <div className="flutter-modern-page">
       {/* Hero Section */}
       <section className="flutter-hero">
-        <motion.div
-          className="flutter-hero-logo"
-          initial={{ opacity: 0, scale: 0.8 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 1 }}
-        >
-          <img src="/tech/flutter.png" alt="Flutter" className="flutter-hero-image" />
-        </motion.div>
+       
         <motion.h1
           className="flutter-hero-title"
           initial={{ opacity: 0, y: -50 }}
@@ -76,42 +69,72 @@ export default function Flutter() {
           </p>
         </div>
         <div className="flutter-features-cards">
-          {[
-            {
-              icon: <FaCogs className="flutter-feature-icon" />, 
-              title: "Modern Tech Stack",
-              desc: "Flutter, Dart, Firebase, and the latest cross-platform APIs.<br />We leverage modern tools to build future-ready apps that are easy to maintain and scale."
-            },
-            {
-              icon: <FaLayerGroup className="flutter-feature-icon" />, 
-              title: "Custom UI/UX",
-              desc: "Stunning, intuitive interfaces for every device.<br />Our designers focus on usability and aesthetics to create delightful user experiences."
-            },
-            {
-              icon: <FaBolt className="flutter-feature-icon" />, 
-              title: "Performance",
-              desc: "Fast, reliable, and beautiful apps.<br />We optimize every layer for speed, responsiveness, and native feel."
-            },
-            {
-              icon: <FaTools className="flutter-feature-icon" />, 
-              title: "Full Lifecycle",
-              desc: "From concept to app store launch and ongoing support.<br />We guide you through every stage for a smooth journey."
-            }
-          ].map((feature, i) => (
-            <motion.div
-              className="flutter-feature-card"
-              key={feature.title}
-              custom={i + 1}
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true }}
-              variants={featureCardVariants}
-            >
-              <div>{feature.icon}</div>
-              <h3>{feature.title}</h3>
-              <p dangerouslySetInnerHTML={{ __html: feature.desc }} />
-            </motion.div>
-          ))}
+          {(() => {
+            const features = [
+              {
+                icon: <FaCogs className="flutter-feature-icon" />, 
+                title: 'Modern Tech Stack',
+                desc: 'Flutter, Dart, Firebase, and the latest cross-platform APIs.<br />We leverage modern tools to build future-ready apps that are easy to maintain and scale.'
+              },
+              {
+                icon: <FaLayerGroup className="flutter-feature-icon" />, 
+                title: 'Custom UI/UX',
+                desc: 'Stunning, intuitive interfaces for every device.<br />Our designers focus on usability and aesthetics to create delightful user experiences.'
+              },
+              {
+                icon: <FaBolt className="flutter-feature-icon" />, 
+                title: 'Performance',
+                desc: 'Fast, reliable, and beautiful apps.<br />We optimize every layer for speed, responsiveness, and native feel.'
+              },
+              {
+                icon: <FaTools className="flutter-feature-icon" />, 
+                title: 'Full Lifecycle',
+                desc: 'From concept to app store launch and ongoing support.<br />We guide you through every stage for a smooth journey.'
+              }
+            ];
+
+            const firstRow = features.slice(0, 3);
+            const last = features[3];
+
+            return (
+              <>
+                <div className="flutter-features-row flutter-features-row--three" style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '1.5rem' }}>
+                  {firstRow.map((feature, i) => (
+                    <motion.div
+                      className="flutter-feature-card"
+                      key={feature.title}
+                      custom={i + 1}
+                      initial="hidden"
+                      whileInView="visible"
+                      viewport={{ once: true }}
+                      variants={featureCardVariants}
+                    >
+                      <div>{feature.icon}</div>
+                      <h3>{feature.title}</h3>
+                      <p dangerouslySetInnerHTML={{ __html: feature.desc }} />
+                    </motion.div>
+                  ))}
+                </div>
+
+                <div className="flutter-features-row flutter-features-row--single" style={{ display: 'flex', justifyContent: 'center', marginTop: '1.5rem' }}>
+                  <motion.div
+                    className="flutter-feature-card"
+                    key={last.title}
+                    custom={4}
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: true }}
+                    variants={featureCardVariants}
+                    style={{ maxWidth: '270px', width: '100%' }}
+                  >
+                    <div>{last.icon}</div>
+                    <h3>{last.title}</h3>
+                    <p dangerouslySetInnerHTML={{ __html: last.desc }} />
+                  </motion.div>
+                </div>
+              </>
+            );
+          })()}
         </div>
       </motion.section>
 

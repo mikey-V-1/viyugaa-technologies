@@ -21,14 +21,7 @@ export default function ReactJS() {
     <div className="reactjs-modern-page">
       {/* Hero Section */}
       <section className="reactjs-hero">
-        <motion.div
-          className="reactjs-hero-logo"
-          initial={{ opacity: 0, scale: 0.8 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 1 }}
-        >
-          <img src="/tech/reactjs.png" alt="ReactJS" className="reactjs-hero-image" />
-        </motion.div>
+        
         <motion.h1
           className="reactjs-hero-title"
           initial={{ opacity: 0, y: -50 }}

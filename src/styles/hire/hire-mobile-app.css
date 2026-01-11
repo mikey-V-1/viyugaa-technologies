@@ -1,4 +1,485 @@
-.hire-mobile-app { background: #f8fafc; padding: 2rem; border-radius: 12px; }
-.hire-mobile-app h1 { color: #1e293b; }
-.hire-mobile-app ul { margin-top: 1rem; }
-.hire-mobile-app li { color: #334155; margin-bottom: 0.5rem; }
+
+/* Mobile App Developer Page - mobile-hire standardized */
+.hire-mobile-app {
+  --accent-color: #0ea5a4;
+  --accent-light: #e0f7fa;
+  --text-primary: #0f1724;
+  --text-secondary: #475569;
+  background: #ffffff;
+  padding: 2.25rem 1.25rem;
+  min-height: 100vh;
+}
+
+.hire-mobile-app .hire-hero {
+  background: linear-gradient(120deg, var(--accent-light) 0%, #fff 100%);
+  border-radius: 14px;
+  padding: 2.25rem 1.25rem;
+  margin-bottom: 2.25rem;
+  display: grid;
+  grid-template-columns: 1fr 420px;
+  gap: 1rem;
+  align-items: center;
+}
+
+.hire-mobile-app .hire-hero-text {
+    text-align: left;
+    max-width: 720px;
+    margin: 0;
+    padding: 0 1rem;
+}
+
+.hire-mobile-app h1,
+.hire-mobile-app .dev-title {
+    color: var(--accent-color);
+    font-size: 2.2rem;
+    font-weight: 800;
+    margin-bottom: 0.6rem;
+}
+
+.hire-mobile-app .hire-illustration {
+    width: 100%;
+    max-width: 420px;
+    justify-self: end;
+}
+
+.hire-mobile-app .hire-feature-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.8rem;
+    margin: 1rem 0 0;
+    padding: 0;
+    justify-content: flex-start;
+    list-style: none;
+}
+
+.hire-mobile-app .hire-feature-list li {
+    background: var(--accent-light);
+    color: var(--accent-color);
+    padding: 0.45rem 0.7rem;
+    border-radius: 999px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    box-shadow: 0 6px 18px rgba(14,165,164,0.04);
+}
+
+.hire-mobile-app .hire-cards {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    margin-top: 1.25rem;
+}
+
+.hire-mobile-app .hire-card {
+    background: #fff;
+    border: 1px solid rgba(15,23,36,0.06);
+    border-radius: 12px;
+    padding: 1.25rem;
+    transition: transform 200ms ease, box-shadow 200ms ease;
+    box-shadow: 0 6px 18px rgba(14,165,164,0.04);
+}
+
+.hire-mobile-app .hire-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 10px 24px rgba(14,165,164,0.08);
+}
+
+.hire-mobile-app .hire-card .dev-title {
+    color: var(--accent-color);
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.hire-mobile-app .hire-card p {
+    color: var(--text-secondary);
+    line-height: 1.6;
+}
+
+/* Process Section */
+.hire-mobile-app .hire-process {
+    background: var(--accent-light);
+    padding: 3rem 2rem;
+    border-radius: 16px;
+    margin: 3rem 0;
+}
+
+.hire-mobile-app .hire-process-title {
+    color: var(--text-primary);
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.hire-mobile-app .hire-process-step {
+    background: #ffffff;
+    padding: 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 2px 4px rgba(14, 165, 164, 0.1);
+    margin-bottom: 1rem;
+}
+
+/* Form Section */
+.hire-mobile-app .hire-resume-form {
+    max-width: 600px;
+    margin: 3rem auto;
+    background: #ffffff;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(14, 165, 164, 0.1);
+}
+
+.hire-mobile-app .hire-resume-form label {
+    color: var(--text-secondary);
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.hire-mobile-app .hire-resume-form input,
+.hire-mobile-app .hire-resume-form textarea {
+    width: 100%;
+    padding: 0.8rem;
+    border: 1px solid #e2e8f0;
+    border-radius: 6px;
+    background: #f8fafc;
+    margin-bottom: 1rem;
+}
+
+.hire-mobile-app .hire-resume-form input:focus,
+.hire-mobile-app .hire-resume-form textarea:focus {
+    outline: none;
+    border-color: var(--accent-color);
+    box-shadow: 0 0 0 2px var(--accent-light);
+}
+
+/* Demo Section */
+.hire-mobile-app .super-animation-demo {
+    background: var(--accent-light);
+    padding: 3rem 2rem;
+    border-radius: 16px;
+    margin-top: 3rem;
+    text-align: center;
+}
+
+.hire-mobile-app .hire-demo-title {
+    color: var(--text-primary);
+    margin-bottom: 1rem;
+}
+
+.hire-mobile-app .hire-demo-desc {
+    color: var(--text-secondary);
+    max-width: 600px;
+    margin: 0 auto 2rem;
+}
+
+/* Responsive Design */
+@media (max-width: 880px) {
+    .hire-mobile-app .hire-hero {
+        grid-template-columns: 1fr;
+        position: relative;
+        padding-bottom: 3.5rem;
+    }
+
+    .hire-mobile-app .hire-illustration {
+        position: absolute;
+        right: 1rem;
+        bottom: -12px;
+        width: 46%;
+        max-width: 260px;
+        z-index: 2;
+    }
+
+    .hire-mobile-app .hire-hero-text {
+        z-index: 3;
+        text-align: center;
+    }
+
+    .hire-mobile-app .hire-cards {
+        grid-template-columns: 1fr;
+    }
+
+    .hire-mobile-app .hire-process-steps {
+        grid-template-columns: 1fr;
+    }
+}
+
+.hire-hero h1 {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	color: var(--accent-color);
+	font-size: 2.4rem;
+	font-weight: 800;
+	margin-bottom: 1.2rem;
+	letter-spacing: 0.02em;
+}
+
+.hire-hero p {
+	font-size: 1.1rem;
+	line-height: 1.6;
+	margin: 1.5rem auto;
+}
+.hire-mobile-app .hire-feature-list {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 1.2rem;
+	margin: 1.2rem 0 0.5rem 0;
+	padding: 0;
+	justify-content: center;
+	list-style: none;
+}
+.hire-mobile-app .hire-feature-list li {
+	background: #e0f7fa;
+	color: #0ea5a4;
+	border-radius: 10px;
+	padding: 0.6rem 1.1rem;
+	font-weight: 600;
+	font-size: 1.05rem;
+	box-shadow: 0 2px 8px #0ea5a422;
+	display: flex;
+	align-items: center;
+}
+.hire-mobile-app .hire-hero {
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.hire-mobile-app .hire-hero-text {
+	width: 100%;
+	max-width: 1200px;
+	padding: 0 1rem;
+}
+.hire-mobile-app ul {
+	margin-top: 1.2rem;
+	padding-left: 0;
+	display: flex;
+	flex-wrap: wrap;
+	gap: 1.2rem;
+	justify-content: center;
+}
+.hire-mobile-app li {
+	color: #fff;
+	background: var(--accent-color);
+	border-radius: 12px;
+	padding: 0.7rem 1.3rem;
+	font-size: 1.08rem;
+	font-weight: 500;
+	box-shadow: 0 2px 8px #0ea5a422;
+	margin-bottom: 0;
+	text-align: center;
+	min-width: 120px;
+}
+.hire-mobile-app .hire-card {
+	border-top: 4px solid var(--accent-color);
+	border-radius: 18px;
+	box-shadow: 0 6px 24px #0ea5a422;
+	transition: box-shadow 0.2s;
+	background: #fff;
+	color: #0f172a;
+	margin-bottom: 2rem;
+	text-align: left;
+}
+.hire-mobile-app .hire-card {
+	min-width: 260px;
+	max-width: 340px;
+	flex: 1 1 260px;
+	margin: 1rem;
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	box-shadow: none;
+}
+.hire-mobile-app .hire-card .dev-title {
+	color: var(--accent-color);
+	font-weight: 700;
+	font-size: 1.18rem;
+	margin-bottom: 0.5rem;
+	display: flex;
+	align-items: center;
+}
+.hire-mobile-app .hire-card .dev-title {
+	color: var(--accent-color);
+	font-weight: 700;
+	font-size: 1.18rem;
+	margin-bottom: 0.5rem;
+}
+.hire-mobile-app .hire-card:hover {
+	box-shadow: 0 12px 32px #0ea5a444;
+}
+
+@media (max-width: 900px) {
+	.hire-mobile-app .hire-hero {
+		grid-template-columns: 1fr;
+		gap: 1.5rem;
+	}
+	.hire-mobile-app .hire-hero-text {
+		text-align: center;
+		padding-right: 0;
+	}
+	.hire-mobile-app ul {
+		gap: 0.7rem;
+	}
+	.hire-mobile-app li {
+		min-width: 100px;
+		font-size: 1rem;
+		padding: 0.6rem 1rem;
+	}
+	.hire-mobile-app .hire-card {
+		margin-bottom: 1.2rem;
+		text-align: center;
+		align-items: center;
+	}
+}
+
+.hire-mobile-app .hire-testimonials {
+	margin: 2.5rem 0 1.5rem 0;
+	text-align: center;
+}
+.hire-mobile-app .hire-testimonial-cards {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 2rem;
+	justify-content: center;
+	margin-top: 1.2rem;
+}
+.hire-mobile-app .hire-testimonial-card {
+	background: #fff;
+	border-radius: 14px;
+	box-shadow: none;
+	padding: 1.2rem 1.5rem;
+	max-width: 320px;
+	font-size: 1.08rem;
+	color: #334155;
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+}
+/* Hiring Process Section */
+.hire-mobile-app .hire-process {
+	margin: 2.5rem 0 1.5rem 0;
+	background: #e0f7fa;
+	border-radius: 16px;
+	padding: 2rem 1.5rem;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+.hire-mobile-app .hire-process-title {
+	color: var(--accent-color);
+	font-size: 1.5rem;
+	font-weight: 700;
+	margin-bottom: 1.2rem;
+	text-align: center;
+}
+.hire-mobile-app .hire-process-steps {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: 1.2rem 2.5rem;
+	margin-bottom: 1.5rem;
+}
+.hire-mobile-app .hire-process-step {
+	background: #fff;
+	border-radius: 12px;
+	padding: 1rem 1.2rem;
+	color: #0f172a;
+	font-size: 1.08rem;
+	font-weight: 500;
+	display: flex;
+	align-items: center;
+	gap: 0.7rem;
+}
+.hire-mobile-app .hire-process-step-icon {
+	color: var(--accent-color);
+	font-size: 1.3rem;
+}
+@media (max-width: 900px) {
+	.hire-mobile-app .hire-process-steps {
+		grid-template-columns: 1fr;
+		gap: 1rem;
+	}
+}
+
+/* Resume Submission Form */
+.hire-mobile-app .hire-resume-form {
+	background: #fff;
+	border-radius: 16px;
+	padding: 2rem 1.5rem;
+	box-shadow: none;
+	margin: 2rem 0;
+	max-width: 420px;
+	margin-left: auto;
+	margin-right: auto;
+	display: flex;
+	flex-direction: column;
+	gap: 1.1rem;
+}
+.hire-mobile-app .hire-resume-form label {
+	font-weight: 600;
+	color: #0ea5a4;
+	margin-bottom: 0.3rem;
+}
+.hire-mobile-app .hire-resume-form input,
+.hire-mobile-app .hire-resume-form textarea {
+	border: 1px solid #e0f7fa;
+	border-radius: 8px;
+	padding: 0.7rem;
+	font-size: 1rem;
+	margin-bottom: 0.5rem;
+}
+.hire-mobile-app .hire-resume-form button {
+	background: var(--accent-color);
+	color: #fff;
+	border: none;
+	border-radius: 8px;
+	padding: 0.8rem 1.2rem;
+	font-size: 1.08rem;
+	font-weight: 700;
+	cursor: pointer;
+	margin-top: 0.7rem;
+	transition: background 0.2s;
+}
+.hire-mobile-app .hire-resume-form button:hover {
+	background: #0c8a8a;
+}
+
+/* Animated Demo & CTA */
+.hire-mobile-app .hire-demo-section {
+	margin: 2.5rem 0 1.5rem 0;
+	text-align: center;
+}
+.hire-mobile-app .hire-demo-title {
+	color: var(--accent-color);
+	font-size: 1.5rem;
+	font-weight: 700;
+	margin-bottom: 1.2rem;
+}
+.hire-mobile-app .hire-demo-desc {
+	color: #334155;
+	font-size: 1.08rem;
+	margin-bottom: 1.2rem;
+}
+.hire-mobile-app .hire-demo-cta {
+	background: var(--accent-color);
+	color: #fff;
+	border: none;
+	border-radius: 10px;
+	padding: 1rem 2rem;
+	font-size: 1.15rem;
+	font-weight: 700;
+	cursor: pointer;
+	margin-top: 1rem;
+	transition: background 0.2s;
+}
+.hire-mobile-app .hire-demo-cta:hover {
+	background: #0c8a8a;
+}
+.hire-mobile-app .hire-testimonial-card span {
+	margin-top: 0.7rem;
+	font-size: 0.98rem;
+	color: #0ea5a4;
+	font-weight: 600;
+}

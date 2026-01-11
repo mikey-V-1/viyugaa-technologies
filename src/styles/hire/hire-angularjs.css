@@ -1,4 +1,168 @@
-.hire-angularjs { background: #fff3e0; padding: 2rem; border-radius: 12px; }
-.hire-angularjs h1 { color: #dd0031; }
-.hire-angularjs ul { margin-top: 1rem; }
-.hire-angularjs li { color: #bf360c; margin-bottom: 0.5rem; }
+
+/* Angular Developer Page - mobile-hire aligned */
+.hire-angularjs {
+    --accent-color: #DD0031;
+    --accent-light: #FFF1F1;
+    --text-primary: #0f1724;
+    --text-secondary: #475569;
+    background: #ffffff;
+    padding: 2.25rem 1.25rem;
+    min-height: 100vh;
+}
+
+.hire-angularjs .hire-hero {
+    background: linear-gradient(120deg, var(--accent-light) 0%, #fff 100%);
+    border-radius: 14px;
+    padding: 2.5rem 1.25rem;
+    margin-bottom: 2.5rem;
+    display: grid;
+    grid-template-columns: 1fr 420px;
+    gap: 1.25rem;
+    align-items: center;
+}
+
+.hire-angularjs .hire-hero-text {
+    text-align: left;
+}
+
+.hire-angularjs h1,
+.hire-angularjs .dev-title {
+    color: var(--text-primary);
+    margin: 0 0 0.5rem 0;
+}
+
+.hire-angularjs p {
+    color: var(--text-secondary);
+    margin: 0 0 1rem 0;
+}
+
+.hire-angularjs .hire-illustration {
+    width: 100%;
+    max-width: 420px;
+    justify-self: end;
+}
+
+.hire-angularjs .hire-cards {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    margin-top: 1.25rem;
+}
+
+.hire-angularjs .hire-card {
+    background: #ffffff;
+    border: 1px solid rgba(15,23,36,0.06);
+    border-radius: 12px;
+    padding: 1.25rem;
+    transition: transform 200ms ease, box-shadow 200ms ease;
+    box-shadow: 0 6px 18px rgba(221,0,49,0.04);
+}
+
+.hire-angularjs .hire-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 10px 24px rgba(221,0,49,0.08);
+}
+
+.hire-angularjs .hire-feature-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+    padding: 0;
+    margin: 0.5rem 0 0 0;
+    list-style: none;
+}
+
+.hire-angularjs .hire-feature-list li {
+    background: var(--accent-light);
+    color: var(--accent-color);
+    padding: 0.45rem 0.7rem;
+    border-radius: 999px;
+    font-weight: 600;
+    box-shadow: 0 6px 18px rgba(221,0,49,0.04);
+}
+
+.hire-angularjs .hire-process {
+    display: grid;
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+
+.hire-angularjs .hire-process-step {
+    display: flex;
+    gap: 0.75rem;
+    align-items: flex-start;
+}
+
+.hire-angularjs .hire-process-step .hire-icon {
+    background: var(--accent-light);
+    color: var(--accent-color);
+    min-width: 44px;
+    min-height: 44px;
+    border-radius: 10px;
+    display: grid;
+    place-items: center;
+    font-size: 18px;
+}
+
+.hire-angularjs .hire-resume-form {
+    margin-top: 1.25rem;
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+}
+
+.hire-angularjs .hire-resume-form input[type="file"] {
+    display: block;
+}
+
+.hire-angularjs .hire-animation-demo {
+    margin-top: 1.25rem;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.hire-angularjs .hire-btn {
+    background: var(--accent-color);
+    color: white;
+    padding: 0.65rem 1rem;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    font-weight: 700;
+    box-shadow: 0 8px 20px rgba(221,0,49,0.08);
+}
+
+/* small screens: stack hero and allow illustration to overlap */
+@media (max-width: 880px) {
+    .hire-angularjs .hire-hero {
+        grid-template-columns: 1fr;
+        position: relative;
+        padding-bottom: 3.5rem;
+    }
+
+    .hire-angularjs .hire-illustration {
+        position: absolute;
+        right: 1rem;
+        bottom: -12px;
+        width: 46%;
+        max-width: 260px;
+        z-index: 2;
+    }
+
+    .hire-angularjs .hire-hero-text {
+        z-index: 3;
+    }
+
+    .hire-angularjs .hire-cards {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .hire-angularjs .hire-illustration { width: 56%; right: 0.6rem; }
+}
+
+/* small polish */
+.hire-angularjs h1 { color: var(--accent-color); }
+.hire-angularjs .dev-title { font-size: 1.05rem; font-weight: 700; }
+

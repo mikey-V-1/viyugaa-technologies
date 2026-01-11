@@ -2,11 +2,18 @@
   text-align: center;
   padding: 50px 20px;
   background: linear-gradient(to bottom right, #f8f9fa, #e3f2fd);
+  box-sizing: border-box;
+  max-width: 100%;
+  overflow-x: hidden;
 }
 
 .hero {
   padding: 10px 20px;
   animation: fadeIn 1s ease-in-out;
+
+  /* prevent hero content from causing horizontal overflow */
+  box-sizing: border-box;
+  max-width: 100%;
 }
 
 .hero h1 {
@@ -41,6 +48,10 @@
   gap: 20px;
   justify-content: center;
   margin-top: 50px;
+
+  /* ensure features don't overflow on small screens */
+  padding-left: 12px;
+  padding-right: 12px;
 }
 
 .feature-card {
@@ -235,3 +246,88 @@
     margin-bottom: 18px;
   }
 }
+
+/* Process, Testimonials and FAQ styles */
+.process-section-home {
+  background: #fff;
+  padding: 40px 20px;
+  border-radius: 16px;
+  box-shadow: 0 6px 24px rgba(16,24,40,0.06);
+  margin: 2.5rem 0;
+  text-align: center;
+}
+.process-section-home h2 {
+  color: #0d47a1;
+  margin-bottom: 8px;
+}
+.process-intro {
+  color: #444;
+  max-width: 800px;
+  margin: 0 auto 24px auto;
+}
+.process-steps {
+  display: flex;
+  gap: 18px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.process-step {
+  background: #f8fafc;
+  padding: 18px;
+  border-radius: 12px;
+  width: 220px;
+  box-shadow: 0 4px 12px rgba(2,6,23,0.06);
+}
+.process-step .step-number {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: #f4a261;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 12px;
+}
+
+.testimonials-home {
+  margin: 2.5rem 0;
+}
+.testimonials-home h2 { color: #0d47a1; }
+.testimonials-grid {
+  display: flex;
+  gap: 18px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 16px;
+}
+.testimonial-card {
+  max-width: 320px;
+  background: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(2,6,23,0.06);
+  text-align: left;
+}
+.testimonial-card .author {
+  margin-top: 12px;
+  font-weight: 700;
+  color: #333;
+}
+
+.faq-home {
+  margin: 2rem 0 4rem 0;
+  text-align: left;
+}
+.faq-home h2 { color: #0d47a1; text-align: center; }
+.faq-list { max-width: 900px; margin: 12px auto; }
+.faq-item { background: #fff; padding: 16px; border-radius: 10px; margin-bottom: 12px; box-shadow: 0 4px 12px rgba(2,6,23,0.04); }
+.faq-item h4 { margin-bottom: 8px; color: #222; }
+.faq-item p { color: #555; margin: 0; }
+
+@media (max-width: 900px) {
+  .process-steps, .testimonials-grid { flex-direction: column; align-items: center; }
+  .process-step, .testimonial-card { width: 100%; max-width: 420px; }
+}
+

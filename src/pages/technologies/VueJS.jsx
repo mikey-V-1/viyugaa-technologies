@@ -25,14 +25,7 @@ export default function VueJS() {
     <div className="vuejs-modern-page">
       {/* Hero Section */}
       <section className="vuejs-hero">
-        <motion.div
-          className="vuejs-hero-logo"
-          initial={{ opacity: 0, scale: 0.8 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 1 }}
-        >
-          <img src="/tech/vuejs.png" alt="Vue.js" className="vuejs-hero-image" />
-        </motion.div>
+       
         <motion.h1
           className="vuejs-hero-title"
           initial={{ opacity: 0, y: -50 }}

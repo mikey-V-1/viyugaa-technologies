@@ -25,14 +25,7 @@ export default function NextJS() {
     <div className="nextjs-modern-page">
       {/* Hero Section */}
       <section className="nextjs-hero">
-        <motion.div
-          className="nextjs-hero-logo"
-          initial={{ opacity: 0, scale: 0.8 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 1 }}
-        >
-          <img src="/tech/nextjs.png" alt="Next.js" className="nextjs-hero-image" />
-        </motion.div>
+       
         <motion.h1
           className="nextjs-hero-title"
           initial={{ opacity: 0, y: -50 }}

@@ -51,14 +51,7 @@ export default function PHP() {
     <div className="php-modern-page">
       {/* Hero Section */}
       <section className="php-hero">
-        <motion.div
-          className="php-hero-logo"
-          initial={{ opacity: 0, scale: 0.8 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 1 }}
-        >
-          <img src="/tech/php.png" alt="PHP" className="php-hero-image" />
-        </motion.div>
+        
         <motion.h1
           className="php-hero-title"
           initial={{ opacity: 0, y: -50 }}

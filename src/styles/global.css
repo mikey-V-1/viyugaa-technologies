@@ -1,7 +1,72 @@
-body {
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Prevent horizontal scroll caused by 100vw and absolute elements */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html, body {
   margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Hide scrollbars but keep scrolling functional */
+html, body {
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE 10+ */
+}
+
+/* WebKit-based browsers */
+html::-webkit-scrollbar,
+body::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+}
+
+/* Force-hide scrollbars globally (high specificity) */
+*::-webkit-scrollbar {
+  width: 0 !important;
+  height: 0 !important;
+  display: none !important;
+}
+
+* {
+  -ms-overflow-style: none !important; /* IE 10+ */
+  scrollbar-width: none !important; /* Firefox */
+}
+
+body {
   font-family: 'Segoe UI', Tahoma, sans-serif;
   background-color: #f9f9f9;
+}
+
+/* Ensure root/app containers don't cause horizontal overflow */
+#root, #app, .app {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+/* Make media scale inside containers to avoid overflow */
+img, picture, video, iframe, svg {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Hide any floating robot assets across pages */
+img[src*="robot"],
+[class*="robot"],
+[id*="robot"],
+[style*="robot"] {
+  display: none !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
 }
 
 .navbar {

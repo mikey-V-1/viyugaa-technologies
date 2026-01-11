@@ -1,91 +1,259 @@
-import React, { useState } from 'react';
-
-// FAQItem component for collapsible Q&A
-function FAQItem({ item }) {
-  const [open, setOpen] = React.useState(false);
-  return (
-    <div className={`super-faq-item${open ? ' open' : ''}`} style={{marginBottom:'16px', borderRadius:'16px', boxShadow:'0 2px 12px rgba(30,60,114,0.08)', background:'#fff', padding:'20px 24px', transition:'box-shadow 0.2s'}}>
-      <div className="super-faq-question" onClick={() => setOpen(!open)} style={{cursor:'pointer', display:'flex', alignItems:'center', gap:'16px', fontWeight:'600', fontSize:'1.1rem', color:'#1e3c72'}}>
-        <span style={{fontSize:'1.5rem'}}>{item.icon}</span>
-        <span>{item.q}</span>
-        {open ? <FaChevronUp style={{marginLeft:'auto', color:'#2a5298'}}/> : <FaChevronDown style={{marginLeft:'auto', color:'#2a5298'}}/>}
-      </div>
-      {open && <div className="super-faq-answer" style={{marginTop:'12px', color:'#333', fontSize:'1rem', lineHeight:'1.7'}}><p>{item.a}</p></div>}
-    </div>
-  );
-}
-import { motion, useViewportScroll, useTransform } from 'framer-motion';
+import React, { useState, useRef } from 'react';
+import { motion, useScroll, useTransform, AnimatePresence, useInView } from 'framer-motion';
 import LazyLottie from '../../components/LazyLottie';
 import '../../styles/services/service-mobile-app.css';
-import { FaMobileAlt, FaApple, FaAndroid, FaReact, FaTools, FaCogs, FaRocket, FaPalette, FaLifeRing } from 'react-icons/fa';
-import { FaShoppingCart, FaHeartbeat, FaUniversity, FaTaxi, FaFootballBall, FaUtensils, FaHome, FaBook } from 'react-icons/fa';
-import { FaSearch, FaDraftingCompass, FaPencilRuler, FaCode, FaCheckCircle, FaChevronDown, FaChevronUp, FaQuestionCircle, FaLock, FaMoneyBillWave, FaClock, FaGooglePlay, FaUsers } from 'react-icons/fa';
+import { useNavigate } from 'react-router-dom';
+import { FaMobileAlt, FaApple, FaAndroid, FaReact, FaTools, FaCogs, FaRocket, 
+         FaShoppingCart, FaHeartbeat, FaUniversity, FaTaxi, FaFootballBall, 
+         FaUtensils, FaHome, FaBook, FaSearch, FaChevronDown, FaChevronUp,
+         FaDraftingCompass, FaPencilRuler, FaPalette, FaCode, FaCheckCircle,
+         FaLifeRing, FaQuestionCircle, FaLock, FaMoneyBillWave, FaClock,
+         FaGooglePlay, FaUsers } from 'react-icons/fa';
+
+// FAQ Item Component with Animation
+// Industry Card Component
+const IndustryCard = ({ icon, title, description, color, delay }) => {
+  return (
+    <motion.div 
+      className="industry-card"
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5, delay }}
+      viewport={{ once: true }}
+      whileHover={{ 
+        y: -5,
+        boxShadow: '0 8px 30px rgba(252, 248, 248, 1)',
+        transition: { duration: 0.2 }
+      }}
+    >
+      <div className="industry-icon" style={{ color }}>
+        {icon}
+      </div>
+      <h3 className="industry-title">{title}</h3>
+      <p className="industry-description">{description}</p>
+    </motion.div>
+  );
+};
+
+// Service Card Component
+const ServiceCard = ({ icon, title, description, color, delay }) => {
+  return (
+    <motion.div 
+      className="service-card"
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5, delay }}
+      viewport={{ once: true }}
+      whileHover={{ y: -5, transition: { duration: 0.2 } }}
+    >
+      <div className="service-icon" style={{ color }}>
+        {icon}
+      </div>
+      <h3 className="service-title">{title}</h3>
+      <p className="service-description">{description}</p>
+    </motion.div>
+  );
+};
+
+// FAQ Item Component
+const FAQItem = ({ item }) => {
+  const [open, setOpen] = useState(false);
+  
+  return (
+    <motion.div 
+      className={`faq-item${open ? ' open' : ''}`}
+      initial={false}
+      animate={{
+        backgroundColor: open ? 'rgba(255, 255, 255, 0.95)' : '#fff',
+        boxShadow: open 
+          ? '0 4px 20px rgba(30, 60, 114, 0.12)' 
+          : '0 2px 12px rgba(30, 60, 114, 0.08)'
+      }}
+    >
+      <motion.div 
+        className="faq-question"
+        onClick={() => setOpen(!open)}
+        whileHover={{ scale: 1.005 }}
+      >
+        <span className="faq-icon">{item.icon}</span>
+        <span className="faq-text">{item.q}</span>
+        <motion.span
+          animate={{ rotate: open ? 180 : 0 }}
+          transition={{ duration: 0.3 }}
+        >
+          <FaChevronDown />
+        </motion.span>
+      </motion.div>
+      <AnimatePresence>
+        {open && (
+          <motion.div 
+            className="faq-answer"
+            initial={{ opacity: 0, height: 0 }}
+            animate={{ opacity: 1, height: 'auto' }}
+            exit={{ opacity: 0, height: 0 }}
+            transition={{ duration: 0.3 }}
+          >
+            <p>{item.a}</p>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </motion.div>
+  );
+}
 
 export default function MobileAppDevelopment() {
-  const { scrollY } = useViewportScroll();
-  // No scroll-based movement, static animation
+  const navigate = useNavigate();
+  const { scrollY } = useScroll();
+  const heroOpacity = useTransform(scrollY, [0, 300], [1, 0]);
+  const heroScale = useTransform(scrollY, [0, 300], [1, 0.8]);
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true });
+  
+  // Memoize functions
+  const handleStartProject = () => {
+    navigate('/contact');
+  };
+
+  const handleViewPortfolio = () => {
+    navigate('/our-work');
+  };
+
   return (
-  <div style={{ minHeight: '100vh', width: '100%', background: 'fff' }}>
-      {/* Hero Section with flex layout: text left, animation right */}
-      <div className="super-hero-flex" style={{ display: "flex", alignItems: "center", justifyContent: "space-between", gap: "32px", margin: "32px 0", background: 'linear-gradient(135deg, #0f2027 0%, #2c5364 100%)', borderRadius: "32px", boxShadow: "0 4px 24px rgba(0,0,0,0.06)" }}>
-        <div style={{ flex: 1 }}>
-          <h1 className="super-title">
-            <FaMobileAlt className="super-icon" /> Mobile App Development
-          </h1>
-          <p className="super-desc">
-            Build custom mobile apps and solutions using the latest technologies powered by a vetted team of engineers. We deliver performant, secure, and user-friendly mobile applications for both Android and iOS.
-          </p>
+    <main className="mobile-app-container">
+      {/* Hero Section */}
+      <motion.section 
+        ref={ref}
+        className="hero-section"
+        initial={{ opacity: 0, y: 50 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8 }}
+      >
+        <motion.div 
+          className="hero-content"
+          style={{ 
+            opacity: heroOpacity, 
+            scale: heroScale,
+            transform: isInView ? "none" : "translateX(-200px)",
+            opacity: isInView ? 1 : 0,
+            transition: "all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s"
+          }}
+        >
+          <motion.h1 
+            className="hero-title"
+            initial={{ x: -50, opacity: 0 }}
+            animate={{ x: 0, opacity: 1 }}
+            transition={{ delay: 0.2, duration: 0.6 }}
+          >
+            <FaMobileAlt className="hero-icon" />
+            <span>Mobile App Development</span>
+          </motion.h1>
+          <motion.p 
+            className="hero-description"
+            initial={{ x: -50, opacity: 0 }}
+            animate={{ x: 0, opacity: 1 }}
+            transition={{ delay: 0.4, duration: 0.6 }}
+          >
+            Build custom mobile apps and solutions using the latest technologies powered by a vetted team of engineers. 
+            We deliver performant, secure, and user-friendly mobile applications for both Android and iOS.
+          </motion.p>
+          <motion.div 
+            className="hero-buttons"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.6, duration: 0.4 }}
+          >
+            <motion.button 
+              className="primary-btn"
+              onClick={handleStartProject}
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              Start Your Project
+            </motion.button>
+            
+          </motion.div>
+        </motion.div>
+        <motion.div 
+          className="hero-animation"
+          initial={{ opacity: 0, scale: 0.8 }}
+          animate={{ 
+            opacity: isInView ? 1 : 0,
+            scale: isInView ? 1 : 0.8 
+          }}
+          transition={{ 
+            duration: 0.8,
+            delay: 0.2,
+            ease: [0.17, 0.55, 0.55, 1]
+          }}
+        >
+          <LazyLottie 
+            animationUrl="/animations/mobiledevelopment.json" 
+            loop={true} 
+          />
+        </motion.div>
+      </motion.section>
+      {/* Services Section */}
+      <motion.section 
+        className="services-section"
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        transition={{ duration: 0.8 }}
+        viewport={{ once: true }}
+      >
+        <motion.h2 
+          className="section-title"
+          initial={{ y: 30 }}
+          whileInView={{ y: 0 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true }}
+        >
+          Comprehensive Mobile App Development Services
+        </motion.h2>
+        <div className="services-grid">
+          <ServiceCard
+            icon={<FaApple />}
+            title="Native iOS App Development"
+            description="Our dedicated iOS development team specializes in building custom native apps for iPhone, iPad, and Apple Watch using Swift and Objective-C. We ensure every app is secure, high-performing, and fully compliant with App Store guidelines."
+            color="#000000"
+            delay={0.1}
+          />
+          <ServiceCard
+            icon={<FaAndroid />}
+            title="Native Android App Development"
+            description="Our top Android engineers create robust, scalable native apps using Kotlin and Java. We optimize for speed, compatibility, and security, ensuring your app stands out in the Google Play Store."
+            color="#3DDC84"
+            delay={0.2}
+          />
+          <ServiceCard
+            icon={<FaReact />}
+            title="Cross-Platform Development"
+            description="Build trendy, secure, and resilient hybrid apps with Flutter and React Native. Our solutions offer cost-effective development, rapid deployment, and native-like performance for both platforms."
+            color="#61DAFB"
+            delay={0.3}
+          />
+          <ServiceCard
+            icon={<FaTools />}
+            title="IoT App Development"
+            description="Connect devices and enable smart solutions with custom IoT app development. We integrate advanced sensors, cloud services, and secure protocols for innovative smart products."
+            color="#FF4B4B"
+            delay={0.4}
+          />
+          <ServiceCard
+            icon={<FaCogs />}
+            title="App Maintenance & Support"
+            description="Our post-development support ensures your app remains up-to-date, secure, and fully functional. We provide updates, monitoring, and feature enhancements."
+            color="#7C3AED"
+            delay={0.5}
+          />
+          <ServiceCard
+            icon={<FaRocket />}
+            title="Mobile App Consultancy"
+            description="Consult with our experts to plan, strategize, and execute your mobile app vision. We guide you through ideation, wireframing, prototyping, and launch."
+            color="#0EA5E9"
+            delay={0.6}
+          />
         </div>
-          <div className="lottie-container" style={{ display: "flex", alignItems: "center", justifyContent: "center" }}>
-            <div style={{ width: "420px", maxWidth: "42vw", minWidth: "320px" }}>
-                <LazyLottie animationUrl={'/animations/mobiledevelopment.json'} loop={true} style={{ width: "100%", height: "320px" }} />
-              </div>
-          </div>
-      </div>
-      <div className="service-mobile-app-super">
-        {/* Services Section */}
-        <section className="super-services-section">
-          <h2 className="super-section-title">Comprehensive Mobile App Development Services</h2>
-          <div className="super-cards">
-            {/* ...existing service cards... */}
-            <div className="super-card ios-service">
-              <h3 className="super-card-title"><FaApple /> Native iOS App Development</h3>
-              <p className="super-card-desc">
-                Our dedicated iOS development team specializes in building custom native apps for iPhone, iPad, and Apple Watch. Using Swift and Objective-C, we ensure every app is secure, high-performing, and fully compliant with App Store guidelines. From concept to deployment, we focus on delivering seamless user experiences, robust integrations, and ongoing support for your business growth.
-              </p>
-            </div>
-            <div className="super-card android-service">
-              <h3 className="super-card-title"><FaAndroid /> Native Android App Development</h3>
-              <p className="super-card-desc">
-                Our top Android engineers create robust, scalable native apps for all industry verticals using Kotlin and Java. We optimize for speed, compatibility, and security, ensuring your app stands out in the Google Play Store. Whether you need a consumer-facing app or an enterprise solution, we deliver tailored experiences and ongoing updates for maximum impact.
-              </p>
-            </div>
-            <div className="super-card hybrid-service">
-              <h3 className="super-card-title"><FaReact /> Hybrid & Cross-Platform App Development</h3>
-              <p className="super-card-desc">
-                Build trendy, secure, and resilient hybrid apps with Flutter and React Native. Our cross-platform solutions offer cost-effective development, rapid deployment, and native-like performance for both iOS and Android. We deliver beautiful UI/UX, seamless integrations, and future-ready scalability for startups and enterprises alike.
-              </p>
-            </div>
-            <div className="super-card iot-service">
-              <h3 className="super-card-title"><FaTools /> IoT App Development</h3>
-              <p className="super-card-desc">
-                Connect devices and enable smart solutions with custom IoT app development for mobile platforms. We integrate advanced sensors, cloud services, and secure protocols to help you build innovative products for smart homes, healthcare, logistics, and more.
-              </p>
-            </div>
-            <div className="super-card maintenance-service">
-              <h3 className="super-card-title"><FaCogs /> App Maintenance & Support</h3>
-              <p className="super-card-desc">
-                Our post-development support and maintenance services ensure your app remains up-to-date, secure, and fully functional. We provide troubleshooting, updates for new OS versions, performance monitoring, and feature enhancements to keep your app ahead of the curve.
-              </p>
-            </div>
-            <div className="super-card consultancy-service">
-              <h3 className="super-card-title"><FaRocket /> Mobile App Dev. Consultancy</h3>
-              <p className="super-card-desc">
-                Consult with our experts to plan, strategize, and execute your mobile app vision. We guide you through ideation, wireframing, prototyping, development, and launch, ensuring your project is successful and future-proof.
-              </p>
-            </div>
-          </div>
-        </section>
+      </motion.section>
         {/* Industries Section */}
         <section className="super-industries-section">
           <h2 className="super-section-title">Industries We Serve</h2>
@@ -185,8 +353,6 @@ export default function MobileAppDevelopment() {
             ))}
           </div>
         </section>
-      </div>
-      
-  </div>
+    </main>
   );
 }

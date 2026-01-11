@@ -1,6 +1,8 @@
-import React, { useState } from 'react';
-import '../../styles/services/service-custom-software.css';
+import React, { useRef } from 'react';
+import { motion, useScroll, useTransform, useInView } from 'framer-motion';
 import LazyLottie from '../../components/LazyLottie';
+import '../../styles/services/service-erp.css';
+import { useNavigate } from 'react-router-dom';
 import {
   FaCode,
   FaCogs,
@@ -11,138 +13,251 @@ import {
   FaMobileAlt,
   FaUsers,
   FaBook,
-  FaChevronDown,
-  FaChevronUp,
-  FaQuestionCircle,
-  FaDraftingCompass
+  FaDraftingCompass,
+  FaGlobe,
+  FaChartLine
 } from 'react-icons/fa';
 
-function FAQItem({ item }) {
-  const [open, setOpen] = useState(false);
+// Service Card Component
+const ServiceCard = ({ icon, title, description, color, delay }) => {
   return (
-    <div className={`super-faq-item${open ? ' open' : ''}`} style={{marginBottom:'16px', borderRadius:'16px', boxShadow:'0 2px 12px rgba(30,60,114,0.08)', background:'#fff', padding:'20px 24px', transition:'box-shadow 0.2s'}}>
-      <div className="super-faq-question" onClick={() => setOpen(!open)} style={{cursor:'pointer', display:'flex', alignItems:'center', gap:'16px', fontWeight:'600', fontSize:'1.1rem', color:'#1e3c72'}}>
-        <span style={{fontSize:'1.5rem'}}>{item.icon}</span>
-        <span>{item.q}</span>
-        {open ? <FaChevronUp style={{marginLeft:'auto', color:'#2a5298'}}/> : <FaChevronDown style={{marginLeft:'auto', color:'#2a5298'}}/>}
+    <motion.div 
+      className="service-card"
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5, delay }}
+      viewport={{ once: true }}
+      whileHover={{ 
+        y: -5,
+        transition: { duration: 0.2 }
+      }}
+    >
+      <div className="service-icon" style={{ color }}>
+        {icon}
       </div>
-      {open && <div className="super-faq-answer" style={{marginTop:'12px', color:'#333', fontSize:'1rem', lineHeight:'1.7'}}><p>{item.a}</p></div>}
-    </div>
+      <h3 className="service-title">{title}</h3>
+      <p className="service-description">{description}</p>
+    </motion.div>
   );
-}
+};
 
 export default function CustomSoftwareDevelopment() {
+  const navigate = useNavigate();
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true });
+  
+  const { scrollY } = useScroll();
+  const heroOpacity = useTransform(scrollY, [0, 300], [1, 0]);
+  const heroScale = useTransform(scrollY, [0, 300], [1, 0.8]);
+
+  const handleStartProject = () => {
+    navigate('/contact');
+  };
+
   return (
-    <>
+    <div className="erp-development-page">
       {/* Hero Section */}
-      <div className="super-hero-flex" style={{ display: "flex", alignItems: "center", justifyContent: "space-between", gap: "32px", margin: "32px 0", background: "linear-gradient(90deg, #2a5298 0%, #f4a261 100%)", borderRadius: "32px", boxShadow: "0 4px 24px rgba(0,0,0,0.06)" }}>
-        <div style={{ flex: 1 }}>
-          <h1 className="super-title"><FaCode className="super-icon" /> Custom Software Development</h1>
-          <p className="super-desc">Explore how custom software keeps your business thriving and get one for you cost effectively. We build tailored solutions that automate workflows and deliver measurable ROI.</p>
+      <motion.div 
+        className="hero-section"
+        style={{ 
+          opacity: heroOpacity,
+          scale: heroScale
+        }}
+      >
+        <div className="hero-content">
+          <motion.h1 
+            className="hero-title"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+          >
+            <FaCode className="icon" /> Custom Software Development
+          </motion.h1>
+          <motion.p 
+            className="hero-description"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+          >
+            Explore how custom software keeps your business thriving and get one for you cost effectively. We build tailored solutions that automate workflows and deliver measurable ROI.
+          </motion.p>
+          <motion.button
+            className="cta-button"
+            onClick={handleStartProject}
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.4 }}
+          >
+            Start Your Project
+          </motion.button>
         </div>
-        <div style={{ flex: "0 0 320px", display: "flex", justifyContent: "center", alignItems: "center", background: "linear-gradient(90deg, #2a5298 0%, #f4a261 100%)", borderRadius: "24px", boxShadow: "0 4px 24px rgba(0,0,0,0.08)", padding: "24px", maxWidth: "320px", width: "320px" }}>
-            <div className="lottie-container" style={{ display: "flex", justifyContent: "center", alignItems: "center" }}>
-              <div style={{ width: "420px", maxWidth: "42vw", minWidth: "320px" }}>
-                <LazyLottie animationUrl={'/animations/customsoftware.json'} loop={true} style={{ width: "100%", height: "420px" }} />
-              </div>
-            </div>
+        <motion.div 
+          className="hero-animation"
+          initial={{ opacity: 0, scale: 0.8 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.8 }}
+        >
+          <LazyLottie 
+            animationUrl="/animations/customsoftware.json" 
+            loop={true}
+          />
+        </motion.div>
+      </motion.div>
+
+      {/* Industries Section */}
+      <section className="industries-section">
+        <motion.h2 
+          className="section-title"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+        >
+          Industries We Serve
+        </motion.h2>
+        <div className="industries-grid">
+          <ServiceCard
+            icon={<FaMobileAlt />}
+            title="Mobile & SaaS"
+            description="Custom software for mobile apps, SaaS platforms, and cloud-based solutions. We build products for startups, enterprises, and everything in between."
+            color="#2a5298"
+            delay={0.1}
+          />
+          <ServiceCard
+            icon={<FaUsers />}
+            title="Enterprise Solutions"
+            description="Business automation, data management, and collaboration tools for enterprises. Our solutions streamline operations and drive digital transformation."
+            color="#e63946"
+            delay={0.2}
+          />
+          <ServiceCard
+            icon={<FaRocket />}
+            title="Startups & Growth Companies"
+            description="Agile development for fast-growing businesses and innovative products. We help you launch quickly and scale efficiently."
+            color="#f4a261"
+            delay={0.3}
+          />
+          <ServiceCard
+            icon={<FaBook />}
+            title="Education & Training"
+            description="Custom software for e-learning platforms, training apps, and educational products. We support online courses, assessments, and collaboration."
+            color="#1d3557"
+            delay={0.4}
+          />
         </div>
-      </div>
-      <div className="service-custom-software-super">
-        {/* Services Section */}
-        <section className="super-services-section">
-          <h2 className="super-section-title">Our Custom Software Services</h2>
-          <div className="super-cards">
-            <div className="super-card"><h3 className="super-card-title"><FaCogs /> Business Automation</h3><p className="super-card-desc">Automate repetitive tasks, streamline workflows, and boost productivity with tailored software solutions.<br /><br />
-We design systems that save time, reduce errors, and improve efficiency.</p></div>
-            <div className="super-card"><h3 className="super-card-title"><FaPuzzlePiece /> Custom Integrations</h3><p className="super-card-desc">Integrate your software with third-party tools, APIs, and platforms for seamless data flow.<br /><br />
-Our integrations connect your business and unlock new capabilities.</p></div>
-            <div className="super-card"><h3 className="super-card-title"><FaRocket /> Scalable Architecture</h3><p className="super-card-desc">We build scalable, future-proof applications that grow with your business and adapt to changing needs.<br /><br />
-Our architecture supports expansion, new features, and high performance.</p></div>
-            <div className="super-card"><h3 className="super-card-title"><FaLifeRing /> Ongoing Support</h3><p className="super-card-desc">Our team provides maintenance, updates, and troubleshooting to keep your software running smoothly.<br /><br />
-We ensure reliability and continuous improvement for your applications.</p></div>
-          </div>
-        </section>
-        {/* Industries Section */}
-        <section className="super-industries-section">
-          <h2 className="super-section-title">Industries We Serve</h2>
-          <div className="super-cards">
-            <div className="super-card"><h3 className="super-card-title"><FaMobileAlt style={{color:'#2a5298'}}/> Mobile & SaaS</h3><p className="super-card-desc">Custom software for mobile apps, SaaS platforms, and cloud-based solutions.<br /><br />
-We build products for startups, enterprises, and everything in between.</p></div>
-            <div className="super-card"><h3 className="super-card-title"><FaUsers style={{color:'#e63946'}}/> Enterprise Solutions</h3><p className="super-card-desc">Business automation, data management, and collaboration tools for enterprises.<br /><br />
-Our solutions streamline operations and drive digital transformation.</p></div>
-            <div className="super-card"><h3 className="super-card-title"><FaRocket style={{color:'#f4a261'}}/> Startups & Growth Companies</h3><p className="super-card-desc">Agile development for fast-growing businesses and innovative products.<br /><br />
-We help you launch quickly and scale efficiently.</p></div>
-            <div className="super-card"><h3 className="super-card-title"><FaBook style={{color:'#1d3557'}}/> Education & Training</h3><p className="super-card-desc">Custom software for e-learning platforms, training apps, and educational products.<br /><br />
-We support online courses, assessments, and collaboration for learners and educators.</p></div>
-          </div>
-        </section>
-        {/* Benefits Section */}
-        <section className="super-benefits-section">
-          <h2 className="super-section-title">Why Choose Us?</h2>
-          <div className="super-cards">
-            <div className="super-card"><h3 className="super-card-title">Tailored Solutions</h3><p className="super-card-desc">Every software product is custom-built to fit your business needs and goals.<br /><br />
-We listen, analyze, and deliver solutions that solve your unique challenges.</p></div>
-            <div className="super-card"><h3 className="super-card-title">Scalability & Flexibility</h3><p className="super-card-desc">Our software grows with your business, adapting to new requirements and opportunities.<br /><br />
-We design systems that are easy to expand and modify.</p></div>
-            <div className="super-card"><h3 className="super-card-title">Expert Support</h3><p className="super-card-desc">Our team provides training, documentation, and ongoing assistance for smooth operations.<br /><br />
-We help you get the most from your investment.</p></div>
-            <div className="super-card"><h3 className="super-card-title">Cost-Effective Development</h3><p className="super-card-desc">We deliver high-quality software at competitive prices, maximizing your ROI.<br /><br />
-Our process is efficient, transparent, and focused on value.</p></div>
-          </div>
-        </section>
-        {/* Process Section */}
-        <section className="super-process-section">
-          <h2 className="super-section-title">Our Custom Software Process</h2>
-          <div className="super-cards">
-            <div className="super-card"><h3 className="super-card-title"><FaCogs style={{color:'#2a5298'}}/> Requirements Analysis</h3><p className="super-card-desc">We gather requirements, analyze workflows, and define project scope for a clear roadmap.<br /><br />
-This phase ensures your software meets all business needs.</p></div>
-            <div className="super-card"><h3 className="super-card-title"><FaDraftingCompass style={{color:'#e63946'}}/> System Design</h3><p className="super-card-desc">We design system architecture, data models, and user interfaces for optimal performance.<br /><br />
-Our designs prioritize usability, scalability, and integration.</p></div>
-            <div className="super-card"><h3 className="super-card-title"><FaCheckCircle style={{color:'#f4a261'}}/> Development & Integration</h3><p className="super-card-desc">Agile development and seamless integration with existing systems and third-party tools.<br /><br />
-We ensure smooth data flow and reliable operation.</p></div>
-            <div className="super-card"><h3 className="super-card-title"><FaRocket style={{color:'#1d3557'}}/> Testing & Launch</h3><p className="super-card-desc">Comprehensive QA, deployment, and launch support for your custom software.<br /><br />
-We test, deploy, and monitor your product for success.</p></div>
-            <div className="super-card"><h3 className="super-card-title"><FaLifeRing style={{color:'#2a5298'}}/> Support & Enhancement</h3><p className="super-card-desc">Continuous support, maintenance, and feature enhancements post-launch.<br /><br />
-Our team is dedicated to your software's long-term success.</p></div>
-          </div>
-        </section>
-        {/* FAQs Section */}
-        <section className="super-faq-section">
-          <h2 className="super-section-title">Frequently Asked Questions</h2>
-          <div className="super-faq-list">
-            {[
-              {
-                q: "What is custom software development?",
-                a: "Custom software is built specifically for your business needs, offering unique features and integrations.",
-                icon: <FaQuestionCircle style={{color:'#2a5298'}}/>
-              },
-              {
-                q: "Can you integrate with my existing systems?",
-                a: "Yes, we specialize in seamless integration with databases, CRMs, accounting software, and more.",
-                icon: <FaPuzzlePiece style={{color:'#e63946'}}/>
-              },
-              {
-                q: "How long does custom development take?",
-                a: "Timelines vary by scope and complexity. We provide clear estimates after initial analysis.",
-                icon: <FaRocket style={{color:'#f4a261'}}/>
-              },
-              {
-                q: "Do you provide training and support?",
-                a: "Absolutely! We offer onboarding, documentation, and ongoing assistance for your team.",
-                icon: <FaLifeRing style={{color:'#1d3557'}}/>
-              },
-              {
-                q: "Is custom software expensive?",
-                a: "We deliver high-quality solutions at competitive prices, maximizing your ROI.",
-                icon: <FaCheckCircle style={{color:'#2a5298'}}/>
-              }
-            ].map((item, idx) => (
-              <FAQItem key={idx} item={item} />
-            ))}
-          </div>
-        </section>
-      </div>
-    </>
+      </section>
+
+      {/* Benefits Section */}
+      <section className="benefits-section">
+        <motion.h2 
+          className="section-title"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+        >
+          Why Choose Us?
+        </motion.h2>
+        <div className="benefits-grid">
+          <ServiceCard
+            icon={<FaCogs />}
+            title="Tailored Solutions"
+            description="Every software product is custom-built to fit your business needs and goals. We listen, analyze, and deliver solutions that solve your unique challenges."
+            color="#3B82F6"
+            delay={0.1}
+          />
+          <ServiceCard
+            icon={<FaRocket />}
+            title="Scalability & Flexibility"
+            description="Our software grows with your business, adapting to new requirements and opportunities. We design systems that are easy to expand and modify."
+            color="#10B981"
+            delay={0.2}
+          />
+          <ServiceCard
+            icon={<FaUsers />}
+            title="Expert Support"
+            description="Our team provides training, documentation, and ongoing assistance for smooth operations. We help you get the most from your investment."
+            color="#8B5CF6"
+            delay={0.3}
+          />
+          <ServiceCard
+            icon={<FaChartLine />}
+            title="Cost-Effective Development"
+            description="We deliver high-quality software at competitive prices, maximizing your ROI. Our process is efficient, transparent, and focused on value."
+            color="#F59E0B"
+            delay={0.4}
+          />
+        </div>
+      </section>
+
+      {/* Process Section */}
+      <section className="process-section">
+        <motion.h2 
+          className="section-title"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+        >
+          Our Custom Software Process
+        </motion.h2>
+        <div className="process-grid">
+          <ServiceCard
+            icon={<FaCogs />}
+            title="Requirements Analysis"
+            description="We gather requirements, analyze workflows, and define project scope. This phase ensures your software meets all business needs."
+            color="#2a5298"
+            delay={0.1}
+          />
+          <ServiceCard
+            icon={<FaDraftingCompass />}
+            title="System Design"
+            description="We design system architecture, data models, and user interfaces for optimal performance. Our designs prioritize usability and scalability."
+            color="#e63946"
+            delay={0.2}
+          />
+          <ServiceCard
+            icon={<FaCheckCircle />}
+            title="Development & Integration"
+            description="Agile development and seamless integration with existing systems. We ensure smooth data flow and reliable operation."
+            color="#f4a261"
+            delay={0.3}
+          />
+          <ServiceCard
+            icon={<FaRocket />}
+            title="Testing & Launch"
+            description="Comprehensive QA, deployment, and launch support for your custom software. We test, deploy, and monitor for success."
+            color="#1d3557"
+            delay={0.4}
+          />
+          <ServiceCard
+            icon={<FaLifeRing />}
+            title="Support & Enhancement"
+            description="Continuous support, maintenance, and feature enhancements post-launch. Our team is dedicated to your software's long-term success."
+            color="#2a5298"
+            delay={0.5}
+          />
+        </div>
+      </section>
+
+      {/* Contact Section */}
+      <motion.section 
+        className="contact-section"
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5 }}
+        viewport={{ once: true }}
+      >
+        <h2 className="section-title">Build Custom Software That Drives Growth</h2>
+        <p className="section-description">Let's transform your vision into a powerful software solution.</p>
+        <motion.button
+          className="cta-button"
+          onClick={handleStartProject}
+          whileHover={{ scale: 1.05 }}
+          whileTap={{ scale: 0.95 }}
+        >
+          Start Your Project
+        </motion.button>
+      </motion.section>
+    </div>
   );
 }

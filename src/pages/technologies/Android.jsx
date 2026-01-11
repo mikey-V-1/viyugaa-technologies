@@ -18,20 +18,36 @@ const featureCardVariants = {
   }),
 };
 
+const features = [
+  {
+    icon: <FaBolt className="android-feature-icon" />,
+    title: 'Performance Optimized',
+    desc: 'High-performance native apps using Kotlin and best practices.'
+  },
+  {
+    icon: <FaCogs className="android-feature-icon" />,
+    title: 'Device Integration',
+    desc: 'Access sensors, camera, GPS, background services, and platform APIs.'
+  },
+  {
+    icon: <FaLayerGroup className="android-feature-icon" />,
+    title: 'Scalable Architecture',
+    desc: 'Modular, maintainable codebases with clean architecture patterns.'
+  },
+  {
+    icon: <FaTools className="android-feature-icon" />,
+    title: 'Testing & CI/CD',
+    desc: 'Automated testing, build pipelines, and Play Store deployment support.'
+  }
+];
+
 export default function Android() {
   const navigate = useNavigate();
   return (
     <div className="android-modern-page">
       {/* Hero Section */}
       <section className="android-hero">
-        <motion.div
-          className="android-hero-logo"
-          initial={{ opacity: 0, scale: 0.8 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 1 }}
-        >
-          <img src="/tech/android.png" alt="Android" className="android-hero-image" />
-        </motion.div>
+        
         <motion.h1
           className="android-hero-title"
           initial={{ opacity: 0, y: -50 }}

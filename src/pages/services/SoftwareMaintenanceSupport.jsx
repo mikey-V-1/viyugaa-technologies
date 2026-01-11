@@ -1,7 +1,8 @@
-import React, { useState } from 'react';
-import '../../styles/services/service-maintenance.css';
+import React, { useRef } from 'react';
+import { motion, useScroll, useTransform, useInView } from 'framer-motion';
+import { useNavigate } from 'react-router-dom';
 import LazyLottie from '../../components/LazyLottie';
-import softwaremaintance from "../../assets/softwaremaintance.json";
+import '../../styles/services/service-erp.css';
 import {
   FaTools,
   FaCogs,
@@ -12,137 +13,294 @@ import {
   FaUsers,
   FaRocket,
   FaBook,
-  FaChevronDown,
-  FaChevronUp,
-  FaQuestionCircle
+  FaCloud,
+  FaLaptopCode,
+  FaDraftingCompass,
+  FaGlobe
 } from 'react-icons/fa';
 
-function FAQItem({ item }) {
-  const [open, setOpen] = useState(false);
+// Service Card Component
+const ServiceCard = ({ icon, title, description, color, delay }) => {
   return (
-    <div className={`super-faq-item${open ? ' open' : ''}`} style={{marginBottom:'16px', borderRadius:'16px', boxShadow:'0 2px 12px rgba(30,60,114,0.08)', background:'#fff', padding:'20px 24px', transition:'box-shadow 0.2s'}}>
-      <div className="super-faq-question" onClick={() => setOpen(!open)} style={{cursor:'pointer', display:'flex', alignItems:'center', gap:'16px', fontWeight:'600', fontSize:'1.1rem', color:'#1e3c72'}}>
-        <span style={{fontSize:'1.5rem'}}>{item.icon}</span>
-        <span>{item.q}</span>
-        {open ? <FaChevronUp style={{marginLeft:'auto', color:'#2a5298'}}/> : <FaChevronDown style={{marginLeft:'auto', color:'#2a5298'}}/>}
+    <motion.div 
+      className="service-card"
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5, delay }}
+      viewport={{ once: true }}
+      whileHover={{ 
+        y: -5,
+        transition: { duration: 0.2 }
+      }}
+    >
+      <div className="service-icon" style={{ color }}>
+        {icon}
       </div>
-      {open && <div className="super-faq-answer" style={{marginTop:'12px', color:'#333', fontSize:'1rem', lineHeight:'1.7'}}><p>{item.a}</p></div>}
-    </div>
+      <h3 className="service-title">{title}</h3>
+      <p className="service-description">{description}</p>
+    </motion.div>
   );
-}
+};
 
 export default function SoftwareMaintenanceSupport() {
+  const navigate = useNavigate();
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true });
+  
+  const { scrollY } = useScroll();
+  const heroOpacity = useTransform(scrollY, [0, 300], [1, 0]);
+  const heroScale = useTransform(scrollY, [0, 300], [1, 0.8]);
+
+  const handleStartProject = () => {
+    navigate('/contact');
+  };
+
   return (
-    <>
+    <div className="erp-development-page">
       {/* Hero Section */}
-      <div className="super-hero-flex" style={{ display: "flex", alignItems: "center", justifyContent: "space-between", gap: "32px", margin: "32px 0", background: "linear-gradient(90deg, #264653 0%, #e9c46a 100%)", borderRadius: "32px", boxShadow: "0 4px 24px rgba(0,0,0,0.06)" }}>
-        <div style={{ flex: 1 }}>
-          <h1 className="super-title"><FaTools className="super-icon" /> Software Maintenance & Support</h1>
-          <p className="super-desc">Ensuring optimal software performance through reliable maintenance and comprehensive support services. We provide proactive monitoring, updates and redesign when needed to keep your systems healthy.</p>
+      <motion.div 
+        className="hero-section"
+        style={{ 
+          opacity: heroOpacity,
+          scale: heroScale
+        }}
+      >
+        <div className="hero-content">
+          <motion.h1 
+            className="hero-title"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+          >
+            <FaTools className="icon" /> Software Maintenance & Support
+          </motion.h1>
+          <motion.p 
+            className="hero-description"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+          >
+            Ensuring optimal software performance through reliable maintenance and comprehensive support services. Keep your systems healthy, secure, and up-to-date with our proactive monitoring and expert assistance.
+          </motion.p>
+          <motion.button
+            className="cta-button"
+            onClick={handleStartProject}
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.4 }}
+          >
+            Start Your Project
+          </motion.button>
         </div>
-        <div style={{ flex: "0 0 320px", display: "flex", justifyContent: "center", alignItems: "center", background: "linear-gradient(90deg, #264653 0%, #e9c46a 100%)", borderRadius: "24px", boxShadow: "0 4px 24px rgba(0,0,0,0.08)", padding: "24px", maxWidth: "320px", width: "320px" }}>
-            <div className="lottie-container" style={{ display: "flex", justifyContent: "center", alignItems: "center" }}>
-              <div style={{ width: "420px", maxWidth: "42vw", minWidth: "320px" }}>
-                <LazyLottie animationUrl={'/animations/softwaremaintance.json'} loop={true} style={{ width: "100%", height: "420px" }} />
-              </div>
-            </div>
+        <motion.div 
+          className="hero-animation"
+          initial={{ opacity: 0, scale: 0.8 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.8 }}
+        >
+          <LazyLottie 
+            animationUrl="/animations/softwaremaintance.json" 
+            loop={true}
+          />
+        </motion.div>
+      </motion.div>
+
+      {/* Services Section */}
+      <section className="services-section" ref={ref}>
+        <motion.h2 
+          className="section-title"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+        >
+          Our Maintenance & Support Services
+        </motion.h2>
+        <div className="services-grid">
+          <ServiceCard
+            icon={<FaCheckCircle />}
+            title="Bug Fixes & Updates"
+            description="We resolve issues quickly and keep your software up-to-date with the latest features and improvements. Our team monitors for bugs and applies patches seamlessly."
+            color="#3B82F6"
+            delay={0.1}
+          />
+          <ServiceCard
+            icon={<FaShieldAlt />}
+            title="Security Enhancements"
+            description="Protect your data and users with robust security protocols, regular audits, and vulnerability assessments. We help you meet compliance requirements."
+            color="#10B981"
+            delay={0.2}
+          />
+          <ServiceCard
+            icon={<FaLifeRing />}
+            title="24/7 Support"
+            description="Our support team is available around the clock to address issues and answer questions. We provide fast response times and dedicated assistance."
+            color="#8B5CF6"
+            delay={0.3}
+          />
+          <ServiceCard
+            icon={<FaRocket />}
+            title="Performance Monitoring"
+            description="Continuous monitoring and optimization to ensure your software runs efficiently and scales. We track key metrics and recommend improvements."
+            color="#F59E0B"
+            delay={0.4}
+          />
         </div>
-      </div>
-      <div className="service-maintenance-super">
-        {/* Services Section */}
-        <section className="super-services-section">
-          <h2 className="super-section-title">Our Maintenance & Support Services</h2>
-          <div className="super-cards">
-            <div className="super-card"><h3 className="super-card-title"><FaCheckCircle /> Bug Fixes & Updates</h3><p className="super-card-desc">We resolve issues quickly and keep your software up-to-date with the latest features and improvements.<br /><br />
-Our team monitors for bugs, applies patches, and ensures smooth operation.</p></div>
-            <div className="super-card"><h3 className="super-card-title"><FaShieldAlt /> Security Enhancements</h3><p className="super-card-desc">Protect your data and users with robust security protocols, regular audits, and vulnerability assessments.<br /><br />
-We help you meet compliance requirements and defend against threats.</p></div>
-            <div className="super-card"><h3 className="super-card-title"><FaLifeRing /> 24/7 Support</h3><p className="super-card-desc">Our support team is available around the clock to address issues and answer questions.<br /><br />
-We provide fast response times and dedicated assistance for mission-critical systems.</p></div>
-            <div className="super-card"><h3 className="super-card-title"><FaRocket /> Performance Monitoring</h3><p className="super-card-desc">Continuous monitoring and optimization to ensure your software runs efficiently and scales with your business.<br /><br />
-We track key metrics, identify bottlenecks, and recommend improvements.</p></div>
-          </div>
-        </section>
-        {/* Industries Section */}
-        <section className="super-industries-section">
-          <h2 className="super-section-title">Industries We Serve</h2>
-          <div className="super-cards">
-            <div className="super-card"><h3 className="super-card-title"><FaMobileAlt style={{color:'#264653'}}/> Mobile & SaaS</h3><p className="super-card-desc">Maintenance and support for mobile apps, SaaS platforms, and cloud-based solutions.<br /><br />
-We keep your products secure, updated, and performing at their best.</p></div>
-            <div className="super-card"><h3 className="super-card-title"><FaUsers style={{color:'#e63946'}}/> Enterprise Systems</h3><p className="super-card-desc">Support for business automation, data management, and collaboration platforms.<br /><br />
-Our services ensure reliability and compliance for mission-critical operations.</p></div>
-            <div className="super-card"><h3 className="super-card-title"><FaRocket style={{color:'#f4a261'}}/> Startups & Growth Companies</h3><p className="super-card-desc">Scalable support for fast-growing businesses and evolving software products.<br /><br />
-We help you adapt quickly and stay ahead of the competition.</p></div>
-            <div className="super-card"><h3 className="super-card-title"><FaBook style={{color:'#1d3557'}}/> Education & Training</h3><p className="super-card-desc">Support for e-learning platforms, training apps, and educational software.<br /><br />
-We ensure smooth operation and continuous improvement for learners and educators.</p></div>
-          </div>
-        </section>
-        {/* Benefits Section */}
-        <section className="super-benefits-section">
-          <h2 className="super-section-title">Why Choose Us?</h2>
-          <div className="super-cards">
-            <div className="super-card"><h3 className="super-card-title">Proactive Maintenance</h3><p className="super-card-desc">We anticipate issues and address them before they impact your business.<br /><br />
-Our monitoring and updates keep your software running smoothly.</p></div>
-            <div className="super-card"><h3 className="super-card-title">Security First</h3><p className="super-card-desc">We prioritize data protection and compliance, defending against threats and vulnerabilities.<br /><br />
-Our team stays current with security best practices and regulations.</p></div>
-            <div className="super-card"><h3 className="super-card-title">24/7 Support</h3><p className="super-card-desc">Our support team is available any time you need help, ensuring peace of mind.<br /><br />
-We respond quickly and resolve issues efficiently.</p></div>
-            <div className="super-card"><h3 className="super-card-title">Continuous Improvement</h3><p className="super-card-desc">We help you evolve your software with new features, optimizations, and enhancements.<br /><br />
-Our services support your growth and changing needs.</p></div>
-          </div>
-        </section>
-        {/* Process Section */}
-        <section className="super-process-section">
-          <h2 className="super-section-title">Our Maintenance & Support Process</h2>
-          <div className="super-cards">
-            <div className="super-card"><h3 className="super-card-title"><FaTools style={{color:'#264653'}}/> Assessment & Planning</h3><p className="super-card-desc">We evaluate your software, identify risks, and create a maintenance plan tailored to your needs.<br /><br />
-This phase ensures proactive support and clear priorities.</p></div>
-            <div className="super-card"><h3 className="super-card-title"><FaCheckCircle style={{color:'#e63946'}}/> Bug Fixes & Updates</h3><p className="super-card-desc">Rapid issue resolution and regular updates to keep your software secure and functional.<br /><br />
-We monitor for bugs, apply patches, and communicate progress.</p></div>
-            <div className="super-card"><h3 className="super-card-title"><FaShieldAlt style={{color:'#f4a261'}}/> Security Audits</h3><p className="super-card-desc">Regular security assessments and compliance checks to protect your data and users.<br /><br />
-We help you meet regulatory requirements and defend against threats.</p></div>
-            <div className="super-card"><h3 className="super-card-title"><FaRocket style={{color:'#1d3557'}}/> Performance Optimization</h3><p className="super-card-desc">Continuous monitoring and tuning to ensure your software runs efficiently and scales with your business.<br /><br />
-We track metrics, identify bottlenecks, and recommend improvements.</p></div>
-            <div className="super-card"><h3 className="super-card-title"><FaLifeRing style={{color:'#264653'}}/> 24/7 Support</h3><p className="super-card-desc">Dedicated support team available any time for troubleshooting and assistance.<br /><br />
-We provide fast response times and expert help for mission-critical systems.</p></div>
-          </div>
-        </section>
-        {/* FAQs Section */}
-        <section className="super-faq-section">
-          <h2 className="super-section-title">Frequently Asked Questions</h2>
-          <div className="super-faq-list">
-            {[
-              {
-                q: "What types of software do you support?",
-                a: "We support web apps, mobile apps, SaaS platforms, enterprise systems, and more.",
-                icon: <FaQuestionCircle style={{color:'#264653'}}/>
-              },
-              {
-                q: "How quickly do you resolve issues?",
-                a: "Our team responds rapidly and resolves most issues within hours, depending on severity.",
-                icon: <FaCheckCircle style={{color:'#e63946'}}/>
-              },
-              {
-                q: "Do you provide 24/7 support?",
-                a: "Yes, our support team is available around the clock for mission-critical systems.",
-                icon: <FaLifeRing style={{color:'#f4a261'}}/>
-              },
-              {
-                q: "How do you ensure security?",
-                a: "We conduct regular audits, apply security patches, and follow best practices for data protection.",
-                icon: <FaShieldAlt style={{color:'#1d3557'}}/>
-              },
-              {
-                q: "Can you help with performance optimization?",
-                a: "Absolutely! We monitor metrics, identify bottlenecks, and recommend improvements for efficiency.",
-                icon: <FaRocket style={{color:'#264653'}}/>
-              }
-            ].map((item, idx) => (
-              <FAQItem key={idx} item={item} />
-            ))}
-          </div>
-        </section>
-      </div>
-    </>
+      </section>
+
+      {/* Industries Section */}
+      <section className="industries-section">
+        <motion.h2 
+          className="section-title"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+        >
+          Industries We Serve
+        </motion.h2>
+        <div className="industries-grid">
+          <ServiceCard
+            icon={<FaMobileAlt />}
+            title="Mobile & SaaS"
+            description="Maintenance and support for mobile apps, SaaS platforms, and cloud-based solutions. We keep your products secure, updated, and performing at their best."
+            color="#2a5298"
+            delay={0.1}
+          />
+          <ServiceCard
+            icon={<FaUsers />}
+            title="Enterprise Systems"
+            description="Support for business automation, data management, and collaboration platforms. Our services ensure reliability and compliance for mission-critical operations."
+            color="#e63946"
+            delay={0.2}
+          />
+          <ServiceCard
+            icon={<FaRocket />}
+            title="Startups & Growth Companies"
+            description="Scalable support for fast-growing businesses and evolving software products. We help you adapt quickly and stay ahead of the competition."
+            color="#f4a261"
+            delay={0.3}
+          />
+          <ServiceCard
+            icon={<FaBook />}
+            title="Education & Training"
+            description="Support for e-learning platforms, training apps, and educational software. We ensure smooth operation and continuous improvement."
+            color="#1d3557"
+            delay={0.4}
+          />
+        </div>
+      </section>
+
+      {/* Benefits Section */}
+      <section className="benefits-section">
+        <motion.h2 
+          className="section-title"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+        >
+          Why Choose Us?
+        </motion.h2>
+        <div className="benefits-grid">
+          <ServiceCard
+            icon={<FaTools />}
+            title="Proactive Maintenance"
+            description="We anticipate issues and address them before they impact your business. Our monitoring and updates keep your software running smoothly."
+            color="#2a9d8f"
+            delay={0.1}
+          />
+          <ServiceCard
+            icon={<FaShieldAlt />}
+            title="Security First"
+            description="We prioritize data protection and compliance, defending against threats and vulnerabilities. Our team stays current with security best practices."
+            color="#e63946"
+            delay={0.2}
+          />
+          <ServiceCard
+            icon={<FaLifeRing />}
+            title="24/7 Support"
+            description="Our support team is available any time you need help, ensuring peace of mind. We respond quickly and resolve issues efficiently."
+            color="#457b9d"
+            delay={0.3}
+          />
+          <ServiceCard
+            icon={<FaCogs />}
+            title="Continuous Improvement"
+            description="We help you evolve your software with new features, optimizations, and enhancements. Our services support your growth and changing needs."
+            color="#1d3557"
+            delay={0.4}
+          />
+        </div>
+      </section>
+
+      {/* Process Section */}
+      <section className="process-section">
+        <motion.h2 
+          className="section-title"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+        >
+          Our Maintenance & Support Process
+        </motion.h2>
+        <div className="process-grid">
+          <ServiceCard
+            icon={<FaTools />}
+            title="Assessment & Planning"
+            description="We evaluate your software, identify risks, and create a maintenance plan tailored to your needs. This ensures proactive support and clear priorities."
+            color="#264653"
+            delay={0.1}
+          />
+          <ServiceCard
+            icon={<FaCheckCircle />}
+            title="Bug Fixes & Updates"
+            description="Rapid issue resolution and regular updates to keep your software secure and functional. We monitor for bugs and apply patches seamlessly."
+            color="#e63946"
+            delay={0.2}
+          />
+          <ServiceCard
+            icon={<FaShieldAlt />}
+            title="Security Audits"
+            description="Regular security assessments and compliance checks to protect your data and users. We help you meet regulatory requirements and defend against threats."
+            color="#f4a261"
+            delay={0.3}
+          />
+          <ServiceCard
+            icon={<FaRocket />}
+            title="Performance Optimization"
+            description="Continuous monitoring and tuning to ensure your software runs efficiently. We track metrics, identify bottlenecks, and recommend improvements."
+            color="#1d3557"
+            delay={0.4}
+          />
+          <ServiceCard
+            icon={<FaLifeRing />}
+            title="24/7 Support"
+            description="Dedicated support team available any time for troubleshooting and assistance. We provide fast response times and expert help for mission-critical systems."
+            color="#264653"
+            delay={0.5}
+          />
+        </div>
+      </section>
+
+      {/* Contact Section */}
+      <motion.section 
+        className="contact-section"
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5 }}
+        viewport={{ once: true }}
+      >
+        <h2 className="section-title">Keep Your Software Running Smoothly</h2>
+        <p className="section-description">Let us handle the maintenance so you can focus on your business growth.</p>
+        <motion.button
+          className="cta-button"
+          onClick={handleStartProject}
+          whileHover={{ scale: 1.05 }}
+          whileTap={{ scale: 0.95 }}
+        >
+          Get Support Today
+        </motion.button>
+      </motion.section>
+    </div>
   );
 }

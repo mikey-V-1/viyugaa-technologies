@@ -23,14 +23,7 @@ export default function AngularJS() {
   <div className="angularjs-modern-page">
       {/* Hero Section */}
       <section className="angularjs-hero">
-        <motion.div
-          className="angularjs-hero-logo"
-          initial={{ opacity: 0, scale: 0.8 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 1 }}
-        >
-          <img src="/tech/angularjs.png" alt="AngularJS" className="angularjs-hero-image" />
-        </motion.div>
+        
         <motion.h1
           className="angularjs-hero-title"
           initial={{ opacity: 0, y: -50 }}

@@ -21,14 +21,7 @@ export default function ReactNative() {
     <div className="reactnative-modern-page">
       {/* Hero Section */}
       <section className="reactnative-hero">
-        <motion.div
-          className="reactnative-hero-logo"
-          initial={{ opacity: 0, scale: 0.8 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 1 }}
-        >
-          <img src="/tech/reactnative.png" alt="React Native" className="reactnative-hero-image" />
-        </motion.div>
+        
         <motion.h1
           className="reactnative-hero-title"
           initial={{ opacity: 0, y: -50 }}

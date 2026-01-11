@@ -1,4 +1,50 @@
-.hire-nodejs { background: #f1f8e9; padding: 2rem; border-radius: 12px; }
-.hire-nodejs h1 { color: #43a047; }
-.hire-nodejs ul { margin-top: 1rem; }
-.hire-nodejs li { color: #33691e; margin-bottom: 0.5rem; }
+
+/* Node.js Developer Page - mobile-hire aligned */
+.hire-nodejs {
+    --accent-color: #68A063;
+    --accent-light: #F0F7EF;
+    --text-primary: #0f1724;
+    --text-secondary: #475569;
+    background: #ffffff;
+    padding: 2.25rem 1.25rem;
+    min-height: 100vh;
+}
+
+.hire-nodejs .hire-hero {
+    background: linear-gradient(120deg, var(--accent-light) 0%, #fff 100%);
+    border-radius: 14px;
+    padding: 2.25rem 1.25rem;
+    margin-bottom: 2.25rem;
+    display: grid;
+    grid-template-columns: 1fr 420px;
+    gap: 1rem;
+    align-items: center;
+}
+
+.hire-nodejs .hire-hero-text { text-align: left; max-width: 720px; }
+.hire-nodejs .hire-illustration { width: 100%; max-width: 420px; justify-self: end; }
+
+.hire-nodejs .hire-feature-list { justify-content: flex-start; }
+
+.hire-nodejs .hire-cards { display: grid; grid-template-columns: repeat(2,1fr); gap: 1rem; margin-top: 1.25rem; }
+
+.hire-nodejs .hire-card {
+    background: #fff;
+    border: 1px solid rgba(15,23,36,0.06);
+    border-radius: 12px;
+    padding: 1.25rem;
+    transition: transform 200ms ease, box-shadow 200ms ease;
+    box-shadow: 0 6px 18px rgba(104,160,99,0.04);
+}
+.hire-nodejs .hire-card:hover { transform: translateY(-6px); box-shadow: 0 10px 24px rgba(104,160,99,0.08); }
+
+.hire-nodejs .hire-process { margin-top: 1.5rem; }
+.hire-nodejs .hire-resume-form { max-width: 640px; margin: 1.25rem 0 0 0; }
+
+@media (max-width: 880px) {
+    .hire-nodejs .hire-hero { grid-template-columns: 1fr; position: relative; padding-bottom: 3.5rem; }
+    .hire-nodejs .hire-illustration { position: absolute; right: 1rem; bottom: -12px; width: 46%; max-width: 260px; z-index: 2; }
+    .hire-nodejs .hire-hero-text { z-index: 3; }
+    .hire-nodejs .hire-cards { grid-template-columns: 1fr; }
+}
+

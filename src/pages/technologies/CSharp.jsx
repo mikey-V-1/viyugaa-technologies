@@ -51,14 +51,7 @@ export default function CSharp() {
     <div className="csharp-modern-page">
       {/* Hero Section */}
       <section className="csharp-hero">
-        <motion.div
-          className="csharp-hero-logo"
-          initial={{ opacity: 0, scale: 0.8 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 1 }}
-        >
-          <img src="/tech/csharp.png" alt="C#" className="csharp-hero-image" />
-        </motion.div>
+        
         <motion.h1
           className="csharp-hero-title"
           initial={{ opacity: 0, y: -50 }}

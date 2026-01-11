@@ -1,12 +1,14 @@
 import React, { useState } from 'react'
-import { Link, NavLink } from 'react-router-dom'
+import { Link, NavLink, useNavigate } from 'react-router-dom'
 import '../styles/header.css'
 import InstallPrompt from './InstallPrompt'
 
 export default function Header() {
+  const navigate = useNavigate();
   const [showTechDropdown, setShowTechDropdown] = useState(false);
   const [showServicesDropdown, setShowServicesDropdown] = useState(false);
   const [showHireDropdown, setShowHireDropdown] = useState(false);
+  const [drawerOpen, setDrawerOpen] = useState(false);
   const handleTechClick = () => {
     setShowTechDropdown((prev) => !prev);
     setShowServicesDropdown(false);
@@ -31,6 +33,8 @@ export default function Header() {
   // Optional: close dropdown when clicking outside
   React.useEffect(() => {
     function handleClickOutside(event) {
+      // don't close dropdowns when clicking inside the mobile drawer
+      if (event.target.closest('.mobile-drawer')) return;
       if (!event.target.closest('.nav-dropdown')) {
         setShowTechDropdown(false);
         setShowServicesDropdown(false);
@@ -48,6 +52,24 @@ export default function Header() {
     handleCloseDropdown();
   }
 
+  // Mobile drawer navigation helper: close drawer first then navigate
+  function handleNavigate(path) {
+    // close drawer first to give visual feedback
+    setDrawerOpen(false);
+    // delay navigation slightly to allow the drawer to close visibly
+    setTimeout(() => {
+      navigate(path);
+    }, 140);
+  }
+
+  // Close the mobile drawer and all dropdowns
+  function closeDrawer() {
+    setDrawerOpen(false);
+    setShowServicesDropdown(false);
+    setShowTechDropdown(false);
+    setShowHireDropdown(false);
+  }
+
   return (
     <header className="header" data-aos="fade-down">
       <div className="header-inner">
@@ -60,7 +82,89 @@ export default function Header() {
             </div>
           </Link>
         </div>
+        {/* Mobile drawer (renders for small screens) */}
+        <div className={`mobile-drawer${drawerOpen ? ' open' : ''}`} role="dialog" aria-hidden={!drawerOpen}>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '1px' }}>
+            <div style={{ fontWeight: 700 }}>Menu</div>
+            <button type="button" className="close-drawer" aria-label="Close menu" onClick={closeDrawer}>✕</button>
+          </div>
+          <nav style={{ display: 'flex', flexDirection: 'column', gap: '6px', marginTop: '12px' }}>
+            <NavLink to="/" className="nav-link" onClick={() => setDrawerOpen(false)}>Home</NavLink>
+            <NavLink to="/career" className="nav-link" onClick={() => setDrawerOpen(false)}>Career</NavLink>
+            <NavLink to="/contact" className="nav-link" onClick={() => setDrawerOpen(false)}>Contact</NavLink>
+
+            {/* Services: parent link + expand toggle */}
+            <div className="mobile-section">
+              <div className="mobile-section-header">
+                <button className="nav-link mobile-parent-btn" aria-expanded={showServicesDropdown} onClick={handleServicesClick}>Services</button>
+                <button className="expand-btn" aria-expanded={showServicesDropdown} onClick={handleServicesClick}>▾</button>
+              </div>
+              <div className={`dropdown-content${showServicesDropdown ? ' show' : ''}`} onClick={e => e.stopPropagation()}>
+                <button className="dropdown-item" onClick={() => handleNavigate('/services/mobile-app-development')}>Mobile App Development</button>
+                <button className="dropdown-item" onClick={() => handleNavigate('/services/custom-software-development')}>Custom Software Development</button>
+                <button className="dropdown-item" onClick={() => handleNavigate('/services/web-development')}>Web Development</button>
+                <button className="dropdown-item" onClick={() => handleNavigate('/services/software-product-development')}>Software Product Development</button>
+                <button className="dropdown-item" onClick={() => handleNavigate('/services/erp-software-development')}>ERP Software Development</button>
+                <button className="dropdown-item" onClick={() => handleNavigate('/services/uiux-design')}>UI/UX Design</button>
+                <button className="dropdown-item" onClick={() => handleNavigate('/services/software-maintenance-support')}>Software Maintenance & Support Services    </button>
+              </div>
+            </div>
+
+            {/* Technologies: parent link + expand toggle */}
+            <div className="mobile-section">
+              <div className="mobile-section-header">
+                <button className="nav-link mobile-parent-btn" aria-expanded={showTechDropdown} onClick={handleTechClick}>Technologies</button>
+                <button className="expand-btn" aria-expanded={showTechDropdown} onClick={handleTechClick}>▾</button>
+              </div>
+              <div className={`dropdown-content${showTechDropdown ? ' show' : ''}`} onClick={e => e.stopPropagation()}>
+                <button className="dropdown-item" onClick={() => handleNavigate('/technologies/reactjs')}>ReactJS</button>
+                <button className="dropdown-item" onClick={() => handleNavigate('/technologies/angularjs')}>AngularJS</button>
+                <button className="dropdown-item" onClick={() => handleNavigate('/technologies/vuejs')}>VueJS</button>
+                <button className="dropdown-item" onClick={() => handleNavigate('/technologies/nodejs')}>NodeJS</button>
+                <button className="dropdown-item" onClick={() => handleNavigate('/technologies/php')}>PHP</button>
+                <button className="dropdown-item" onClick={() => handleNavigate('/technologies/android')}>Android</button>
+                <button className="dropdown-item" onClick={() => handleNavigate('/technologies/ios')}>iOS</button>
+                <button className="dropdown-item" onClick={() => handleNavigate('/technologies/flutter')}>Flutter</button>
+                <button className="dropdown-item" onClick={() => handleNavigate('/technologies/knockoutjs')}>Knockout.js</button>
+                <button className="dropdown-item" onClick={() => handleNavigate('/technologies/aspnet')}>Asp.Net</button>
+                <button className="dropdown-item" onClick={() => handleNavigate('/technologies/aspnetcore')}>Asp.Net Core</button>
+                <button className="dropdown-item" onClick={() => handleNavigate('/technologies/csharp')}>C#</button>
+                <button className="dropdown-item" onClick={() => handleNavigate('/technologies/mongodb')}>MongoDB</button>
+                <button className="dropdown-item" onClick={() => handleNavigate('/technologies/mssqlserver')}>MSSQL Server</button>
+                <button className="dropdown-item" onClick={() => handleNavigate('/technologies/nextjs')}>Next.js</button>
+                <button className="dropdown-item" onClick={() => handleNavigate('/technologies/ondemandappsolutions')}>On Demand App Solutions</button>
+                <button className="dropdown-item" onClick={() => handleNavigate('/technologies/vbnet')}>VB.Net</button>
+                <button className="dropdown-item" onClick={() => handleNavigate('/technologies/react-native')}>React Native
+</button>
+              </div>
+            </div>
+
+            {/* Hire Developer: parent link + expand toggle */}
+            <div className="mobile-section">
+              <div className="mobile-section-header">
+                <button className="nav-link mobile-parent-btn" aria-expanded={showHireDropdown} onClick={handleHireClick}>Hire Developer</button>
+                <button className="expand-btn" aria-expanded={showHireDropdown} onClick={handleHireClick}>▾</button>
+              </div>
+              <div className={`dropdown-content${showHireDropdown ? ' show' : ''}`} onClick={e => e.stopPropagation()}>
+                <button className="dropdown-item" onClick={() => handleNavigate('/hire/mobile-app-developers')}>Mobile App Developers</button>
+                <button className="dropdown-item" onClick={() => handleNavigate('/hire/flutter-developers')}>Flutter Developers</button>
+                <button className="dropdown-item" onClick={() => handleNavigate('/hire/react-native-developers')}>React Native Developers</button>
+                <button className="dropdown-item" onClick={() => handleNavigate('/hire/ios-developers')}>iOS Developers</button>
+                <button className="dropdown-item" onClick={() => handleNavigate('/hire/android-developers')}>Android Developers</button>
+                <button className="dropdown-item" onClick={() => handleNavigate('/hire/web-developers')}>Web Developers</button>
+                <button className="dropdown-item" onClick={() => handleNavigate('/hire/reactjs-developers')}>ReactJS Developers</button>
+                <button className="dropdown-item" onClick={() => handleNavigate('/hire/nodejs-developers')}>NodeJS Developers</button>
+                <button className="dropdown-item" onClick={() => handleNavigate('/hire/angularjs-developers')}>Angular JS Developers</button>
+                <button className="dropdown-item" onClick={() => handleNavigate('/hire/php-developers')}>PHP Developers</button>
+              </div>
+            </div>
+          </nav>
+        </div>
         <div className="header-right">
+          {/* hamburger for mobile */}
+          <button aria-label="Open menu" className="hamburger" onClick={() => setDrawerOpen(true)}>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3 6h18M3 12h18M3 18h18" stroke="#222" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"/></svg>
+          </button>
           <nav className="nav">
             <div className="nav-btn nav-dropdown" tabIndex={0} onClick={handleServicesClick}>
               Services

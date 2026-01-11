@@ -1,11 +1,9 @@
-// ...existing code...
-import React, { useState } from 'react';
-import '../../styles/services/service-web.css';
+import React, { useRef } from 'react';
+import { motion, useScroll, useTransform, useInView } from 'framer-motion';
 import LazyLottie from '../../components/LazyLottie';
+import '../../styles/services/service-erp.css';
+import { useNavigate } from 'react-router-dom';
 import {
-  FaClock,
-  FaLifeRing,
-  FaCheckCircle,
   FaGlobe,
   FaLaptopCode,
   FaSearch,
@@ -14,139 +12,295 @@ import {
   FaCloud,
   FaShieldAlt,
   FaUsers,
-  FaChevronDown,
-  FaChevronUp,
-  FaQuestionCircle,
-  FaShoppingCart,
-  FaBook,
-  FaDraftingCompass
+  FaCode,
+  FaCogs,
+  FaDraftingCompass,
+  FaChartLine,
+  FaTools
 } from 'react-icons/fa';
 
-function FAQItem({ item }) {
-  const [open, setOpen] = useState(false);
+// Service Card Component
+const ServiceCard = ({ icon, title, description, color, delay }) => {
   return (
-    <div className={`super-faq-item${open ? ' open' : ''}`} style={{marginBottom:'16px', borderRadius:'16px', boxShadow:'0 2px 12px rgba(30,60,114,0.08)', background:'#fff', padding:'20px 24px', transition:'box-shadow 0.2s'}}>
-      <div className="super-faq-question" onClick={() => setOpen(!open)} style={{cursor:'pointer', display:'flex', alignItems:'center', gap:'16px', fontWeight:'600', fontSize:'1.1rem', color:'#1e3c72'}}>
-        <span style={{fontSize:'1.5rem'}}>{item.icon}</span>
-        <span>{item.q}</span>
-        {open ? <FaChevronUp style={{marginLeft:'auto', color:'#2a5298'}}/> : <FaChevronDown style={{marginLeft:'auto', color:'#2a5298'}}/>}
+    <motion.div 
+      className="service-card"
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5, delay }}
+      viewport={{ once: true }}
+      whileHover={{ 
+        y: -5,
+        transition: { duration: 0.2 }
+      }}
+    >
+      <div className="service-icon" style={{ color }}>
+        {icon}
       </div>
-      {open && <div className="super-faq-answer" style={{marginTop:'12px', color:'#333', fontSize:'1rem', lineHeight:'1.7'}}><p>{item.a}</p></div>}
-    </div>
+      <h3 className="service-title">{title}</h3>
+      <p className="service-description">{description}</p>
+    </motion.div>
   );
-}
+};
 
 export default function WebDevelopment() {
+  const navigate = useNavigate();
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true });
+  
+  const { scrollY } = useScroll();
+  const heroOpacity = useTransform(scrollY, [0, 300], [1, 0]);
+  const heroScale = useTransform(scrollY, [0, 300], [1, 0.8]);
+
+  const handleStartProject = () => {
+    navigate('/contact');
+  };
+
   return (
-    <>
+    <div className="erp-development-page">
       {/* Hero Section */}
-      <div className="super-hero-flex" style={{ display: "flex", alignItems: "center", justifyContent: "space-between", gap: "32px", margin: "32px 0", background: "linear-gradient(90deg, #1e3c72 0%, #2a5298 100%)", borderRadius: "32px", boxShadow: "0 4px 24px rgba(0,0,0,0.06)" }}>
-        <div style={{ flex: 1 }}>
-          <h1 className="super-title"><FaGlobe className="super-icon" /> Web Development</h1>
-          <p className="super-desc">Leave no space for ordinary websites; create exceptional web applications for your business. We design and build high-performance, secure web applications that scale with your customers and goals.<br /><br />
-We focus on fast load times, accessibility, and maintainable architectures so your product performs in both mobile and desktop contexts.</p>
+      <motion.div 
+        className="hero-section"
+        style={{ 
+          opacity: heroOpacity,
+          scale: heroScale
+        }}
+      >
+        <div className="hero-content">
+          <motion.h1 
+            className="hero-title"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+          >
+            <FaGlobe className="icon" /> Web Development
+          </motion.h1>
+          <motion.p 
+            className="hero-description"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+          >
+            Leave no space for ordinary websites; create exceptional web applications for your business. We design and build high-performance, secure web applications that scale with your customers and goals.
+          </motion.p>
+          <motion.button
+            className="cta-button"
+            onClick={handleStartProject}
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.4 }}
+          >
+            Start Your Project
+          </motion.button>
         </div>
-        <div className="lottie-container" style={{ display: "flex", justifyContent: "center", alignItems: "center", background: "linear-gradient(90deg, #1e3c72 0%, #2a5298 100%)", borderRadius: "24px", boxShadow: "0 4px 24px rgba(0,0,0,0.08)", padding: "24px" }}>
-          <div>
-            <LazyLottie animationUrl={'/animations/Web Development Animation.json'} loop={true} style={{ width: "100%", height: "320px" }} />
-          </div>
+        <motion.div 
+          className="hero-animation"
+          initial={{ opacity: 0, scale: 0.8 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.8 }}
+        >
+          <LazyLottie 
+            animationUrl="/animations/Web Development Animation.json" 
+            loop={true}
+          />
+        </motion.div>
+      </motion.div>
+
+      {/* Services Section */}
+      <section className="services-section" ref={ref}>
+        <motion.h2 
+          className="section-title"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+        >
+          Our Web Development Services
+        </motion.h2>
+        <div className="services-grid">
+          <ServiceCard
+            icon={<FaLaptopCode />}
+            title="Full-Stack Web Development"
+            description="End-to-end development using modern technologies and best practices. We build scalable, secure, and maintainable web applications for your business."
+            color="#4F46E5"
+            delay={0.1}
+          />
+          <ServiceCard
+            icon={<FaSearch />}
+            title="SEO Optimization"
+            description="Build web applications that rank high in search engines. We optimize performance, structure, and content for maximum visibility."
+            color="#06B6D4"
+            delay={0.2}
+          />
+          <ServiceCard
+            icon={<FaRocket />}
+            title="Progressive Web Apps"
+            description="Create modern PWAs that work offline and provide app-like experiences. Fast, reliable, and engaging applications that users love."
+            color="#8B5CF6"
+            delay={0.3}
+          />
+          <ServiceCard
+            icon={<FaMobileAlt />}
+            title="Responsive & Mobile-First"
+            description="Build web applications that look and function perfectly on all devices. Mobile-first approach ensures excellent experience everywhere."
+            color="#10B981"
+            delay={0.4}
+          />
         </div>
-      </div>
-      <div className="service-web-super">
-        {/* Services Section */}
-        <section className="super-services-section">
-          <h2 className="super-section-title">Our Web Development Services</h2>
-          <div className="super-cards">
-            <div className="super-card"><h3 className="super-card-title"><FaMobileAlt /> Responsive Website Design</h3><p className="super-card-desc">We create visually stunning, mobile-friendly websites that adapt seamlessly to all devices and screen sizes.<br /><br />
-Our designs prioritize accessibility, fast load times, and intuitive navigation, ensuring every visitor enjoys a flawless experience. We use the latest CSS and JavaScript frameworks to deliver pixel-perfect layouts and interactive features.</p></div>
-            <div className="super-card"><h3 className="super-card-title"><FaCloud /> Web Application Development</h3><p className="super-card-desc">Custom web apps built for scalability, performance, and security, using the latest technologies and frameworks.<br /><br />
-We architect solutions for growth, integrating cloud services, APIs, and databases to support your evolving business needs. Our team ensures your app is robust, maintainable, and ready for future enhancements.</p></div>
-            <div className="super-card"><h3 className="super-card-title"><FaSearch /> SEO Optimization</h3><p className="super-card-desc">Boost your online visibility and rankings with advanced SEO strategies and technical optimization.<br /><br />
-We optimize site structure, content, and metadata to improve search engine performance. Our approach includes keyword research, analytics, and ongoing monitoring to keep your site ahead of the competition.</p></div>
-            <div className="super-card"><h3 className="super-card-title"><FaShieldAlt /> Security & Compliance</h3><p className="super-card-desc">We implement robust security protocols and ensure compliance with industry standards to protect your data and users.<br /><br />
-Our solutions include SSL encryption, secure authentication, and regular vulnerability assessments. We help you meet GDPR, PCI, and other regulatory requirements for peace of mind.</p></div>
-          </div>
-        </section>
-        {/* Industries Section */}
-        <section className="super-industries-section">
-          <h2 className="super-section-title">Industries We Serve</h2>
-          <div className="super-cards">
-            <div className="super-card"><h3 className="super-card-title"><FaUsers style={{color:'#2a5298'}}/> Corporate & Enterprise</h3><p className="super-card-desc">Enterprise-grade web solutions for internal portals, business automation, and digital transformation.<br /><br />
-We streamline workflows, improve collaboration, and enable data-driven decision making with custom enterprise platforms.</p></div>
-            <div className="super-card"><h3 className="super-card-title"><FaShoppingCart style={{color:'#e63946'}}/> eCommerce</h3><p className="super-card-desc">Custom online stores, product catalogs, and secure payment integrations for retail businesses.<br /><br />
-Our eCommerce solutions support inventory management, customer engagement, and marketing automation for growth.</p></div>
-            <div className="super-card"><h3 className="super-card-title"><FaRocket style={{color:'#457b9d'}}/> Startups</h3><p className="super-card-desc">Agile web development for MVPs, landing pages, and scalable platforms to launch your ideas fast.<br /><br />
-We help startups validate concepts, attract users, and scale quickly with flexible, cost-effective solutions.</p></div>
-            <div className="super-card"><h3 className="super-card-title"><FaBook style={{color:'#f4a261'}}/> Education</h3><p className="super-card-desc">E-learning platforms, school websites, and online course management systems for educators.<br /><br />
-Our platforms enable online courses, assessments, and collaboration tools for modern learning experiences.</p></div>
-          </div>
-        </section>
-        {/* Benefits Section */}
-        <section className="super-benefits-section">
-          <h2 className="super-section-title">Why Choose Us?</h2>
-          <div className="super-cards">
-            <div className="super-card"><h3 className="super-card-title">Cutting-Edge Technology</h3><p className="super-card-desc">We use the latest frameworks and tools to deliver modern, future-proof web solutions.<br /><br />
-Our developers stay ahead of trends, adopting new technologies to keep your site competitive and secure.</p></div>
-            <div className="super-card"><h3 className="super-card-title">Performance & Scalability</h3><p className="super-card-desc">Our web apps are optimized for speed, reliability, and growth as your business expands.<br /><br />
-We monitor performance, optimize code, and design scalable architectures to support your future needs.</p></div>
-            <div className="super-card"><h3 className="super-card-title">User-Centric Design</h3><p className="super-card-desc">We focus on intuitive navigation and engaging interfaces to maximize user satisfaction.<br /><br />
-Our design process includes user research, usability testing, and feedback-driven improvements.</p></div>
-            <div className="super-card"><h3 className="super-card-title">End-to-End Support</h3><p className="super-card-desc">From planning to launch and beyond, we provide ongoing support and maintenance.<br /><br />
-Our team is available for updates, troubleshooting, and enhancements as your business evolves.</p></div>
-          </div>
-        </section>
-        {/* Process Section */}
-        <section className="super-process-section">
-          <h2 className="super-section-title">Our Web Development Process</h2>
-          <div className="super-cards">
-            <div className="super-card"><h3 className="super-card-title"><FaSearch style={{color:'#2a5298'}}/> Discovery & Planning</h3><p className="super-card-desc">We analyze your requirements, research competitors, and define project goals for a clear roadmap.<br /><br />
-This phase ensures we understand your business, audience, and objectives before starting design or development.</p></div>
-            <div className="super-card"><h3 className="super-card-title"><FaDraftingCompass style={{color:'#e63946'}}/> Design & Prototyping</h3><p className="super-card-desc">Wireframes and prototypes help visualize the user journey and get your feedback before development.<br /><br />
-We iterate on designs, gather feedback, and refine user flows to create a blueprint for your site.</p></div>
-            <div className="super-card"><h3 className="super-card-title"><FaLaptopCode style={{color:'#457b9d'}}/> Development</h3><p className="super-card-desc">Our developers build robust, scalable web solutions using best practices and modern tech stacks.<br /><br />
-We follow agile methodologies, maintain clean code, and ensure every feature meets your requirements.</p></div>
-            <div className="super-card"><h3 className="super-card-title"><FaCheckCircle style={{color:'#f4a261'}}/> Testing & Launch</h3><p className="super-card-desc">Comprehensive QA ensures your site is bug-free, secure, and ready for launch.<br /><br />
-We test across browsers and devices, fix issues, and deploy your site with confidence.</p></div>
-            <div className="super-card"><h3 className="super-card-title"><FaLifeRing style={{color:'#264653'}}/> Maintenance & Support</h3><p className="super-card-desc">We provide updates, performance monitoring, and ongoing support to keep your site running smoothly.<br /><br />
-Our support team is available for troubleshooting, enhancements, and proactive maintenance.</p></div>
-          </div>
-        </section>
-        {/* FAQs Section */}
-        <section className="super-faq-section">
-          <h2 className="super-section-title">Frequently Asked Questions</h2>
-          <div className="super-faq-list">
-            {[
-              {
-                q: "How long does it take to build a website?",
-                a: "Project timelines vary based on complexity and requirements. Most websites are delivered within 4-8 weeks.",
-                icon: <FaClock style={{color:'#2a5298'}}/>
-              },
-              {
-                q: "Can you redesign my existing website?",
-                a: "Absolutely! We specialize in modernizing outdated sites and improving user experience.",
-                icon: <FaRocket style={{color:'#e63946'}}/>
-              },
-              {
-                q: "Do you offer SEO services?",
-                a: "Yes, we provide comprehensive SEO optimization to boost your site's visibility and ranking.",
-                icon: <FaSearch style={{color:'#457b9d'}}/>
-              },
-              {
-                q: "Will my website be mobile-friendly?",
-                a: "All our websites are fully responsive and optimized for mobile devices.",
-                icon: <FaMobileAlt style={{color:'#f4a261'}}/>
-              },
-              {
-                q: "Do you provide ongoing support?",
-                a: "We offer maintenance packages and support to keep your website secure and up-to-date.",
-                icon: <FaLifeRing style={{color:'#264653'}}/>
-              }
-            ].map((item, idx) => (
-              <FAQItem key={idx} item={item} />
-            ))}
-          </div>
-        </section>
-      </div>
-    </>
+      </section>
+
+      {/* Industries Section */}
+      <section className="industries-section">
+        <motion.h2 
+          className="section-title"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+        >
+          Industries We Serve
+        </motion.h2>
+        <div className="industries-grid">
+          <ServiceCard
+            icon={<FaGlobe />}
+            title="E-Commerce & Retail"
+            description="Beautiful, high-converting web applications for online stores. We build e-commerce platforms that increase sales and customer satisfaction."
+            color="#4F46E5"
+            delay={0.1}
+          />
+          <ServiceCard
+            icon={<FaCloud />}
+            title="SaaS & Cloud Applications"
+            description="Robust, scalable web applications for Software-as-a-Service platforms. We handle millions of users with performance and reliability."
+            color="#06B6D4"
+            delay={0.2}
+          />
+          <ServiceCard
+            icon={<FaShieldAlt />}
+            title="Enterprise & Financial"
+            description="Secure, compliant web applications for enterprises and financial institutions. We prioritize data security and regulatory compliance."
+            color="#8B5CF6"
+            delay={0.3}
+          />
+          <ServiceCard
+            icon={<FaUsers />}
+            title="Media & Publishing"
+            description="Dynamic web platforms for content management and distribution. We build engaging experiences that attract and retain audiences."
+            color="#10B981"
+            delay={0.4}
+          />
+        </div>
+      </section>
+
+      {/* Benefits Section */}
+      <section className="benefits-section">
+        <motion.h2 
+          className="section-title"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+        >
+          Why Choose Us?
+        </motion.h2>
+        <div className="benefits-grid">
+          <ServiceCard
+            icon={<FaRocket />}
+            title="Performance & Speed"
+            description="Lightning-fast web applications optimized for speed and user experience. We minimize load times and maximize engagement."
+            color="#4F46E5"
+            delay={0.1}
+          />
+          <ServiceCard
+            icon={<FaShieldAlt />}
+            title="Security First"
+            description="Enterprise-grade security with best practices and compliance. We protect your data, users, and business reputation."
+            color="#06B6D4"
+            delay={0.2}
+          />
+          <ServiceCard
+            icon={<FaCogs />}
+            title="Scalability & Flexibility"
+            description="Build once, scale infinitely. Our architecture grows with your business needs and user base."
+            color="#8B5CF6"
+            delay={0.3}
+          />
+          <ServiceCard
+            icon={<FaChartLine />}
+            title="Analytics & Insights"
+            description="Integrated analytics and reporting to track performance and user behavior. Make data-driven decisions to grow your business."
+            color="#10B981"
+            delay={0.4}
+          />
+        </div>
+      </section>
+
+      {/* Process Section */}
+      <section className="process-section">
+        <motion.h2 
+          className="section-title"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+        >
+          Our Web Development Process
+        </motion.h2>
+        <div className="process-grid">
+          <ServiceCard
+            icon={<FaDraftingCompass />}
+            title="Discovery & Planning"
+            description="Understand your vision, goals, and target audience. We create a detailed roadmap for successful web development."
+            color="#4F46E5"
+            delay={0.1}
+          />
+          <ServiceCard
+            icon={<FaCode />}
+            title="Design & Prototyping"
+            description="Create beautiful, user-centered designs. We prototype and validate concepts before development."
+            color="#06B6D4"
+            delay={0.2}
+          />
+          <ServiceCard
+            icon={<FaTools />}
+            title="Development & Testing"
+            description="Agile development with continuous testing and quality assurance. We build clean, maintainable, and secure code."
+            color="#8B5CF6"
+            delay={0.3}
+          />
+          <ServiceCard
+            icon={<FaRocket />}
+            title="Deployment & Launch"
+            description="Deploy to production with zero downtime. We ensure smooth launches and immediate user feedback."
+            color="#10B981"
+            delay={0.4}
+          />
+          <ServiceCard
+            icon={<FaCogs />}
+            title="Support & Optimization"
+            description="Continuous monitoring, updates, and optimization post-launch. We help your web app succeed long-term."
+            color="#4F46E5"
+            delay={0.5}
+          />
+        </div>
+      </section>
+
+      {/* Contact Section */}
+      <motion.section 
+        className="contact-section"
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5 }}
+        viewport={{ once: true }}
+      >
+        <h2 className="section-title">Build Your Exceptional Web Application</h2>
+        <p className="section-description">Let's create a web solution that drives your business forward.</p>
+        <motion.button
+          className="cta-button"
+          onClick={handleStartProject}
+          whileHover={{ scale: 1.05 }}
+          whileTap={{ scale: 0.95 }}
+        >
+          Start Your Project
+        </motion.button>
+      </motion.section>
+    </div>
   );
 }

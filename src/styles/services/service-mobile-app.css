@@ -1,12 +1,267 @@
-.service-mobile-app { background: #f8fafc; padding: 2rem; border-radius: 12px; }
-.service-mobile-app h1 { color: #1e293b; }
-.service-mobile-app ul { margin-top: 1rem; }
-.service-mobile-app li { color: #334155; margin-bottom: 0.5rem; }
+/* Mobile App Development Styles */
 
-/* Shared hero responsive enhancements */
-.super-hero-flex { gap: 32px; }
-.super-hero-flex .lottie-container { flex: 0 0 320px; max-width: 320px; width: 100%; }
+/* Hero Section */
+.mobile-app-container {
+  max-width: 1440px;
+  margin: 0 auto;	
+}
+
+.hero-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 30vh;
+  padding:0 0  0 4rem ;
+  position: relative;
+}
+
+.hero-content {
+  flex: 1;
+}
+
+.hero-title {
+  font-size: 3.5rem;
+  font-weight: 700;
+  color: #121212ff;
+  display: flex;
+  align-items: center;
+}
+
+.hero-icon {
+  color: #3B82F6;
+  font-size: 2.5rem;
+}
+
+.hero-description {
+  font-size: 1.25rem;
+  color: #4A5568;
+  line-height: 1.8;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 1rem;
+}
+
+.primary-btn, .secondary-btn {
+  padding: 1rem 2rem;
+  border-radius: 8px;
+  font-weight: 600;
+  transition: transform 0.2s ease;
+  cursor: pointer;
+}
+
+.primary-btn {
+  background: #3B82F6;
+  color: white;
+  border: none;
+}
+
+.secondary-btn {
+  background: transparent;
+  color: #3B82F6;
+  border: 2px solid #3B82F6;
+}
+
+.primary-btn:hover, .secondary-btn:hover {
+  transform: translateY(-2px);
+}
+
+.hero-animation {
+  flex: 1;
+  max-width: 600px;
+}
+
+/* Services Section */
+.services-section {
+  padding: 6rem 0;
+}
+
+.section-title {
+  font-size: 2.5rem;
+  color: #1a202c;
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  padding: 2rem 0;
+}
+
+.service-card {
+  background: white;
+  padding: 2rem;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+}
+
+.service-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+}
+
+.service-icon {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+.service-title {
+  font-size: 1.5rem;
+  color: #2D3748;
+  margin-bottom: 1rem;
+}
+
+.service-description {
+  color: #4A5568;
+  line-height: 1.6;
+}
+
+/* Industries Section */
+.super-industries-section {
+  padding: 6rem 0;
+  background: #F7FAFC;
+}
+
+.super-section-title {
+  font-size: 2.5rem;
+  text-align: center;
+  color: #1a202c;
+  margin-bottom: 3rem;
+}
+
+.super-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  padding: 2rem;
+}
+
+.super-card {
+  background: white;
+  padding: 2rem;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+}
+
+.super-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+}
+
+.super-card-title {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 1.5rem;
+  color: #2D3748;
+  margin-bottom: 1rem;
+}
+
+.super-card-desc {
+  color: #4A5568;
+  line-height: 1.6;
+}
+
+/* FAQ Section */
+.super-faq-section {
+  padding: 6rem 0;
+}
+
+.super-faq-list {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.faq-item {
+  margin-bottom: 1rem;
+  border-radius: 12px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.faq-question {
+  padding: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  cursor: pointer;
+  background: white;
+}
+
+.faq-icon {
+  flex-shrink: 0;
+  font-size: 1.25rem;
+}
+
+.faq-text {
+  flex-grow: 1;
+  font-weight: 500;
+  color: #2D3748;
+}
+
+.faq-answer {
+  padding: 0 1.5rem 1.5rem;
+  color: #4A5568;
+  line-height: 1.6;
+}
+
+/* Process Section */
+.super-process-section {
+  padding: 6rem 0;
+  background: #F7FAFC;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .hero-section {
+    flex-direction: column;
+    text-align: center;
+    padding: 2rem 0;
+  }
+
+  .hero-title {
+    justify-content: center;
+  }
+
+  .hero-buttons {
+    justify-content: center;
+  }
+
+  .hero-animation {
+    max-width: 400px;
+    margin: 0 auto;
+  }
+}
+
 @media (max-width: 768px) {
-	.super-hero-flex { flex-direction: column; text-align: center; }
-	.super-hero-flex .lottie-container > div { height: 260px; }
+  .mobile-app-container {
+    padding: 1rem;
+  }
+
+  .hero-title {
+    font-size: 2.5rem;
+  }
+
+  .hero-description {
+    font-size: 1.1rem;
+  }
+
+  .services-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .super-cards {
+    grid-template-columns: 1fr;
+    padding: 1rem;
+  }
+
+  .section-title,
+  .super-section-title {
+    font-size: 2rem;
+  }
 }

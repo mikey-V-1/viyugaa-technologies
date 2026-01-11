@@ -3,6 +3,7 @@ import { createRoot } from 'react-dom/client'
 import App from './App'
 import AOS from 'aos'
 import 'aos/dist/aos.css'
+import './styles/loader.css'
 
 AOS.init({ duration: 700, easing: 'ease-out-quart', once: true })
 

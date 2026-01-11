@@ -10,12 +10,15 @@
   }
   .career-modern-cards {
     gap: 0.7rem;
-    max-width: 100vw;
+    max-width: 100%;
     margin: 24px auto 0 auto;
+    padding: 0 12px;
   }
   .career-modern-card {
-    width: 95vw;
+    width: 95%;
     padding: 1.2rem 0.5rem;
+    max-width: 520px;
+    box-sizing: border-box;
   }
   .career-modern-card img {
     width: 40px;
@@ -33,12 +36,14 @@
   }
   .career-modern-culture {
     gap: 0.7rem;
-    max-width: 100vw;
+    max-width: 100%;
     margin: 24px auto 0 auto;
+    padding: 0 12px;
   }
   .career-modern-culture-img {
-    width: 95vw;
+    width: 95%;
     height: 120px;
+    max-width: 420px;
   }
   .career-modern-culture-desc {
     padding: 1rem 0.5rem;

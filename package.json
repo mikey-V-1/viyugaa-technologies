@@ -4,16 +4,16 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-  "dev": "vite",
-  "prebuild": "node ./scripts/copy-animations.cjs",
-  "build": "vite build",
+    "dev": "vite",
+    "prebuild": "node ./scripts/copy-animations.cjs",
+    "build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview"
   },
   "dependencies": {
+    "@emailjs/browser": "^4.4.1",
     "@lottiefiles/react-lottie-player": "^3.6.0",
     "aos": "^2.3.4",
-    "framer-motion": "^12.23.12",
     "lottie-react": "^2.4.1",
     "react": "^19.1.1",
     "react-dom": "^19.1.1",
@@ -22,13 +22,26 @@
   },
   "devDependencies": {
     "@eslint/js": "^9.32.0",
-    "@types/react": "^19.1.9",
+    "@splinetool/react-spline": "^4.1.0",
+    "@splinetool/runtime": "^1.10.91",
+    "@types/node": "^24.10.0",
+    "@types/react": "^19.2.2",
     "@types/react-dom": "^19.1.7",
     "@vitejs/plugin-react-swc": "^3.11.0",
+    "autoprefixer": "^10.4.14",
+    "clsx": "^2.1.1",
     "eslint": "^9.32.0",
     "eslint-plugin-react-hooks": "^5.2.0",
     "eslint-plugin-react-refresh": "^0.4.20",
+    "framer-motion": "^12.23.24",
     "globals": "^16.3.0",
+    "lucide-react": "^0.552.0",
+    "postcss": "^8.4.31",
+    "postcss-import": "^16.1.1",
+    "postcss-nesting": "^13.0.2",
+    "tailwind-merge": "^3.3.1",
+    "tailwindcss": "^3.3.0",
+    "typescript": "^5.9.3",
     "vite": "^7.1.0"
   }
 }

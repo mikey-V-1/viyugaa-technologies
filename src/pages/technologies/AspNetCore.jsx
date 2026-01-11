@@ -52,14 +52,7 @@ export default function AspNetCore() {
     <div className="aspnetcore-modern-page">
       {/* Hero Section */}
       <section className="aspnetcore-hero">
-        <motion.div
-          className="aspnetcore-hero-logo"
-          initial={{ opacity: 0, scale: 0.8 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 1 }}
-        >
-          <img src="/tech/aspnetcore.png" alt="ASP.NET Core" className="aspnetcore-hero-image" />
-        </motion.div>
+        
         <motion.h1
           className="aspnetcore-hero-title"
           initial={{ opacity: 0, y: -50 }}

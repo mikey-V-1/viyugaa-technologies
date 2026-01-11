@@ -25,14 +25,7 @@ export default function KnockoutJS() {
     <div className="knockoutjs-modern-page">
       {/* Hero Section */}
       <section className="knockoutjs-hero">
-        <motion.div
-          className="knockoutjs-hero-logo"
-          initial={{ opacity: 0, scale: 0.8 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 1 }}
-        >
-          <img src="/tech/knockoutjs.png" alt="Knockout.js" className="knockoutjs-hero-image" />
-        </motion.div>
+        
         <motion.h1
           className="knockoutjs-hero-title"
           initial={{ opacity: 0, y: -50 }}

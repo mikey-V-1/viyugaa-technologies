@@ -1,231 +1,206 @@
-/* Super Styled ReactJS Hire Page */
-.super-desc{
-	color:#fff;
+
+
+/* ReactJS page - merged/adapted styles from mobile hire page */
+.hire-reactjs {
+  --accent-color: #61DAFB;
+  --accent-light: #E6FDFF;
+  --text-primary: #0f172a;
+  --text-secondary: #334155;
+  background: #f3fbff;
+  padding: 2.25rem 1.25rem;
+  min-height: 100vh;
 }
 
-.hire-reactjs-super {
-	font-family: 'Segoe UI', 'Roboto', Arial, sans-serif;
-	min-height: 100vh;
-	color: #fff;
+.hire-reactjs .hire-hero {
+  background: linear-gradient(120deg, var(--accent-light) 0%, #fff 100%);
+  border-radius: 14px;
+  padding: 2.25rem 1.25rem;
+  margin-bottom: 2.25rem;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 1rem;
+  align-items: center;
 }
 
-.super-hero-section {
-	background: linear-gradient(90deg, #1e3c72 0%, #2a5298 100%);
-	padding: 4rem 2rem 2rem 2rem;
-	text-align: center;
-	box-shadow: 0 8px 32px rgba(30,60,114,0.2);
-	border-radius: 0 0 2rem 2rem;
-}
-.super-logo {
-	width: 120px;
-	height: 120px;
-	border-radius: 50%;
-	box-shadow: 0 4px 24px #61dafb99;
-	margin-bottom: 1.5rem;
-}
-.super-title {
-	font-size: 3rem;
-	font-weight: 800;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	gap: 1rem;
-	color: #61dafb;
-	text-shadow: 0 2px 8px #222;
-}
-.super-icon {
-	font-size: 3.5rem;
-	color: #61dafb;
-	filter: drop-shadow(0 0 8px #61dafb99);
-}
-.super-desc {
-	font-size: 1.25rem;
-	margin: 1.5rem auto 0 auto;
-	max-width: 700px;
-	color: #fff;
-	padding: 1.2rem 1.5rem;
-	border-radius: 10px;
-	text-shadow: none;
+.hire-reactjs .hire-hero-text {
+  text-align: center;
+  max-width: 920px;
+  margin: 0 auto;
+  padding: 0 1rem;
+  justify-self: center;
 }
 
-.super-section-title {
-	font-size: 2.2rem;
-	font-weight: 700;
-	margin-bottom: 2rem;
-	color: #61dafb;
-	text-align: center;
-		text-shadow: none;
-}
-.super-cards {
-	display: flex;
-	flex-wrap: wrap;
-	gap: 2rem;
-	justify-content: center;
-}
-.super-card {
-	background: linear-gradient(135deg, #232526 0%, #414345 100%);
-	color: #fff;
-	border-radius: 1.5rem;
-	box-shadow: 0 4px 24px #2228;
-	padding: 2rem 1.5rem;
-	min-width: 280px;
-	max-width: 370px;
-	margin-bottom: 2rem;
-	transition: transform 0.2s, box-shadow 0.2s;
-}
-.super-card:hover {
-	transform: translateY(-8px) scale(1.03);
-	box-shadow: 0 8px 32px #61dafb44;
-}
-.super-card-title {
-	font-size: 1.3rem;
-	font-weight: 600;
-	margin-bottom: 1rem;
-	display: flex;
-		text-shadow: none;
-	gap: 0.5rem;
-	color: #61dafb;
-}
-.super-card-desc {
-	font-size: 1rem;
-	color: #e0e7ef;
+.hire-reactjs h1,
+.hire-reactjs .dev-title {
+  color: var(--accent-color);
+  font-size: 2.2rem;
+  font-weight: 800;
+  margin-bottom: 0.6rem;
+.hire-reactjs h1,
+.hire-reactjs .dev-title {
+  color: var(--accent-color);
+  font-size: 2.2rem;
+  font-weight: 800;
+  margin-bottom: 0.6rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
 }
 
-.super-candidate-reqs {
-	background: linear-gradient(90deg, #232526 0%, #414345 100%);
-	padding: 3rem 2rem;
-	border-radius: 2rem;
-	margin: 2rem 0;
-	box-shadow: 0 4px 24px #2228;
-}
-.super-benefits {
-	background: linear-gradient(90deg, #1e3c72 0%, #2a5298 100%);
-	padding: 3rem 2rem;
-	border-radius: 2rem;
-	margin: 2rem 0;
-	box-shadow: 0 4px 24px #2228;
+.hire-reactjs .hire-illustration {
+  width: 420px;
+  max-width: 420px;
+  justify-self: end;
+
+.hire-reactjs .hire-feature-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+  margin: 1rem 0 0;
+  padding: 0;
+  justify-content: center;
+  list-style: none;
 }
 
-.super-hiring-process {
-	background: linear-gradient(135deg, #232526 0%, #414345 100%);
-	padding: 3rem 2rem;
-	border-radius: 2rem;
-	margin: 2rem 0;
-	box-shadow: 0 4px 24px #2228;
-}
-.super-process-steps {
-	display: flex;
-	flex-wrap: wrap;
-	gap: 2rem;
-	justify-content: center;
-}
-.super-process-step {
-	background: #222;
-	color: #fff;
-	border-radius: 1rem;
-	box-shadow: 0 2px 12px #61dafb22;
-	padding: 1.5rem 1rem;
-	min-width: 180px;
-	max-width: 220px;
-	text-align: center;
-	transition: transform 0.2s, box-shadow 0.2s;
-}
-.super-process-step:hover {
-	transform: scale(1.05);
-	box-shadow: 0 8px 32px #61dafb44;
-}
-.super-process-icon {
-	font-size: 2rem;
-	color: #61dafb;
-	margin-bottom: 0.5rem;
-}
-.super-process-desc {
-	font-size: 1rem;
-	color: #e0e7ef;
+.hire-reactjs .hire-feature-list li {
+  background: var(--accent-light);
+  color: var(--accent-color);
+  padding: 0.45rem 0.7rem;
+  border-radius: 999px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  box-shadow: 0 6px 18px rgba(97,218,251,0.04);
 }
 
-.super-resume-section {
-	background: linear-gradient(90deg, #232526 0%, #414345 100%);
-	padding: 3rem 2rem;
-	border-radius: 2rem;
-	margin: 2rem 0;
-	box-shadow: 0 4px 24px #2228;
-}
-.super-resume-form {
-	max-width: 500px;
-	margin: 0 auto;
-	background: #222;
-	padding: 2rem;
-	border-radius: 1.5rem;
-	box-shadow: 0 2px 12px #61dafb22;
-	display: flex;
-	flex-direction: column;
-	gap: 1.2rem;
-}
-.super-form-input, .super-form-textarea {
-	background: #333;
-	color: #fff;
-	border: none;
-	border-radius: 0.7rem;
-	padding: 0.9rem 1rem;
-	font-size: 1rem;
-	box-shadow: 0 1px 6px #61dafb22;
-	outline: none;
-	transition: box-shadow 0.2s;
-}
-.super-form-input:focus, .super-form-textarea:focus {
-	box-shadow: 0 2px 12px #61dafb44;
-}
-.super-btn {
-	background: linear-gradient(90deg, #61dafb 0%, #2a5298 100%);
-	color: #222;
-	font-weight: 700;
-	border: none;
-	border-radius: 2rem;
-	padding: 1rem 2rem;
-	font-size: 1.1rem;
-	box-shadow: 0 4px 24px #61dafb44;
-	cursor: pointer;
-	transition: background 0.2s, box-shadow 0.2s;
-}
-.super-btn:hover {
-	background: linear-gradient(90deg, #2a5298 0%, #61dafb 100%);
-	box-shadow: 0 8px 32px #61dafb88;
+.hire-reactjs .hire-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1rem;
+  margin-top: 1.25rem;
 }
 
-.super-contact-offices {
-	background: linear-gradient(135deg, #232526 0%, #414345 100%);
-	padding: 3rem 2rem;
-	border-radius: 2rem;
-	margin: 2rem 0;
-	box-shadow: 0 4px 24px #2228;
+/* Match Web Developers styling: center section headings and cards */
+.hire-reactjs .hire-section-title { text-align: center; color: var(--accent-color); }
+.hire-reactjs .hire-card { text-align: center; align-items: center; }
+.hire-reactjs .hire-card .dev-title,
+.hire-reactjs .hire-card-title { justify-content: center; }
+.hire-reactjs .hire-process { text-align: center; }
+.hire-reactjs .hire-process-steps { justify-items: center; }
+.hire-reactjs .hire-process-step { justify-content: center; text-align: center; }
+
+.hire-reactjs .hire-card {
+  background: #fff;
+  border: 1px solid rgba(15,23,36,0.06);
+  border-radius: 12px;
+  padding: 1.25rem;
+  transition: transform 200ms ease, box-shadow 200ms ease;
+  box-shadow: 0 6px 18px rgba(97,218,251,0.04);
 }
 
-.super-animation-demo {
-	background: linear-gradient(90deg, #1e3c72 0%, #2a5298 100%);
-	padding: 4rem 2rem;
-	border-radius: 2rem;
-	margin: 2rem 0;
-	box-shadow: 0 4px 24px #2228;
-	text-align: center;
-}
-.super-demo-desc {
-	font-size: 1.2rem;
-	color: #e0e7ef;
-	margin-bottom: 2rem;
+.hire-reactjs .hire-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 24px rgba(97,218,251,0.08);
 }
 
+.hire-reactjs .hire-card .dev-title {
+  color: var(--accent-color);
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.hire-reactjs .hire-card p {
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+/* Process Section */
+.hire-reactjs .hire-process {
+  background: var(--accent-light);
+  padding: 2.5rem 2rem;
+  border-radius: 16px;
+  margin: 2.5rem 0;
+}
+
+.hire-reactjs .hire-process-title {
+  color: var(--text-primary);
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.hire-reactjs .hire-process-steps {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.2rem 1.5rem;
+}
+
+.hire-reactjs .hire-process-step {
+  background: #ffffff;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 2px 4px rgba(97,218,251,0.08);
+  display: flex;
+  gap: 0.8rem;
+  align-items: center;
+}
+
+.hire-reactjs .hire-process-step-icon { color: var(--accent-color); font-size: 1.25rem; }
+
+/* Form Section */
+.hire-reactjs .hire-resume-form {
+  max-width: 640px;
+  margin: 2.5rem auto;
+  background: #ffffff;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(97,218,251,0.08);
+}
+
+.hire-reactjs .hire-resume-form label { color: var(--text-secondary); display: block; margin-bottom: 0.5rem; }
+.hire-reactjs .hire-resume-form input,
+.hire-reactjs .hire-resume-form textarea {
+  width: 100%;
+  padding: 0.8rem;
+  border: 1px solid #e2e8f0;
+  border-radius: 6px;
+  background: #f8fafc;
+  margin-bottom: 1rem;
+}
+
+.hire-reactjs .hire-resume-form input:focus,
+.hire-reactjs .hire-resume-form textarea:focus {
+  outline: none;
+  border-color: var(--accent-color);
+  box-shadow: 0 0 0 4px rgba(97,218,251,0.06);
+}
+
+/* Demo Section */
+.hire-reactjs .hire-animation-demo {
+  background: var(--accent-light);
+  padding: 2.5rem 2rem;
+  border-radius: 16px;
+  margin-top: 2.5rem;
+  text-align: center;
+}
+
+.hire-reactjs .hire-demo-title { color: var(--text-primary); margin-bottom: 1rem; }
+.hire-reactjs .hire-demo-desc { color: var(--text-secondary); max-width: 640px; margin: 0 auto 1.5rem; }
+
+/* Utility / responsive tweaks */
 @media (max-width: 900px) {
-	.super-cards, .super-process-steps {
-		flex-direction: column;
-		gap: 1.5rem;
-	}
-	.super-card, .super-process-step {
-		min-width: 220px;
-		max-width: 100%;
-	}
+  .hire-reactjs .hire-hero { grid-template-columns: 1fr; position: relative; padding-bottom: 3.5rem; }
+  .hire-reactjs .hire-illustration { position: absolute; right: 1rem; bottom: -12px; width: 46%; max-width: 260px; z-index: 2; }
+  .hire-reactjs .hire-hero-text { z-index: 3; text-align: center; }
+  .hire-reactjs .hire-cards { grid-template-columns: 1fr; }
+  .hire-reactjs .hire-process-steps { grid-template-columns: 1fr; }
 }
-.hire-reactjs { background: #e3f2fd; padding: 2rem; border-radius: 12px; }
-.hire-reactjs h1 { color: #61dafb; }
-.hire-reactjs ul { margin-top: 1rem; }
-.hire-reactjs li { color: #1a237e; margin-bottom: 0.5rem; }
+
+@media (max-width: 520px) {
+  .hire-reactjs .hire-cards { grid-template-columns: 1fr; }
+}

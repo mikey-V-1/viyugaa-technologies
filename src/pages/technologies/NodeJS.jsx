@@ -51,14 +51,7 @@ export default function NodeJS() {
     <div className="nodejs-modern-page">
       {/* Hero Section */}
       <section className="nodejs-hero">
-        <motion.div
-          className="nodejs-hero-logo"
-          initial={{ opacity: 0, scale: 0.8 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 1 }}
-        >
-          <img src="/tech/nodejs.png" alt="Node.js" className="nodejs-hero-image" />
-        </motion.div>
+        
         <motion.h1
           className="nodejs-hero-title"
           initial={{ opacity: 0, y: -50 }}

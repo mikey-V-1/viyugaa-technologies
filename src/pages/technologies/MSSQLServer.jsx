@@ -40,14 +40,7 @@ export default function MSSQLServer() {
     <div className="mssqlserver-modern-page">
       {/* Hero Section */}
       <section className="mssqlserver-hero">
-        <motion.div
-          className="mssqlserver-hero-logo"
-          initial={{ opacity: 0, scale: 0.8 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 1 }}
-        >
-          <img src="/tech/mssqlserver.png" alt="MSSQLServer" className="mssqlserver-hero-image" />
-        </motion.div>
+        
         <motion.h1
           className="mssqlserver-hero-title"
           initial={{ opacity: 0, y: -50 }}

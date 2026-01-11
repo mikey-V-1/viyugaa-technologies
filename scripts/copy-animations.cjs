@@ -8,6 +8,7 @@ const files = [
   'softwaremaintance.json',
   'Page Not Found 404.json',
   'mobiledevelopment.json',
+  'customsoftware.json',
   'uiux.json'
 ]
 

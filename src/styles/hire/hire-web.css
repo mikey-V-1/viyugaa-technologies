@@ -1,4 +1,210 @@
-.hire-web { background: #f0f4ff; padding: 2rem; border-radius: 12px; }
-.hire-web h1 { color: #1976d2; }
-.hire-web ul { margin-top: 1rem; }
-.hire-web li { color: #0d47a1; margin-bottom: 0.5rem; }
+
+
+/* Web Developer Page - mobile-hire aligned */
+.hire-web {
+  --accent-color: #4F46E5;
+  --accent-light: #EEF2FF;
+  --text-primary: #0f1724;
+  --text-secondary: #475569;
+  background: #ffffff;
+  padding: 2.25rem 1.25rem;
+  min-height: 100vh;
+}
+
+.hire-web .hire-hero {
+  background: linear-gradient(120deg, var(--accent-light) 0%, #fff 100%);
+  border-radius: 14px;
+  padding: 2.25rem 1.25rem;
+  margin-bottom: 2.25rem;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 1rem;
+  align-items: center;
+}
+
+.hire-web .hire-hero-text { text-align: center; max-width: 920px; margin: 0 auto; padding: 0 1rem; justify-self: center; }
+
+.hire-web .hire-illustration { width: 420px; max-width: 420px; justify-self: end; }
+
+.hire-web .hire-feature-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+  margin: 1rem 0 0;
+  padding: 0;
+  justify-content: center;
+  list-style: none;
+}
+
+.hire-web .hire-feature-list li {
+  background: var(--accent-light);
+  color: var(--accent-color);
+  padding: 0.45rem 0.7rem;
+  border-radius: 999px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  box-shadow: 0 6px 18px rgba(79,70,229,0.04);
+}
+
+.hire-web .hire-feature-list { justify-content: center; }
+
+.hire-web .hire-cards { display: grid; grid-template-columns: repeat(2,1fr); gap: 1rem; margin-top: 1.25rem; }
+
+.hire-web .hire-card { background:#fff; border:1px solid rgba(15,23,36,0.06); border-radius:12px; padding:1.25rem; box-shadow:0 6px 18px rgba(79,70,229,0.04); transition:transform 200ms ease,box-shadow 200ms ease; }
+.hire-web .hire-card:hover { transform: translateY(-6px); box-shadow: 0 10px 24px rgba(79,70,229,0.08); }
+
+.hire-web .hire-resume-form { max-width: 640px; margin: 1.25rem 0 0 0; }
+.hire-web .hire-process { margin-top: 1.5rem; }
+
+/* Additional rules to more closely match iOS hire layout */
+.hire-web h1,
+.hire-web .hero-title,
+.hire-web .dev-title {
+  color: var(--accent-color);
+  font-size: 2.2rem;
+  font-weight: 800;
+  margin-bottom: 0.6rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.hire-web .hero-sub,
+.hire-web p {
+  color: var(--text-secondary);
+  font-size: 1.05rem;
+  line-height: 1.6;
+  margin: 0 0 1rem 0;
+}
+
+.hire-web .hire-illustration {
+  width: 100%;
+  max-width: 420px;
+  justify-self: end;
+}
+
+/* make cards layout match iOS: centered flex-wrap */
+.hire-web .hire-cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  margin: 2rem 0;
+}
+
+.hire-web .hire-card {
+  min-width: 260px;
+  max-width: 340px;
+  flex: 1 1 260px;
+  background: #fff;
+  border-radius: 18px;
+  padding: 1.5rem;
+  border-top: 4px solid var(--accent-color);
+  transition: box-shadow 0.2s;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.hire-web .hire-card:hover {
+  box-shadow: 0 12px 32px rgba(79,70,229,0.14);
+}
+
+/* Center section titles and card contents for Job Roles, Candidate Reqs, Benefits, and Process */
+.hire-web .hire-section-title { text-align: center; color: #4F46E5; }
+
+.hire-web .hire-job-roles .hire-cards .hire-card,
+.hire-web .hire-candidate-reqs .hire-cards .hire-card,
+.hire-web .hire-benefits .hire-cards .hire-card {
+  align-items: center;
+  text-align: center;
+  color:#4F46E5;
+}
+
+.hire-web .hire-card-title { justify-content: center; }
+
+.hire-web .hire-process { text-align: center; }
+.hire-web .hire-process-steps { justify-items: center; }
+.hire-web .hire-process-step { justify-content: center; text-align: center; }
+
+.hire-web .hire-card-title,
+.hire-web .dev-title {
+  color: #4F46E5;
+  font-weight: 700;
+  font-size: 1.18rem;
+  margin-bottom: 0.8rem;
+  display: flex;
+  align-items: center;
+}
+
+.hire-web .hire-card p,
+.hire-web .hire-card-desc {
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin: 0;
+}
+
+.hire-web .hire-process {
+  background: var(--accent-light);
+  padding: 2.5rem 2rem;
+  border-radius: 16px;
+  margin: 2.5rem 0;
+}
+
+.hire-web .hire-process-title {
+  color: #4F46E5;
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.hire-web .hire-process-steps {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.2rem 2.5rem;
+}
+
+.hire-web .hire-process-step {
+  background: #fff;
+  padding: 1.2rem;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(79,70,229,0.08);
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  font-size: 1.08rem;
+}
+
+.hire-web .hire-process-icon { color: var(--accent-color); font-size: 1.3rem; }
+
+.hire-web .hire-resume-section { margin: 3rem auto; max-width: 600px; }
+.hire-web .hire-resume-form { background: #fff; padding: 2rem; border-radius: 12px; box-shadow: 0 4px 16px rgba(79,70,229,0.08); }
+.hire-web .hire-resume-form label { display: block; color: var(--text-secondary); margin-bottom: 0.5rem; font-weight: 500; }
+.hire-web .hire-form-input,
+.hire-web .hire-form-textarea { width: 100%; padding: 0.8rem; border: 1px solid #e2e8f0; border-radius: 8px; background: #f8fafc; margin-bottom: 1rem; }
+
+.hire-web .hire-animation-demo { text-align: center; padding: 3rem 1rem; max-width: 800px; margin: 0 auto; }
+.hire-web .hire-demo-title { color: var(--accent-color); font-size: 2rem; font-weight: 700; margin-bottom: 1.2rem; }
+.hire-web .hire-demo-desc { color: var(--text-secondary); font-size: 1.1rem; line-height: 1.6; margin: 0 auto 2rem; max-width: 600px; }
+
+@media (max-width: 900px) {
+  .hire-web .hire-hero { grid-template-columns: 1fr; position: relative; padding-bottom: 3.5rem; }
+  .hire-web .hire-illustration { position: absolute; right: 1rem; bottom: -12px; width: 46%; max-width: 260px; z-index: 2; }
+  .hire-web .hire-hero-text { z-index: 3; text-align: center; padding-right: 0; }
+  .hire-web .hire-cards { grid-template-columns: 1fr; }
+  .hire-web ul { gap: 0.7rem; }
+  .hire-web li { min-width: 100px; font-size: 1rem; padding: 0.6rem 1rem; }
+  .hire-web .hire-card { margin-bottom: 1.2rem; text-align: center; align-items: center; }
+}
+
+@media (max-width: 880px) {
+  .hire-web .hire-hero { grid-template-columns: 1fr; position: relative; padding-bottom: 3.5rem; }
+  .hire-web .hire-illustration { position: absolute; right: 1rem; bottom: -12px; width: 46%; max-width: 260px; z-index: 2; }
+  .hire-web .hire-hero-text { z-index: 3; }
+  .hire-web .hire-cards { grid-template-columns: 1fr; }
+}
+

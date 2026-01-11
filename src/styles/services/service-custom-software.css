@@ -1,3 +1,261 @@
+/* Custom Software Development Styles */
+
+/* Hero Section */
+.custom-software-container {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.hero-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 30vh;
+  padding: 4rem 0;
+  gap: 4rem;
+  position: relative;
+  background: linear-gradient(135deg, #2a5298 0%, #1e3c72 100%);
+  border-radius: 24px;
+  overflow: hidden;
+}
+
+.hero-content {
+  flex: 1;
+  padding: 0 4rem;
+  color: white;
+}
+
+.hero-title {
+  font-size: 3.5rem;
+  font-weight: 700;
+  color: white;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.hero-icon {
+  color: #60A5FA;
+  font-size: 2.5rem;
+}
+
+.hero-description {
+  font-size: 1.25rem;
+  color: rgba(255, 255, 255, 0.9);
+  line-height: 1.8;
+  margin-bottom: 2rem;
+  max-width: 600px;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 1rem;
+}
+
+.primary-btn {
+  padding: 1rem 2rem;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 1.1rem;
+  background: #60A5FA;
+  color: white;
+  border: none;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.primary-btn:hover {
+  background: #3B82F6;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+}
+
+.hero-animation {
+  flex: 1;
+  max-width: 600px;
+  padding: 2rem;
+}
+
+/* Services Section */
+.services-section {
+  padding: 6rem 0;
+}
+
+.section-title {
+  font-size: 2.5rem;
+  color: #1a202c;
+  text-align: center;
+  margin-bottom: 3rem;
+  font-weight: 700;
+  padding: 0 1rem;
+  position: relative;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2rem;
+  padding: 2rem 0;
+}
+
+.service-card {
+  background: white;
+  padding: 2.5rem;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.service-icon {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.service-title {
+  font-size: 1.5rem;
+  color: #2D3748;
+  font-weight: 600;
+}
+
+.service-description {
+  color: #4A5568;
+  line-height: 1.7;
+  font-size: 1.1rem;
+}
+
+/* FAQ Section */
+.faq-item {
+  background: white;
+  margin-bottom: 1rem;
+  border-radius: 12px;
+  overflow: hidden;
+  padding: 1.5rem;
+}
+
+.faq-question {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  cursor: pointer;
+  color: #2D3748;
+  font-weight: 500;
+}
+
+.faq-icon {
+  font-size: 1.25rem;
+  color: #3B82F6;
+}
+
+.faq-text {
+  flex-grow: 1;
+  font-size: 1.1rem;
+}
+
+.faq-answer {
+  padding-top: 1rem;
+  color: #4A5568;
+  line-height: 1.7;
+}
+
+/* Process Section */
+.super-process-section {
+  background: #F8FAFC;
+  padding: 6rem 0;
+  border-radius: 24px;
+  margin: 4rem 0;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .hero-section {
+    flex-direction: column;
+    text-align: center;
+    padding: 3rem 1rem;
+  }
+
+  .hero-content {
+    padding: 0 2rem;
+  }
+
+  .hero-title {
+    justify-content: center;
+    font-size: 2.5rem;
+  }
+
+  .hero-description {
+    margin: 0 auto;
+    margin-bottom: 2rem;
+  }
+
+  .hero-buttons {
+    justify-content: center;
+  }
+
+  .hero-animation {
+    max-width: 400px;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 768px) {
+  .custom-software-container {
+    padding: 1rem;
+  }
+
+  .services-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .service-card {
+    padding: 1.5rem;
+  }
+
+  .section-title {
+    font-size: 2rem;
+  }
+
+  .hero-title {
+    font-size: 2rem;
+  }
+
+  .hero-description {
+    font-size: 1.1rem;
+  }
+}
+
+/* Animations */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.service-card {
+  animation: fadeUp 0.6s ease-out forwards;
+}
+.super-hero-flex { padding: 24px }
+.super-title { font-size: 2rem; color: #fff; margin: 0 0 12px 0; display:flex; align-items:center; gap:12px }
+.super-desc { color: rgba(255,255,255,0.95); line-height:1.6 }
+.lottie-container { max-width: 520px; width: 48%; }
+.super-cards { display:grid; grid-template-columns: repeat(2, 1fr); gap:16px; padding: 24px 0 }
+.super-card { background:#fff; padding:18px; border-radius:12px; box-shadow:0 6px 18px rgba(0,0,0,0.04) }
+@media (max-width: 900px) {
+	.super-hero-flex { flex-direction: column; gap: 18px; padding: 18px }
+	.lottie-container { width: 100%; max-width: none }
+	.super-cards { grid-template-columns: 1fr }
+}
+
 /* Custom Software Development service page styles */
 .service-custom-software { background: #fffbe6; padding: 2rem; border-radius: 12px; }
 .service-custom-software h1 { color: #ff9800; }

@@ -3,6 +3,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { FaMobileAlt, FaCode, FaCogs, FaRocket, FaUsers, FaBook, FaCloud, FaShieldAlt, FaDraftingCompass, FaChartLine, FaIndustry, FaHospital, FaHeartbeat, FaGraduationCap, FaMoneyBillWave, FaBriefcase } from 'react-icons/fa';
 import LazyPlayer from '../components/LazyPlayer';
+import SplineSceneBasic from '../components/ui/spline-demo';
 import { motion } from 'framer-motion';
 import '../styles/home.css';
 
@@ -25,8 +26,11 @@ export default function Home() {
           </p>
           <Link className="cta-btn" to="/contact">Get Started</Link>
         </motion.div>
-        <motion.div style={{flex:'0 0 340px',display:'flex',justifyContent:'center',alignItems:'center'}} initial={{ opacity: 0, x: 40 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.8, delay: 0.4 }}>
-          <LazyPlayer src="phone-app-animation.json" style={{width:'320px',height:'320px'}} loop autoplay />
+        <motion.div style={{flex:'0 0 420px',display:'flex',justifyContent:'center',alignItems:'flex-start'}} initial={{ opacity: 0, x: 40 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.8, delay: 0.4 }}>
+          {/* Spline 3D demo component (moved up and scaled larger) */}
+          <div style={{width:320, height:320, transform: 'translateY(-415px) scale(2)', transformOrigin: 'center top'}}>
+            <SplineSceneBasic />
+          </div>
         </motion.div>
       </motion.section>
 
@@ -120,6 +124,90 @@ export default function Home() {
         <h2 style={{fontSize:'1.4rem',marginBottom:'1rem'}}><FaRocket style={{marginRight:'8px'}}/>Ready to Start Your Project?</h2>
         <p style={{fontSize:'1.08rem',marginBottom:'1.2rem'}}>Contact us today and let's build something amazing together.</p>
   <Link className="cta-btn" to="/contact">Contact Us</Link>
+      </motion.section>
+
+      {/* Our Process Section */}
+      <motion.section
+        className="process-section-home"
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.8, delay: 0.1 }}
+      >
+        <h2>How We Work</h2>
+        <p className="process-intro">From discovery to delivery, our proven process ensures predictable outcomes and rapid time-to-value.</p>
+        <div className="process-steps">
+          <div className="process-step">
+            <div className="step-number">1</div>
+            <h3>Discover</h3>
+            <p>We align on business goals, map user journeys, and define success metrics.</p>
+          </div>
+          <div className="process-step">
+            <div className="step-number">2</div>
+            <h3>Design</h3>
+            <p>UX-first designs and rapid prototypes to validate ideas early with stakeholders.</p>
+          </div>
+          <div className="process-step">
+            <div className="step-number">3</div>
+            <h3>Build</h3>
+            <p>Iterative engineering with CI/CD, tests, and continuous feedback loops.</p>
+          </div>
+          <div className="process-step">
+            <div className="step-number">4</div>
+            <h3>Operate</h3>
+            <p>Monitoring, maintenance, and roadmap planning to keep products healthy and growing.</p>
+          </div>
+        </div>
+      </motion.section>
+
+      {/* Testimonials Section */}
+      <motion.section
+        className="testimonials-home"
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.8, delay: 0.1 }}
+      >
+        <h2>What Clients Say</h2>
+        <div className="testimonials-grid">
+          <div className="testimonial-card">
+            <p>“Viyugaa helped us modernize our platform and significantly reduced time-to-market. Their team is responsive and delivery-focused.”</p>
+            <div className="author">— CEO, Acme Manufacturing</div>
+          </div>
+          <div className="testimonial-card">
+            <p>“Excellent design and attention to detail. The product shipped with minimal rework and high quality.”</p>
+            <div className="author">— Head of Product, Fintech Startup</div>
+          </div>
+          <div className="testimonial-card">
+            <p>“Reliable support and fast iteration cycles. Our operations improved after they migrated our systems to the cloud.”</p>
+            <div className="author">— CTO, Healthcare Platform</div>
+          </div>
+        </div>
+      </motion.section>
+
+      {/* FAQ Section */}
+      <motion.section
+        className="faq-home"
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.8, delay: 0.1 }}
+      >
+        <h2>Frequently Asked Questions</h2>
+        <div className="faq-list">
+          <div className="faq-item">
+            <h4>How long does a typical project take?</h4>
+            <p>Project timelines vary — most MVPs launch within 8–16 weeks depending on scope.</p>
+          </div>
+          <div className="faq-item">
+            <h4>What engagement models do you offer?</h4>
+            <p>Fixed-price, time & materials, and dedicated teams — we’ll recommend the best fit.</p>
+          </div>
+          <div className="faq-item">
+            <h4>Do you provide post-launch support?</h4>
+            <p>Yes — we offer maintenance, monitoring, and enhancement plans tailored to your needs.</p>
+          </div>
+        </div>
       </motion.section>
     </main>
   );

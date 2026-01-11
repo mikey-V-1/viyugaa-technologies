@@ -39,14 +39,7 @@ export default function MongoDB() {
     <div className="mongodb-modern-page">
       {/* Hero Section */}
       <section className="mongodb-hero">
-        <motion.div
-          className="mongodb-hero-logo"
-          initial={{ opacity: 0, scale: 0.8 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 1 }}
-        >
-          <img src="/tech/mongodb.png" alt="MongoDB" className="mongodb-hero-image" />
-        </motion.div>
+        
         <motion.h1
           className="mongodb-hero-title"
           initial={{ opacity: 0, y: -50 }}
