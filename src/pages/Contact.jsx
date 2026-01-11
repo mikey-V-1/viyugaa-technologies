@@ -3,7 +3,7 @@ import emailjs from '@emailjs/browser';
 import { motion } from 'framer-motion';
 import SEO from '../components/SEO';
 import seoData from '../lib/seoData';
-import '../styles/Contact.css';
+import '../styles/contact.css';
 
 export default function Contact() {
   const formRef = useRef()
