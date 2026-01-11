@@ -17,12 +17,14 @@ export default defineConfig({
             if (id.includes('react') || id.includes('react-dom')) return 'vendor-react'
             if (id.includes('framer-motion')) return 'vendor-framer'
             if (id.includes('lottie-web') || id.includes('lottie-react') || id.includes('@lottiefiles')) return 'vendor-lottie'
-            return 'vendor'
+            if (id.includes('@splinetool')) return 'vendor-spline'
+            // Split other large vendors
+            if (id.includes('node_modules')) return 'vendor'
           }
         }
       }
     },
-    // keep the default chunk size warning but you can tweak if needed
-    chunkSizeWarningLimit: 1000
+    chunkSizeWarningLimit: 5000,
+    minify: 'esbuild'
   }
 })
