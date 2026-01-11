@@ -36,12 +36,6 @@
   font-size: 2.2rem;
   font-weight: 800;
   margin-bottom: 0.6rem;
-.hire-reactjs h1,
-.hire-reactjs .dev-title {
-  color: var(--accent-color);
-  font-size: 2.2rem;
-  font-weight: 800;
-  margin-bottom: 0.6rem;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -52,6 +46,7 @@
   width: 420px;
   max-width: 420px;
   justify-self: end;
+}
 
 .hire-reactjs .hire-feature-list {
   display: flex;

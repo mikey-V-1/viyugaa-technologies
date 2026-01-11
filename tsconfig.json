@@ -10,7 +10,7 @@
 		"moduleResolution": "bundler",
 		"resolveJsonModule": true,
 		"isolatedModules": true,
-		"allowJs": true,
+		"allowJs": false,
 		"baseUrl": "./src",
 		"paths": { "@/*": ["./*"] }
 	},

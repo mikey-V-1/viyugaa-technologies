@@ -52,20 +52,29 @@ export default function InstallPrompt() {
   }, [])
 
   const handleInstallClick = async () => {
-    if (!deferredPromptRef.current && !deferredPrompt) return
     const installEvt = deferredPromptRef.current || deferredPrompt
+    if (!installEvt) return
+    
     try {
+      // Call prompt() to show the install banner
       installEvt.prompt()
       const choiceResult = await installEvt.userChoice
       // Optionally react to the user's choice
+      if (choiceResult.outcome === 'accepted') {
+        // App was installed
+      }
     } catch (err) {
-      // console.warn('install prompt failed:', err)
+      // prompt can fail if not available; ignore silently
+    } finally {
+      promptShownRef.current = true
+      setVisible(false)
+      setDeferredPrompt(null)
+      deferredPromptRef.current = null
+      if (promptTimerRef.current) { 
+        clearTimeout(promptTimerRef.current)
+        promptTimerRef.current = null 
+      }
     }
-    promptShownRef.current = true
-    setVisible(false)
-    setDeferredPrompt(null)
-    deferredPromptRef.current = null
-    if (promptTimerRef.current) { clearTimeout(promptTimerRef.current); promptTimerRef.current = null }
   }
 
   if (!visible) return null
