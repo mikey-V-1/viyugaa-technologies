@@ -133,8 +133,7 @@ export default function MobileAppDevelopment() {
           style={{ 
             opacity: isInView ? 1 : 0,
             scale: heroScale,
-            transform: isInView ? "none" : "translateX(-200px)",
-            transition: "all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s"
+            transform: isInView ? "none" : "translateX(-200px)"
           }}
         >
           <motion.h1 
@@ -177,7 +176,7 @@ export default function MobileAppDevelopment() {
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ 
             opacity: isInView ? 1 : 0,
-            scale: isInView ? 1 : 0.8 
+            scale: isInView ? 1 : 0.8
           }}
           transition={{ 
             duration: 0.8,
